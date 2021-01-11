@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\Fortify\PasswordValidationRules;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,9 +11,10 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
+    use PasswordValidationRules;
     public function register(Request $request)
     {
-        Validator::make($request, [
+        $validator=Validator::make($request, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
