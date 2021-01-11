@@ -12,13 +12,14 @@ use Illuminate\Support\Facades\Validator;
 class AuthController extends Controller
 {
     use PasswordValidationRules;
+
     public function register(Request $request)
     {
         $validator=Validator::make($request->all(), [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => $this->passwordRules(),
-        ])->validate();
+            'password' => ['required'],
+        ]);
 
         if($validator->fails()){
             return response()->json(['status_code'=>400,'message'=>$validator->errors()]);
