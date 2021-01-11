@@ -30,12 +30,16 @@ class CreateNewUser implements CreatesNewUsers
         ])->validate();
 
         return DB::transaction(function () use ($input) {
+
             return tap(User::create([
                 'name' => $input['name'],
                 'email' => $input['email'],
                 'password' => Hash::make($input['password']),
+                'activo' => true,
             ]), function (User $user) {
-                $this->createTeam($user);
+//                $this->createTeam($user);
+//                $teamToAssign = Team::find(intval($input['idTeam']));
+//                $user->switchTeam($teamToAssign);
             });
         });
     }

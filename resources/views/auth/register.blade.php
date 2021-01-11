@@ -29,6 +29,15 @@
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
+            <div class="mt-4 ">
+                <x-jet-label for="type" value="{{'Tipo'}}" />
+                <select id="type" name="idTeam" class="form-select mt-1 block w-full">
+                    <option value="2">{{'Administrador'}}</option>
+                    <option value="1">{{'Cliente'}}</option>
+                    <option value="3">{{'Miembro'}}</option>
+                </select>
+            </div>
+
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
                     <x-jet-label for="terms">
