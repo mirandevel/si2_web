@@ -23,7 +23,14 @@ class CreateUsersTable extends Migration
             $table->foreignId('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable();
             $table->boolean('activo');
+            $table->unsignedBigInteger('ciudad_id');
             $table->timestamps();
+
+            $table->foreign('ciudad_id')
+                ->references('id')
+                ->on('ciudades')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
         });
     }
 

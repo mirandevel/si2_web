@@ -1,0 +1,39 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateTipoPagosTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('tipo_pagos', function (Blueprint $table) {
+            $table->id();
+            $table->string('tipo', 50);
+            $table->unsignedBigInteger('tarjeta_id');
+            $table->timestamps();
+
+            $table->foreign('tarjeta_id')
+                ->references('id')
+                ->on('tarjetas')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('tipo_pagos');
+    }
+}
