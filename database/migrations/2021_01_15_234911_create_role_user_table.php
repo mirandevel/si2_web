@@ -18,9 +18,7 @@ class CreateRoleUserTable extends Migration
             $table->foreignId('role_id');
             $table->foreignId('user_id');
             $table->timestamps();
-
             $table->unique(['role_id', 'user_id']);
-
         });
     }
 

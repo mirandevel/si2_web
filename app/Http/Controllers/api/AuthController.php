@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\api;
 
 use App\Actions\Fortify\PasswordValidationRules;
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -51,6 +52,7 @@ class AuthController extends Controller
 
         $credentials=request(['email','password']);
         if(!Auth::attempt($credentials)){
+
             return response()->json(['status_code'=>500,'message'=>'Unauthorized']);
         }
         $user=User::where('email',$request->email)->first();

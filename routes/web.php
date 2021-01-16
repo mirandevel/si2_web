@@ -14,9 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('auth.login');
+})->name('/');
+Route::post('/login',[\App\Http\Controllers\web\LoginController::class,'login']);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    //Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
+
+    Route::get('/start',[\App\Http\Controllers\web\StartController::class,'start'])->name('start');
+    Route::get('/adm/dashboard',\App\Http\Livewire\Adm\Dashboard::class)->name('adm.dashboard');
+
+});
