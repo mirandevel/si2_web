@@ -2,7 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with role table">
+      <change afterPath="$PROJECT_DIR$/app/Models/Bitacora.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Carrito.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/CarritoProducto.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Categoria.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/CategoriaProducto.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Ciudad.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Comision.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Detalle.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Empresa.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/EmpresaUsuario.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Factura.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/FcmToken.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Garantia.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Marca.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Pais.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Producto.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/ProductoPromocion.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Promocion.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Rol.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/RolUser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Tarjeta.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/TipoPago.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2014_10_11_000000_create_paises_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_ciudades_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_151606_create_bitacoras_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_152732_create_fcm_tokens_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154621_create_empresas_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154647_create_tarjetas_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154709_create_tipo_pagos_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154728_create_garantias_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154747_create_carritos_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154805_create_facturas_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154822_create_categorias_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154835_create_marcas_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154849_create_comisiones_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154909_create_productos_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154934_create_carrito_productos_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154953_create_categoria_productos_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_155014_create_promociones_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_155034_create_detalles_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_155130_create_producto_promociones_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_155157_create_empresa_usuarios_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_15_234903_create_roles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_15_234903_create_roles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_15_234911_create_role_user_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_150934_create_rol_users_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,6 +234,7 @@
       <workItem from="1610325453930" duration="3839000" />
       <workItem from="1610372779591" duration="44000" />
       <workItem from="1610753683576" duration="5261000" />
+      <workItem from="1610809591732" duration="9536000" />
     </task>
     <task id="LOCAL-00001" summary="with npm">
       <created>1610323981734</created>
