@@ -1,25 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with role table">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/web/LoginController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/web/StartController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Adm/Dashboard.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Emp/Dashboard.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/modal-menu.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/start-card.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/adm/dashboard.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/emp/dashboard.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/start.blade.php" afterDir="false" />
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with menu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_15_234911_create_role_user_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_15_234911_create_role_user_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/guest.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/guest.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/navigation-menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/navigation-menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -216,7 +201,7 @@
       <workItem from="1610325453930" duration="3839000" />
       <workItem from="1610372779591" duration="44000" />
       <workItem from="1610753683576" duration="10247000" />
-      <workItem from="1610805703574" duration="12813000" />
+      <workItem from="1610805703574" duration="18778000" />
     </task>
     <task id="LOCAL-00001" summary="with npm">
       <created>1610323981734</created>
@@ -274,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610760477963</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="with menu">
+      <created>1610822028574</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1610822028575</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,6 +292,7 @@
     <MESSAGE value="with npm" />
     <MESSAGE value="with register" />
     <MESSAGE value="with role table" />
-    <option name="LAST_COMMIT_MESSAGE" value="with role table" />
+    <MESSAGE value="with menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="with menu" />
   </component>
 </project>
