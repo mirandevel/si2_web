@@ -33,6 +33,10 @@
 
             <!-- Page Content -->
             <main>
+                <x-modal-menu>
+                    <x-menu></x-menu>
+                </x-modal-menu>
+
                 {{ $slot }}
             </main>
         </div>

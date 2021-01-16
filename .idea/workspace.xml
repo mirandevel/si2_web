@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with role table">
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with menu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +17,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
@@ -167,6 +175,10 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\si2\si2_web" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\si2\si2_web\app\Http\Controllers\api" />
+      <recent name="E:\si2\si2_web\app\Http\Controllers\web" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -188,7 +200,8 @@
       <workItem from="1610323223280" duration="2515000" />
       <workItem from="1610325453930" duration="3839000" />
       <workItem from="1610372779591" duration="44000" />
-      <workItem from="1610753683576" duration="5261000" />
+      <workItem from="1610753683576" duration="10247000" />
+      <workItem from="1610805703574" duration="18778000" />
     </task>
     <task id="LOCAL-00001" summary="with npm">
       <created>1610323981734</created>
@@ -239,7 +252,21 @@
       <option name="project" value="LOCAL" />
       <updated>1610759189087</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="with role table">
+      <created>1610760477963</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1610760477963</updated>
+    </task>
+    <task id="LOCAL-00009" summary="with menu">
+      <created>1610822028574</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1610822028575</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,6 +292,7 @@
     <MESSAGE value="with npm" />
     <MESSAGE value="with register" />
     <MESSAGE value="with role table" />
-    <option name="LAST_COMMIT_MESSAGE" value="with role table" />
+    <MESSAGE value="with menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="with menu" />
   </component>
 </project>
