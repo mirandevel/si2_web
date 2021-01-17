@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api;
 
 use App\Actions\Fortify\PasswordValidationRules;
 use App\Http\Controllers\Controller;
+use App\Models\RolUser;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,18 +21,27 @@ class AuthController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required'],
+            'ciudad_id' => 'exists:App\Models\Pais,id'
         ]);
 
         if($validator->fails()){
             return response()->json(['status_code'=>400,'message'=>$validator->errors()]);
         }
         //$result=$request->file('profile_photo_path')->store('profile');
-        return User::create([
+        $user = User::create([
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
             'activo' => true,
+            'ciudad_id' => $request['ciudad_id']
         ]);
+
+        RolUser::create([
+            'rol_id' => 3,
+            'user_id' => $user->id,
+        ]);
+
+        return $user;
     }
 
     public function logout(Request $request)

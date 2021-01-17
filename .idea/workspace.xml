@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="seeders">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_1_2021_20_33_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_1_2021_20_33__Default_Changelist_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_1_2021_20_34_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_1_2021_20_34__Default_Changelist_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="se crearon los usuarios en los seeders">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/EmpresaSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/EmpresaSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/EmpresaUsuarioSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/EmpresaUsuarioSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/RolUserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/RolUserSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/UserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/UserSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/AuthController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +203,8 @@
       <workItem from="1610372779591" duration="44000" />
       <workItem from="1610753683576" duration="10247000" />
       <workItem from="1610805703574" duration="18778000" />
-      <workItem from="1610894020054" duration="1740000" />
+      <workItem from="1610894020054" duration="1868000" />
+      <workItem from="1610924877245" duration="865000" />
     </task>
     <task id="LOCAL-00001" summary="with npm">
       <created>1610323981734</created>
@@ -292,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610852382087</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="se crearon los usuarios en los seeders">
+      <created>1610895821032</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1610895821032</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +319,7 @@
     <MESSAGE value="with menu" />
     <MESSAGE value="avance de seeders" />
     <MESSAGE value="seeders" />
-    <option name="LAST_COMMIT_MESSAGE" value="seeders" />
+    <MESSAGE value="se crearon los usuarios en los seeders" />
+    <option name="LAST_COMMIT_MESSAGE" value="se crearon los usuarios en los seeders" />
   </component>
 </project>
