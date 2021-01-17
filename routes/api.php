@@ -43,11 +43,13 @@ Route::post('/forgot-password', function (Request $request) {
     );
 
     $value=$status === Password::RESET_LINK_SENT;
-    if($value){
+    return ['respuesta'=>__($status)];
+
+    /*if($value){
         return ['status'=>__($status),'email' => 'ok'];
     }else{
         return ['status'=>'error','email' => __($status)];
-    }
+    }*/
     /*return $status === Password::RESET_LINK_SENT
         ? ['status' => __($status)]
         : ['email' => __($status)];*/
