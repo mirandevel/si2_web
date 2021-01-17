@@ -16,4 +16,9 @@ class Pais extends Model
     protected $hidden = [
         'created_at', 'updated_at',
     ];
+
+    public function ciudades()
+    {
+        return $this->hasMany(Ciudad::class, 'pais_id', 'id');
+    }
 }

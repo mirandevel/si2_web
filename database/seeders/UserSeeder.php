@@ -25,5 +25,14 @@ class UserSeeder extends Seeder
                 'ciudad_id' => 1,
             ]);
         }
+        for ($i = 0; $i < 3; $i++) {
+            User::create([
+                'name' => $faker->name,
+                'email' => $faker->unique()->safeEmail,
+                'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+                'activo' => true,
+                'ciudad_id' => 2,
+            ]);
+        }
     }
 }

@@ -17,6 +17,9 @@ class DatabaseSeeder extends Seeder
             PaisSeeder::class,
             CiudadSeeder::class,
             UserSeeder::class,
+            RolSeeder::class,
+            RolUserSeeder::class,
+            EmpresaSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
     }

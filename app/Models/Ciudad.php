@@ -14,6 +14,6 @@ class Ciudad extends Model
     protected $fillable = ['nombre', 'pais_id'];
 
     protected $hidden = [
-        'created_at', 'updated_at',
+        'created_at', 'updated_at', 'pais_id',
     ];
 }
