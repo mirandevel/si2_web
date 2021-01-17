@@ -57,6 +57,8 @@ class AuthController extends Controller
         }
         $user=User::where('email',$request->email)->first();
         $tokenResult=$user->createToken('authToken')->plainTextToken;
-        return response()->json(['status_code'=>200,'token'=>$tokenResult,'user'=>Auth::user()->email]);
+        return response()->json(['token'=>$tokenResult,
+            'email'=>Auth::user()->email,
+            'verification'=>Auth::user()->email_verified_at]);
     }
 }
