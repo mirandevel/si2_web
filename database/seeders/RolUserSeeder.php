@@ -14,43 +14,36 @@ class RolUserSeeder extends Seeder
      */
     public function run()
     {
-        RolUser::create([
-            'rol_id' => 1,
-            'user_id' => 1,
-        ]);
-        RolUser::create([
-            'rol_id' => 2,
-            'user_id' => 1,
-        ]);
-        RolUser::create([
-            'rol_id' => 3,
-            'user_id' => 1,
-        ]);
+        //administradores
+        for ($i = 1; $i <= 3; $i++)
+        {
+            for ($j = 1; $j <= 3; $j++)
+            {
+                RolUser::create([
+                    'rol_id' => $j,
+                    'user_id' => $i,
+                ]);
+            }
+        }
+        //miembros
+        for ($i = 4; $i <= 11; $i++)
+        {
+            for ($j = 2; $j <= 3; $j++)
+            {
+                RolUser::create([
+                    'rol_id' => $j,
+                    'user_id' => $i,
+                ]);
+            }
+        }
+        //clientes
+        for ($i = 12; $i <= 21; $i++)
+        {
+            RolUser::create([
+                'rol_id' => 3,
+                'user_id' => $i,
+            ]);
+        }
 
-        RolUser::create([
-            'rol_id' => 1,
-            'user_id' => 2,
-        ]);
-        RolUser::create([
-            'rol_id' => 2,
-            'user_id' => 2,
-        ]);
-        RolUser::create([
-            'rol_id' => 3,
-            'user_id' => 2,
-        ]);
-
-        RolUser::create([
-            'rol_id' => 1,
-            'user_id' => 3,
-        ]);
-        RolUser::create([
-            'rol_id' => 2,
-            'user_id' => 3,
-        ]);
-        RolUser::create([
-            'rol_id' => 3,
-            'user_id' => 3,
-        ]);
     }
 }

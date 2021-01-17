@@ -20,15 +20,15 @@ class EmpresaSeeder extends Seeder
         ]);
         Empresa::create([
             'nombre' => 'Multicenter',
-            'nit' => '1234',
+            'nit' => '4321',
         ]);
         Empresa::create([
             'nombre' => 'Hipermaxi',
-            'nit' => '1234',
+            'nit' => '1243',
         ]);
         Empresa::create([
             'nombre' => 'Tienda Amiga',
-            'nit' => '1234',
+            'nit' => '4312',
         ]);
     }
 }
