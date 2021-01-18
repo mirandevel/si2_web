@@ -42,3 +42,15 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/adm/dashboard',\App\Http\Livewire\Adm\Dashboard::class)->name('adm.dashboard');
 
 });
+
+Route::get('send-mail', function () {
+
+    $details = [
+        'title' => 'Mail from ItSolutionStuff.com',
+        'body' => 'This is for testing email using smtp'
+    ];
+
+    \Illuminate\Support\Facades\Mail::to('jose.and.brid@gmail.com')->send(new \App\Mail\MyTestMail($details));
+
+    dd("Email is Sent.");
+})->name('email');

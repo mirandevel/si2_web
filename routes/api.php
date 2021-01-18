@@ -60,6 +60,21 @@ Route::post('/forgot-password', function (Request $request) {
 
 Route::post('/register', [AuthController::class, 'register']);
 
+Route::get('/prueba', function () {
+    return route('email',['hola'=>'hoola']);
+});
+
+Route::get('send-mail', function () {
+
+    $details = [
+        'title' => 'Mail from ItSolutionStuff.com',
+        'body' => 'This is for testing email using smtp'
+    ];
+    \Illuminate\Support\Facades\Mail::to('jose@gmail.com')->send(new \App\Mail\MyTestMail($details));
+
+    //dd("Email is Sent.");
+})->name('email');
+
 Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);
 
 Route::post('/login', [AuthController::class, 'login']);
