@@ -83,8 +83,5 @@ Route::get('/datalogin', [DatoMaestroController::class, 'datalogin']);
 
 Route::post('/store/token', [DatoMaestroController::class, 'storetoken']);
 
-
-
-
-
+Route::post('/register/bitacora', [DatoMaestroController::class, 'registrarbitacora']);
 
