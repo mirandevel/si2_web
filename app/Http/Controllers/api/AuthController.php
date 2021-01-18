@@ -57,7 +57,7 @@ class AuthController extends Controller
             'password' => ['required'],
         ]);
         if($validator->fails()){
-            return response()->json(['error'=>$validator->messages()[0]]);
+            return response()->json(['error'=>$validator->messages()]);
         }
 
         $credentials=request(['email','password']);
