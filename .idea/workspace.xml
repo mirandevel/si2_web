@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with menu">
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="api recover password">
+      <change afterPath="$PROJECT_DIR$/app/Mail/MyTestMail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/email.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/verif-email.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +25,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -144,6 +145,7 @@
       <path value="$PROJECT_DIR$/vendor/phar-io/version" />
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/vendor/jaybizzle/crawler-detect" />
+      <path value="$PROJECT_DIR$/vendor/laraveles/spanish" />
     </include_path>
   </component>
   <component name="ProjectId" id="1mr80h0SAXbZ1uzi8wO0ehMweVr" />
@@ -202,6 +204,7 @@
       <workItem from="1610372779591" duration="44000" />
       <workItem from="1610753683576" duration="10247000" />
       <workItem from="1610805703574" duration="18778000" />
+      <workItem from="1610927444511" duration="2029000" />
     </task>
     <task id="LOCAL-00001" summary="with npm">
       <created>1610323981734</created>
@@ -266,7 +269,49 @@
       <option name="project" value="LOCAL" />
       <updated>1610822028575</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="api recover password">
+      <created>1610847058951</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1610847058951</updated>
+    </task>
+    <task id="LOCAL-00011" summary="api recover password">
+      <created>1610848769812</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1610848769812</updated>
+    </task>
+    <task id="LOCAL-00012" summary="api recover password">
+      <created>1610849268806</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1610849268806</updated>
+    </task>
+    <task id="LOCAL-00013" summary="api recover password">
+      <created>1610849728259</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1610849728259</updated>
+    </task>
+    <task id="LOCAL-00014" summary="api recover password">
+      <created>1610850723281</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1610850723281</updated>
+    </task>
+    <task id="LOCAL-00015" summary="api recover password">
+      <created>1610850943625</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1610850943625</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,6 +338,7 @@
     <MESSAGE value="with register" />
     <MESSAGE value="with role table" />
     <MESSAGE value="with menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="with menu" />
+    <MESSAGE value="api recover password" />
+    <option name="LAST_COMMIT_MESSAGE" value="api recover password" />
   </component>
 </project>
