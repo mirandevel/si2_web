@@ -81,7 +81,7 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/datalogin', [DatoMaestroController::class, 'datalogin']);
 
-Route::post('/store/token', [DatoMaestroController::class, 'storetoken']);
+Route::middleware('auth:sanctum')->post('/store/token', [DatoMaestroController::class, 'storetoken']);
 
 
 
