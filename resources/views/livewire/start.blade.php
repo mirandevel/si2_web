@@ -42,7 +42,7 @@
         @foreach($empresas as $empresa)
             <x-start-card>
 
-                <img src="{{ url('storage/'.$empresa->image_url) }}" alt="" title="" />
+                <img src="{{ asset('storage/'.$empresa->image_url) }}" alt="" title="" />
             </x-start-card>
         @endforeach
     </div>
