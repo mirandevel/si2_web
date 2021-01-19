@@ -64,13 +64,12 @@ Route::get('/prueba', function () {
     return route('email',['hola'=>'hoola']);
 });
 
-Route::get('send-mail', function (Request $request) {
+Route::get('send-mail', function ($request) {
 
     $details = [
         'title' => 'Confirmar correo electrónico',
         'body' => 'This is for testing email using smtp'
     ];
-dd($request);
     \Illuminate\Support\Facades\Mail::to($request['email'])->send(new \App\Mail\MyTestMail($details,$request['id']));
     return response()->json(['email'=>'ok']);
 
