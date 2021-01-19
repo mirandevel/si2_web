@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with email">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -209,7 +210,7 @@
       <workItem from="1610995587617" duration="82000" />
       <workItem from="1610995703391" duration="233000" />
       <workItem from="1610995954246" duration="306000" />
-      <workItem from="1610997088070" duration="16435000" />
+      <workItem from="1610997088070" duration="16698000" />
     </task>
     <task id="LOCAL-00001" summary="with npm">
       <created>1610323981734</created>
@@ -470,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611024892836</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="with email">
+      <created>1611025031621</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1611025031621</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
