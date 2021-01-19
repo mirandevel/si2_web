@@ -14,17 +14,17 @@ class MyTestMail extends Mailable
     use Queueable, SerializesModels;
 
     public $details;
-    public $request;
+    public $id;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($details,Request $request)
+    public function __construct($details,$id)
     {
         $this->details = $details;
-        $this->request=$request;
+        $this->id=$id;
     }
 
     /**
@@ -35,7 +35,7 @@ class MyTestMail extends Mailable
     public function build()
     {
         return $this->subject('Confirmar correo electronico')
-            ->view('verif-email',['link'=>route('verification',['id'=>1])]);
+            ->view('verif-email',['link'=>route('verification',['id'=>$this->id])]);
     }
   /*  public function build()
     {
