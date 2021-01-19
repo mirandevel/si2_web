@@ -70,9 +70,7 @@ Route::get('send-mail', function (Request $request) {
         'title' => 'Confirmar correo electrónico',
         'body' => 'This is for testing email using smtp'
     ];
-
-    $id=$request['id'];
-    \Illuminate\Support\Facades\Mail::to('jose@gmail.com')->send(new \App\Mail\MyTestMail($details,1));
+    \Illuminate\Support\Facades\Mail::to($request['email'])->send(new \App\Mail\MyTestMail($details,$request['id']));
     return response()->json(['email'=>'ok']);
 
 })->name('email');
