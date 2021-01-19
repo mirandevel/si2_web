@@ -64,13 +64,13 @@ Route::get('/prueba', function () {
     return route('email',['hola'=>'hoola']);
 });
 
-Route::post('sendverif', function (Request $request) {
+Route::post('send-mail', function (Request $request) {
 
     $details = [
         'title' => 'Confirmar correo electrónico',
         'body' => 'This is for testing email using smtp'
     ];
-    \Illuminate\Support\Facades\Mail::to('jose.and.brid@gmail.com')->send(new \App\Mail\MyTestMail($details,$request['id']));
+    \Illuminate\Support\Facades\Mail::to('jose.and.brid@gmail.com')->send(new \App\Mail\MyTestMail($details,$request->user()->id));
     return response()->json(['email'=>'ok']);
 
 })->name('email');
