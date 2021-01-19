@@ -48,5 +48,5 @@ Route::get('/verification/{id}', function ($id) {
     $user=\App\Models\User::find($id);
     $user->email_verified_at=Carbon::now('America/La_Paz')->toDateTimeString();
     $user->save();
-    redirect('/');
+    return redirect('/');
 })->name('verification');
