@@ -64,7 +64,7 @@ Route::get('/prueba', function () {
     return route('email',['hola'=>'hoola']);
 });
 
-Route::get('sendverif', function (Request $request) {
+Route::post('sendverif', function (Request $request) {
 
     $details = [
         'title' => 'Confirmar correo electrónico',
