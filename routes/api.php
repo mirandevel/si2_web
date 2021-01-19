@@ -64,15 +64,14 @@ Route::get('/prueba', function () {
     return route('email',['hola'=>'hoola']);
 });
 
-Route::get('send-mail', function () {
+Route::get('send-mail', function (Request $request) {
 
     $details = [
-        'title' => 'Mail from ItSolutionStuff.com',
+        'title' => 'Confirmar correo electrónico',
         'body' => 'This is for testing email using smtp'
     ];
-    \Illuminate\Support\Facades\Mail::to('jose@gmail.com')->send(new \App\Mail\MyTestMail($details));
+    \Illuminate\Support\Facades\Mail::to('jose@gmail.com')->send(new \App\Mail\MyTestMail($details,$request));
 
-    //dd("Email is Sent.");
 })->name('email');
 
 Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);

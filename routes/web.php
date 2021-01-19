@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -38,19 +39,14 @@ Route::post('/email/verification-notification', function (Request $request) {
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
 
-    Route::get('/start',[\App\Http\Controllers\web\StartController::class,'start'])->name('start');
+    Route::get('/start',\App\Http\Livewire\Start::class)->name('start');
     Route::get('/adm/dashboard',\App\Http\Livewire\Adm\Dashboard::class)->name('adm.dashboard');
 
 });
 
-Route::get('send-mail', function () {
-
-    $details = [
-        'title' => 'Mail from ItSolutionStuff.com',
-        'body' => 'This is for testing email using smtp'
-    ];
-
-    \Illuminate\Support\Facades\Mail::to('jose.and.brid@gmail.com')->send(new \App\Mail\MyTestMail($details));
-
-    dd("Email is Sent.");
-})->name('email');
+Route::get('/verification/{id}', function ($id) {
+    $user=\App\Models\User::find($id);
+    $user->email_verified_at=Carbon::now('America/La_Paz')->toDateTimeString();
+    $user->save();
+    redirect(\route('login'));
+})->name('verification');
