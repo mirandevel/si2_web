@@ -1,0 +1,18 @@
+Index: routes/api.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\nuse App\\Http\\Controllers\\api\\AuthController;\r\nuse Illuminate\\Foundation\\Auth\\EmailVerificationRequest;\r\nuse App\\Http\\Controllers\\DatoMaestroController;\r\nuse Illuminate\\Http\\Request;\r\nuse Illuminate\\Support\\Facades\\Password;\r\nuse Illuminate\\Support\\Facades\\Route;\r\n\r\n/*\r\n|--------------------------------------------------------------------------\r\n| API Routes\r\n|--------------------------------------------------------------------------\r\n|\r\n| Here is where you can register API routes for your application. These\r\n| routes are loaded by the RouteServiceProvider within a group which\r\n| is assigned the \"api\" middleware group. Enjoy building your API!\r\n|\r\n*/\r\n\r\nRoute::middleware('auth:sanctum')->get('/user', function (Request $request) {\r\n    return $request->user();\r\n});\r\n\r\nRoute::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {\r\n    $request->fulfill();\r\n    return redirect('/start');\r\n})->middleware(['auth', 'signed'])->name('verification.verify');\r\n\r\nRoute::post('/email/verification-notification', function (Request $request) {\r\n    $request->user()->sendEmailVerificationNotification();\r\n\r\n    return back()->with('message', 'Verification link sent!');\r\n})->middleware(['auth', 'throttle:6,1'])->name('verification.send');\r\n\r\n\r\n\r\nRoute::post('/forgot-password', function (Request $request) {\r\n    $request->validate(['email' => 'required|email']);\r\n\r\n    $status = Password::sendResetLink(\r\n        $request->only('email')\r\n    );\r\n\r\n    $value=$status === Password::RESET_LINK_SENT;\r\n    return ['respuesta'=>__($status)];\r\n\r\n    /*if($value){\r\n        return ['status'=>__($status),'email' => 'ok'];\r\n    }else{\r\n        return ['status'=>'error','email' => __($status)];\r\n    }*/\r\n    /*return $status === Password::RESET_LINK_SENT\r\n        ? ['status' => __($status)]\r\n        : ['email' => __($status)];*/\r\n})->middleware('guest');\r\n\r\n\r\n\r\n\r\nRoute::post('/register', [AuthController::class, 'register']);\r\n\r\nRoute::get('/prueba', function () {\r\n    return route('email',['hola'=>'hoola']);\r\n});\r\n\r\nRoute::get('send-mail', function () {\r\n\r\n    $details = [\r\n        'title' => 'Mail from ItSolutionStuff.com',\r\n        'body' => 'This is for testing email using smtp'\r\n    ];\r\n    \\Illuminate\\Support\\Facades\\Mail::to('jose@gmail.com')->send(new \\App\\Mail\\MyTestMail($details));\r\n\r\n    //dd(\"Email is Sent.\");\r\n})->name('email');\r\n\r\nRoute::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);\r\n\r\nRoute::post('/login', [AuthController::class, 'login']);\r\n\r\nRoute::get('/datalogin', [DatoMaestroController::class, 'datalogin']);\r\n\r\nRoute::post('/store/token', [DatoMaestroController::class, 'storetoken']);\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/routes/api.php b/routes/api.php
+--- a/routes/api.php	(revision e381a718ff7eb79984c008e4874cfd9b1a152b72)
++++ b/routes/api.php	(date 1610931169330)
+@@ -3,6 +3,7 @@
+ use App\Http\Controllers\api\AuthController;
+ use Illuminate\Foundation\Auth\EmailVerificationRequest;
+ use App\Http\Controllers\DatoMaestroController;
++use Illuminate\Foundation\Auth\EmailVerificationRequest;
+ use Illuminate\Http\Request;
+ use Illuminate\Support\Facades\Password;
+ use Illuminate\Support\Facades\Route;
