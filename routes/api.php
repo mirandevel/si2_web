@@ -64,7 +64,7 @@ Route::get('/prueba', function () {
     return route('email',['hola'=>'hoola']);
 });
 
-Route::get('send-mail', function ($request) {
+Route::get('send-mail', function (Request $request) {
 
     $details = [
         'title' => 'Confirmar correo electrónico',
