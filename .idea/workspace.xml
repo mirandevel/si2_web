@@ -1,27 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="repare login">
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Crear.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Start.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/modal.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/crear.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/start.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_1_2021_21_44_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_1_2021_21_44__Default_Changelist_.xml" beforeDir="false" />
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with email">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/web/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/web/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/web/StartController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/MyTestMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/MyTestMail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Empresa.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Empresa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_16_154621_create_empresas_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154621_create_empresas_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/start-card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/start-card.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/guest.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/guest.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/start.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +210,7 @@
       <workItem from="1610995587617" duration="82000" />
       <workItem from="1610995703391" duration="233000" />
       <workItem from="1610995954246" duration="306000" />
-      <workItem from="1610997088070" duration="12495000" />
+      <workItem from="1610997088070" duration="13114000" />
     </task>
     <task id="LOCAL-00001" summary="with npm">
       <created>1610323981734</created>
@@ -419,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610939019135</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="with email">
+      <created>1611020082928</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1611020082928</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,6 +438,7 @@
     <MESSAGE value="api recover password" />
     <MESSAGE value="with oscar" />
     <MESSAGE value="repare login" />
-    <option name="LAST_COMMIT_MESSAGE" value="repare login" />
+    <MESSAGE value="with email" />
+    <option name="LAST_COMMIT_MESSAGE" value="with email" />
   </component>
 </project>
