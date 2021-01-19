@@ -71,6 +71,7 @@ class AuthController extends Controller
         return response()->json(['token'=>$tokenResult,
             'email'=>Auth::user()->email,
             'error'=>null,
+            'id'=>$user->id,
             'verification'=>Auth::user()->email_verified_at]);
     }
 }
