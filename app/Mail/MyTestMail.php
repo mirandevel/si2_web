@@ -35,7 +35,7 @@ class MyTestMail extends Mailable
     public function build()
     {
         return $this->subject('Confirmar correo electronico')
-            ->view('verif-email',['link'=>route('verification',['id'=>$this->request->user()->id])]);
+            ->view('verif-email',['link'=>route('verification',['id'=>1])]);
     }
   /*  public function build()
     {
