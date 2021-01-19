@@ -71,7 +71,7 @@ Route::get('send-mail', function (Request $request) {
         'body' => 'This is for testing email using smtp'
     ];
 
-    $id=$request->user()->id;
+    $id=$request['id'];
     \Illuminate\Support\Facades\Mail::to('jose@gmail.com')->send(new \App\Mail\MyTestMail($details,1));
     return response()->json(['email'=>'ok']);
 
