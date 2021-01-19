@@ -17,9 +17,10 @@ class DatoMaestroController extends Controller
 
     public function storetoken(Request $request)
     {
-        FcmToken::create([
+        $fcmToken=FcmToken::create([
             'token' => $request['token'],
             'usuario_id' => $request['usuario_id'],
         ]);
+        return $fcmToken;
     }
 }
