@@ -43,6 +43,7 @@
             <x-start-card>
 
                 <img src="{{ asset('storage/'.$empresa->image_url) }}" alt="" title="" />
+                <p class="font-bold text-xl">{{$empresa->nombre}}</p>
             </x-start-card>
         @endforeach
     </div>
