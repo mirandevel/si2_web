@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
             RolUserSeeder::class,
             EmpresaSeeder::class,
             EmpresaUsuarioSeeder::class,
+            CategoriaSeeder::class,
+            CategoriaUsuarioSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
     }
