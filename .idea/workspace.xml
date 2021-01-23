@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="se aumento la tabla que enlaza los usuarios con las categorias que le gusta y se creo su migracion, modelo y seeder">
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="seeding tablas: CategoriaUsuarioSeeder.php, GarantiaSeeder.php, MarcaSeeder.php y ProductoSeeder.php">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_16_154728_create_garantias_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154728_create_garantias_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_16_154835_create_marcas_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154835_create_marcas_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_16_154909_create_productos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154909_create_productos_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/CategoriaUsuarioSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/CategoriaUsuarioSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/CategoriaProductoSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/CategoriaProductoSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/CategoriaSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/CategoriaSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/GarantiaSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/GarantiaSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/MarcaSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/MarcaSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/ProductoSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/ProductoSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -216,7 +212,8 @@
       <workItem from="1610927444511" duration="2029000" />
       <workItem from="1611291903991" duration="3912000" />
       <workItem from="1611328641718" duration="9781000" />
-      <workItem from="1611412058016" duration="9923000" />
+      <workItem from="1611412058016" duration="14090000" />
+      <workItem from="1611435686015" duration="6496000" />
     </task>
     <task id="LOCAL-00001" summary="with npm">
       <created>1610323981734</created>
@@ -337,7 +334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611337618536</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="seeding tablas: CategoriaUsuarioSeeder.php, GarantiaSeeder.php, MarcaSeeder.php y ProductoSeeder.php">
+      <created>1611424301897</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1611424301897</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,6 +370,7 @@
     <MESSAGE value="with menu" />
     <MESSAGE value="api recover password" />
     <MESSAGE value="se aumento la tabla que enlaza los usuarios con las categorias que le gusta y se creo su migracion, modelo y seeder" />
-    <option name="LAST_COMMIT_MESSAGE" value="se aumento la tabla que enlaza los usuarios con las categorias que le gusta y se creo su migracion, modelo y seeder" />
+    <MESSAGE value="seeding tablas: CategoriaUsuarioSeeder.php, GarantiaSeeder.php, MarcaSeeder.php y ProductoSeeder.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="seeding tablas: CategoriaUsuarioSeeder.php, GarantiaSeeder.php, MarcaSeeder.php y ProductoSeeder.php" />
   </component>
 </project>

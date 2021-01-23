@@ -23,6 +23,8 @@ class CategoriaUsuarioSeeder extends Seeder
         {
             $categoriasId[] = $categoria['id'];
         }
+
+        //atravez de la tabla intermedia obtengo los usuarios que son clientes
         $clientesId = RolUser::select('user_id')
             ->groupBy('user_id')
             ->havingRaw('COUNT(*) = ?', [1])

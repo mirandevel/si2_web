@@ -27,6 +27,12 @@ class CategoriaSeeder extends Seeder
             'nombre' => 'Camas',
         ]);
         Categoria::create([
+            'nombre' => 'Armarios',
+        ]);
+        Categoria::create([
+            'nombre' => 'Bibliotecas',
+        ]);
+        Categoria::create([
             'nombre' => 'Escritorios',
         ]);
         Categoria::create([
@@ -51,9 +57,6 @@ class CategoriaSeeder extends Seeder
             'nombre' => 'Muebles de televisor',
         ]);
         Categoria::create([
-            'nombre' => 'Bibliotecas',
-        ]);
-        Categoria::create([
             'nombre' => 'Futones',
         ]);
         Categoria::create([
@@ -76,9 +79,6 @@ class CategoriaSeeder extends Seeder
         ]);
         Categoria::create([
             'nombre' => 'Islas para cocina',
-        ]);
-        Categoria::create([
-            'nombre' => 'Armarios',
         ]);
         Categoria::create([
             'nombre' => 'Bancos de almacenamiento',
