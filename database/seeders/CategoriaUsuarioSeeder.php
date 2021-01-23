@@ -32,9 +32,10 @@ class CategoriaUsuarioSeeder extends Seeder
         {
             shuffle($categoriasId);
             $categoriasDelUsuario = array_slice($categoriasId, rand(0, count($categoriasId)), rand(1, 10));
-            for ($i = 0; $i < count($categoriasDelUsuario); $i++) {
+            foreach ($categoriasDelUsuario as $categoriaDelUsuario)
+            {
                 CategoriaUsuario::create([
-                    'categoria_id' => $categoriasDelUsuario[$i],
+                    'categoria_id' => $categoriaDelUsuario,
                     'user_id' => $cliente->user_id,
                 ]);
             }
