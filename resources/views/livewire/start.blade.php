@@ -40,7 +40,7 @@
     </div>
     <div class="grid grid-cols-3 gap-4 place-items-center">
         @foreach($empresas as $empresa)
-            <x-start-card>
+            <x-start-card :empresa="$empresa->nombre">
 
                 <img src="{{ asset('storage/'.$empresa->image_url) }}" alt="" title="" />
                 <p class="font-bold text-xl">{{$empresa->nombre}}</p>

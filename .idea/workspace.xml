@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with email">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_1_2021_20_53__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_1_2021_20_53__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_1.xml" afterDir="false" />
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="modified routes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/start-card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/start-card.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/start.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/start.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -219,13 +217,6 @@
       <workItem from="1611154909828" duration="936000" />
       <workItem from="1611326891654" duration="1662000" />
       <workItem from="1611332977650" duration="764000" />
-    </task>
-    <task id="LOCAL-00005" summary="with register">
-      <created>1610331330806</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1610331330806</updated>
     </task>
     <task id="LOCAL-00006" summary="with role table">
       <created>1610755296480</created>
@@ -563,7 +554,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611029200562</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="modified routes">
+      <created>1611508457506</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1611508457507</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,6 +592,7 @@
     <MESSAGE value="with oscar" />
     <MESSAGE value="repare login" />
     <MESSAGE value="with email" />
-    <option name="LAST_COMMIT_MESSAGE" value="with email" />
+    <MESSAGE value="modified routes" />
+    <option name="LAST_COMMIT_MESSAGE" value="modified routes" />
   </component>
 </project>
