@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
@@ -44,12 +45,6 @@ class AuthController extends Controller
         return $user;
     }
 
-    public function logout(Request $request)
-    {
-        $request->user()->currentAccessToken()->delete();
-        return response()->json(['status_code'=>200,'message'=>'token deleted']);
-    }
-
     public function login(Request $request)
     {
         $validator=Validator::make($request->all(), [
@@ -73,5 +68,33 @@ class AuthController extends Controller
             'error'=>null,
             'id'=>$user->id,
             'verification'=>Auth::user()->email_verified_at]);
+    }
+
+    public function logout(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
+        return response()->json(['status_code'=>200,'message'=>'token deleted']);
+    }
+
+    public function forgotPassword(Request $request)
+    {
+        $request->validate(['email' => 'required|email']);
+
+        $status = Password::sendResetLink(
+            $request->only('email')
+        );
+
+        $value=$status === Password::RESET_LINK_SENT;
+        return ['respuesta'=>__($status)];
+    }
+
+    public function sendEmail(Request $request)
+    {
+        $details = [
+            'title' => 'Confirmar correo electrónico',
+            'body' => 'This is for testing email using smtp'
+        ];
+        \Illuminate\Support\Facades\Mail::to($request['email'])->send(new \App\Mail\MyTestMail($details,$request['id']));
+        return response()->json(['email'=>'ok']);
     }
 }

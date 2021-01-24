@@ -18,70 +18,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
-    $request->fulfill();
-    return redirect('/start');
-})->middleware(['auth', 'signed'])->name('verification.verify');
-
-Route::post('/email/verification-notification', function (Request $request) {
-    $request->user()->sendEmailVerificationNotification();
-
-    return back()->with('message', 'Verification link sent!');
-})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 
-
-Route::post('/forgot-password', function (Request $request) {
-    $request->validate(['email' => 'required|email']);
-
-    $status = Password::sendResetLink(
-        $request->only('email')
-    );
-
-    $value=$status === Password::RESET_LINK_SENT;
-    return ['respuesta'=>__($status)];
-
-    /*if($value){
-        return ['status'=>__($status),'email' => 'ok'];
-    }else{
-        return ['status'=>'error','email' => __($status)];
-    }*/
-    /*return $status === Password::RESET_LINK_SENT
-        ? ['status' => __($status)]
-        : ['email' => __($status)];*/
-})->middleware('guest');
-
-
-
-
-Route::post('/register', [AuthController::class, 'register']);
-
-Route::get('/prueba', function () {
-    return route('email',['hola'=>'hoola']);
-});
-
-Route::post('send-mail', function (Request $request) {
-
-    $details = [
-        'title' => 'Confirmar correo electrónico',
-        'body' => 'This is for testing email using smtp'
-    ];
-    \Illuminate\Support\Facades\Mail::to($request['email'])->send(new \App\Mail\MyTestMail($details,$request['id']));
-    return response()->json(['email'=>'ok']);
-
-})->name('email');
-
-Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);
-
+//LOGIN ROUTES
 Route::post('/login', [AuthController::class, 'login']);
+Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::middleware('guest')->post('/forgot-password', [AuthController::class, 'forgotPassword']);
 
+
+
+//VERIFICATION ROUTES
+Route::post('send-mail', [AuthController::class, 'sendEmail'] )->name('email');
+
+//  DATA MASTER ROUTES
 Route::get('/datalogin', [DatoMaestroController::class, 'datalogin']);
-
 Route::middleware('auth:sanctum')->post('/store/token', [DatoMaestroController::class, 'storetoken']);
-
 Route::post('/register/bitacora', [DatoMaestroController::class, 'registrarbitacora']);
 
