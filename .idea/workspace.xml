@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with email">
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,35 +210,11 @@
       <workItem from="1610995587617" duration="82000" />
       <workItem from="1610995703391" duration="233000" />
       <workItem from="1610995954246" duration="306000" />
-      <workItem from="1610997088070" duration="17058000" />
-    </task>
-    <task id="LOCAL-00001" summary="with npm">
-      <created>1610323981734</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1610323981734</updated>
-    </task>
-    <task id="LOCAL-00002" summary="with register">
-      <created>1610330067080</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1610330067080</updated>
-    </task>
-    <task id="LOCAL-00003" summary="with register">
-      <created>1610330187376</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1610330187376</updated>
-    </task>
-    <task id="LOCAL-00004" summary="with register">
-      <created>1610330309988</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1610330309988</updated>
+      <workItem from="1610997088070" duration="21000000" />
+      <workItem from="1611030794638" duration="54000" />
+      <workItem from="1611154909828" duration="936000" />
+      <workItem from="1611326891654" duration="1662000" />
+      <workItem from="1611332977650" duration="764000" />
     </task>
     <task id="LOCAL-00005" summary="with register">
       <created>1610331330806</created>
@@ -505,7 +482,84 @@
       <option name="project" value="LOCAL" />
       <updated>1611025642462</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="with email">
+      <created>1611025874129</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1611025874129</updated>
+    </task>
+    <task id="LOCAL-00044" summary="with email">
+      <created>1611025906946</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1611025906946</updated>
+    </task>
+    <task id="LOCAL-00045" summary="with email">
+      <created>1611026253690</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1611026253690</updated>
+    </task>
+    <task id="LOCAL-00046" summary="with email">
+      <created>1611026369121</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1611026369121</updated>
+    </task>
+    <task id="LOCAL-00047" summary="with email">
+      <created>1611026770355</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1611026770355</updated>
+    </task>
+    <task id="LOCAL-00048" summary="with email">
+      <created>1611026872706</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1611026872706</updated>
+    </task>
+    <task id="LOCAL-00049" summary="with email">
+      <created>1611027117452</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1611027117452</updated>
+    </task>
+    <task id="LOCAL-00050" summary="with email">
+      <created>1611028473975</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1611028473984</updated>
+    </task>
+    <task id="LOCAL-00051" summary="with email">
+      <created>1611028569951</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1611028569951</updated>
+    </task>
+    <task id="LOCAL-00052" summary="with email">
+      <created>1611029070942</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1611029070943</updated>
+    </task>
+    <task id="LOCAL-00053" summary="with email">
+      <created>1611029200561</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1611029200562</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
