@@ -12,6 +12,10 @@ class CategoriasTable extends Component
 
     public $cantidadDeItemsPorPagina;
 
+    protected $rules = [
+        'nombre' => 'required|string|max:30|min:3',
+    ];
+
     public function mount()
     {
         $this->cantidadDeItemsPorPagina = 5;
