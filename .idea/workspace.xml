@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="seeding tablas: CategoriaUsuarioSeeder.php, GarantiaSeeder.php, MarcaSeeder.php y ProductoSeeder.php">
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="se aumentaron productos y se enlazaron con sus respectivas categorias">
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/CategoriasTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/categorias-table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_1_2021_19_49_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_1_2021_19_49__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_1_2021_20_33_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_1_2021_20_33__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_1_2021_20_34_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_1_2021_20_34__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/CategoriaProductoSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/CategoriaProductoSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/CategoriaSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/CategoriaSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/ProductoSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/ProductoSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +219,8 @@
       <workItem from="1611291903991" duration="3912000" />
       <workItem from="1611328641718" duration="9781000" />
       <workItem from="1611412058016" duration="14090000" />
-      <workItem from="1611435686015" duration="6496000" />
+      <workItem from="1611435686015" duration="10299000" />
+      <workItem from="1611460285640" duration="6769000" />
     </task>
     <task id="LOCAL-00001" summary="with npm">
       <created>1610323981734</created>
@@ -341,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611424301897</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="se aumentaron productos y se enlazaron con sus respectivas categorias">
+      <created>1611443002635</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1611443002635</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,6 +385,7 @@
     <MESSAGE value="api recover password" />
     <MESSAGE value="se aumento la tabla que enlaza los usuarios con las categorias que le gusta y se creo su migracion, modelo y seeder" />
     <MESSAGE value="seeding tablas: CategoriaUsuarioSeeder.php, GarantiaSeeder.php, MarcaSeeder.php y ProductoSeeder.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="seeding tablas: CategoriaUsuarioSeeder.php, GarantiaSeeder.php, MarcaSeeder.php y ProductoSeeder.php" />
+    <MESSAGE value="se aumentaron productos y se enlazaron con sus respectivas categorias" />
+    <option name="LAST_COMMIT_MESSAGE" value="se aumentaron productos y se enlazaron con sus respectivas categorias" />
   </component>
 </project>
