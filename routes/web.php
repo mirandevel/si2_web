@@ -1,6 +1,7 @@
 <?php
 
 use Carbon\Carbon;
+use App\Http\Livewire\CategoriasTable;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -41,7 +42,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('/start',\App\Http\Livewire\Start::class)->name('start');
     Route::get('/adm/dashboard',\App\Http\Livewire\Adm\Dashboard::class)->name('adm.dashboard');
-
+    Route::get('categorias', CategoriasTable::class);
 });
 
 Route::get('/verification/{id}', function ($id) {

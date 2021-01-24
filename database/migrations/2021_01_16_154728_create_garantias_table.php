@@ -15,7 +15,7 @@ class CreateGarantiasTable extends Migration
     {
         Schema::create('garantias', function (Blueprint $table) {
             $table->id();
-            $table->unsignedTinyInteger('tiempo'); //meses
+            $table->unsignedTinyInteger('tiempo')->unique(); //meses
             $table->timestamps();
         });
     }
