@@ -13,13 +13,13 @@ class LoginController extends Controller
     {
         // Retrive Input
         $credentials = $request->only('email', 'password');
-        $user = User::where('email', $request['email'])->first();
-        $rol='adm';
+      //  $user = User::where('email', $request['email'])->first();
+       // $rol='adm';
         //$rol='mie';
-        if ($user == null) {
-            return 'nulo';
-        } else {
-            if ($rol=='adm'){
+       // if ($user == null) {
+       //     return 'nulo';
+       // } else {
+           // if ($rol=='adm'){
                 if (Auth::attempt($credentials)) {
                     // if success login
                     // Auth::logout();
@@ -28,9 +28,9 @@ class LoginController extends Controller
 
                     //return redirect()->intended('/details');
                 }
-            }
-            return 'eres un tecnico';
-        }
+           // }
+            //return 'eres un tecnico';
+      //  }
         // if failed login
         return redirect('/');
     }

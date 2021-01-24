@@ -3,8 +3,8 @@
 
         <div class="h-screen bg-gray-800">
             <div class="flex justify-between p-5">
-                <img class="h-6 w-6 rounded-full mr-3 object-cover"
-                     src="https://1000marcas.net/wp-content/uploads/2019/12/Pinterest-Logo.png" alt="logo">
+                {{--<img class="h-6 w-6 rounded-full mr-3 object-cover"
+                     src="https://1000marcas.net/wp-content/uploads/2019/12/Pinterest-Logo.png" alt="logo">--}}
                 <span class="mx-4 font-medium text-lg text-gray-100">Menú</span>
 
                 <button @click="menu = false">

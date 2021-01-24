@@ -57,18 +57,21 @@ class AuthController extends Controller
             'password' => ['required'],
         ]);
         if($validator->fails()){
-            return response()->json(['status_code'=>400,'message'=>'bad request']);
+            return response()->json(['error'=>$validator->errors()->first('email')]);
         }
 
         $credentials=request(['email','password']);
-        if(!Auth::attempt($credentials)){
 
-            return response()->json(['status_code'=>500,'message'=>'Unauthorized']);
+        if(!Auth::attempt($credentials)){
+            return response()->json(['error'=>'datos invalidos']);
         }
+
         $user=User::where('email',$request->email)->first();
         $tokenResult=$user->createToken('authToken')->plainTextToken;
         return response()->json(['token'=>$tokenResult,
             'email'=>Auth::user()->email,
+            'error'=>null,
+            'id'=>$user->id,
             'verification'=>Auth::user()->email_verified_at]);
     }
 }

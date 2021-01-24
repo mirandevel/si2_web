@@ -17,6 +17,7 @@ class CreateEmpresasTable extends Migration
             $table->id();
             $table->string('nombre', 30);
             $table->unsignedBigInteger('nit');
+            $table->text('image_url');
             $table->timestamps();
         });
     }

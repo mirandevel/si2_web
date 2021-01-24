@@ -64,15 +64,15 @@ Route::get('/prueba', function () {
     return route('email',['hola'=>'hoola']);
 });
 
-Route::get('send-mail', function () {
+Route::post('send-mail', function (Request $request) {
 
     $details = [
-        'title' => 'Mail from ItSolutionStuff.com',
+        'title' => 'Confirmar correo electrónico',
         'body' => 'This is for testing email using smtp'
     ];
-    \Illuminate\Support\Facades\Mail::to('jose@gmail.com')->send(new \App\Mail\MyTestMail($details));
+    \Illuminate\Support\Facades\Mail::to($request['email'])->send(new \App\Mail\MyTestMail($details,$request['id']));
+    return response()->json(['email'=>'ok']);
 
-    //dd("Email is Sent.");
 })->name('email');
 
 Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);
@@ -81,7 +81,7 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/datalogin', [DatoMaestroController::class, 'datalogin']);
 
-Route::post('/store/token', [DatoMaestroController::class, 'storetoken']);
+Route::middleware('auth:sanctum')->post('/store/token', [DatoMaestroController::class, 'storetoken']);
 
 
 
