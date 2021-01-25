@@ -1,5 +1,6 @@
-<a href="#"
+@props(['empresa'])
+<a href="{{route('emp.dashboard',['empresa'=>$empresa])}}"
     class="border border-blue-200 rounded-2xl p-5
     bg-white flex justify-center group border-indigo-500 hover:bg-white hover:shadow-lg hover:border-transparent ">
-    <img src="https://logos-marcas.com/wp-content/uploads/2020/04/Huawei-Logo.png"/>
+    {{$slot}}
 </a>

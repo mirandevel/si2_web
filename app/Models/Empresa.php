@@ -11,7 +11,7 @@ class Empresa extends Model
 
     protected $table = 'empresas';
 
-    protected $fillable = ['nombre', 'nit'];
+    protected $fillable = ['nombre', 'nit','image_url'];
 
     protected $hidden = [
         'created_at', 'updated_at',
