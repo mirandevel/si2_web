@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="modified routes">
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="crud de categorias en proceso">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_1_2021_20_42_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_1_2021_20_42__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_1_2021_20_53_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_1_2021_20_53__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/start-card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/start-card.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/start.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/start.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/CategoriasTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/CategoriasTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/categorias-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/categorias-table.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,6 +223,10 @@
       <workItem from="1611154909828" duration="936000" />
       <workItem from="1611326891654" duration="1662000" />
       <workItem from="1611332977650" duration="764000" />
+      <workItem from="1611611233948" duration="68000" />
+      <workItem from="1611611324091" duration="723000" />
+      <workItem from="1611619852127" duration="2000" />
+      <workItem from="1611624416304" duration="2017000" />
     </task>
     <task id="LOCAL-00006" summary="with role table">
       <created>1610755296480</created>
