@@ -1,3 +1,4 @@
+<div>
 <div class="container antialiased font-sans mx-auto px-4 sm:px-8">
     <div class="py-8">
         <div>
@@ -106,7 +107,7 @@
         </div>
     </div>
 </div>
-<x-jet-button x-data="{}" @click="$dispatch('{{0}}')"></x-jet-button>
+<x-jet-button x-data="{}" @click="$dispatch('{{0}}')">crear</x-jet-button>
 <x-modal :id="0" type="create" >
     <x-slot name="title">
         Nueva Empresa
@@ -120,6 +121,7 @@
                         Nombre
                     </label>
                     <input type="text" wire:model="nombre" name="nombre" id="nombre" class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+                    <x-jet-button >{{$nombre}}</x-jet-button>
                 </div>
             </div>
             @error('nombre')
@@ -139,5 +141,4 @@
         </div>
     </form>
 </x-modal>
-
-
+</div>

@@ -38,7 +38,7 @@ class CategoriasTable extends Component
 //        Categoria::create([
 //            'nombre' => $this->nombre
 //        ]);
-        return $this->redirect(route('login'));
+        return $this->redirect(route('start'));
     }
 
     public function render()
