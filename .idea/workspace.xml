@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="crud de categorias en proceso">
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/CategoriasTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/CategoriasTable.php" afterDir="false" />
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with modal">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Crear.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Crear.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/jetstream.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/jetstream.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/categorias-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/categorias-table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/start.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/start.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/update-profile-information-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/update-profile-information-form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/jetstream/components/form-section.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/jetstream/components/form-section.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/storage/app/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/livewire-tmp/5GOMDkcQgtIRW1ugg3wT8n8QqDqXp7-metaY29yaW1leG8uanBlZw==-.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/livewire-tmp/5mAVJuhrORl2l7KRa1MNOIpjriaSom-metaWm9tYmF0YXJfMS5qcGc=-.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/livewire-tmp/DS2lniXkSyjusjlZk0uHmatcZzYO7J-metaZGFpZ3JhbWFfcGFyY2lhbC5ibXA=-.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/livewire-tmp/GxVlAdlngGVJ5caT7R1N0lTLjPVFNw-metaV2ViIDE5MjAg4oCTIDcyLnBuZw==-.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/livewire-tmp/euy6Gnc57Zfq3C01N2Xp53KcZSGkx1-metaV2ViIDE5MjAg4oCTIDEyLnBuZw==-.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/livewire-tmp/tNIsBWIggGXHOrjNSbbh88raLG3bgr-metaWm9tYmF0YXJfMS5qcGc=-.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/livewire-tmp/vsWRHWNGATudgRIEuOe6LAko4YME3D-metaY29yaW1leG8uanBlZw==-.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/livewire-tmp/xy8tw0gPK0fbhghGg4Ns5NJo67iP9D-metaY29yaW1leG8uanBlZw==-.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/livewire-tmp/yDE3lyjalhmtGXtnZrJHDUk4tVJP9M-metaY29yaW1leG8uanBlZw==-.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/photos/17boUQWSaf7PDc2clmEAwClLfv3rasq1NWgtUirw.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/photos/pQmH2x6twQkMjYB5uxvX6bCHkwHxO0e8jCGAD25j.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/photos/sirr2RlMCGW91Oclxf0CVkHlXE6Abaq2trDXlcL1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/public/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/storage/app/public/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/public/photos/u7HpmtFJd6gZYVRa8pGQTYbpUA5kDBiabbOuMQyK.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,13 +240,10 @@
       <workItem from="1611611324091" duration="723000" />
       <workItem from="1611619852127" duration="2000" />
       <workItem from="1611624416304" duration="2017000" />
-    </task>
-    <task id="LOCAL-00006" summary="with role table">
-      <created>1610755296480</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1610755296481</updated>
+      <workItem from="1611948475103" duration="653000" />
+      <workItem from="1611950130861" duration="3197000" />
+      <workItem from="1611953358741" duration="46000" />
+      <workItem from="1611953407990" duration="1185000" />
     </task>
     <task id="LOCAL-00007" summary="with role table">
       <created>1610759189086</created>
@@ -563,7 +581,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611508457507</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="with modal">
+      <created>1611627277276</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1611627277277</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,6 +620,7 @@
     <MESSAGE value="repare login" />
     <MESSAGE value="with email" />
     <MESSAGE value="modified routes" />
-    <option name="LAST_COMMIT_MESSAGE" value="modified routes" />
+    <MESSAGE value="with modal" />
+    <option name="LAST_COMMIT_MESSAGE" value="with modal" />
   </component>
 </project>
