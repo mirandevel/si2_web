@@ -25,26 +25,27 @@ class CategoriasTable extends Component
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName, [
-            'nombre' => 'string|between:3,30',
+            'nombre' => 'string|between:3,30|unique:App\Models\Categoria,nombre',
         ]);
     }
 
     public function storeCategoria()
     {
-//        $datosValidados = $this->validate([
-//            'nombre' => 'required|string|between:3,30',
-//        ]);
-//
-//        Categoria::create([
-//            'nombre' => $this->nombre
-//        ]);
-        return $this->redirect(route('start'));
+        $datosValidados = $this->validate([
+            'nombre' => 'required|string|between:3,30|unique:App\Models\Categoria,nombre',
+        ]);
+
+        Categoria::create([
+            'nombre' => $this->nombre
+        ]);
+        $this->reset(['nombre',]);
     }
 
     public function render()
     {
         return view('livewire.categorias-table', [
             'categorias' => Categoria::select('id', 'nombre')
+                ->orderBy('categorias.id', 'asc')
                 ->paginate($this->cantidadDeItemsPorPagina)
         ]);
 //            ->layout('layouts.app', ['header' => 'Post Compoent Page']); //para resolver el error del header

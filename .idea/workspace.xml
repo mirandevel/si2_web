@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="crud de categorias en proceso">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/CategoriasTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/CategoriasTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_16_154822_create_categorias_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154822_create_categorias_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/EmpresaSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/EmpresaSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/categorias-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/categorias-table.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -172,7 +176,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="Configurable.PHP.Blade" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -219,6 +223,7 @@
       <workItem from="1611611324091" duration="723000" />
       <workItem from="1611619852127" duration="2000" />
       <workItem from="1611624416304" duration="2017000" />
+      <workItem from="1611677577450" duration="7736000" />
     </task>
     <task id="LOCAL-00006" summary="with role table">
       <created>1610755296480</created>
@@ -596,5 +601,9 @@
     <MESSAGE value="with email" />
     <MESSAGE value="modified routes" />
     <option name="LAST_COMMIT_MESSAGE" value="modified routes" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

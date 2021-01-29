@@ -107,38 +107,111 @@
         </div>
     </div>
 </div>
-<x-jet-button x-data="{}" @click="$dispatch('{{0}}')">crear</x-jet-button>
-<x-modal :id="0" type="create" >
-    <x-slot name="title">
-        Nueva Empresa
-    </x-slot>
-     <form wire:submit.prevent="storeCategoria" class="w-full max-w-lg">
-        <div class="p-5 pb-6">
-            <div class="flex flex-wrap">
-                <div class="w-full px-3">
-                    <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
-                           for="grid-email">
-                        Nombre
-                    </label>
-                    <input type="text" wire:model="nombre" name="nombre" id="nombre" class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
-                    <x-jet-button >{{$nombre}}</x-jet-button>
-                </div>
+
+    <div wire:ignore.self class="modal-create h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
+        <!-- modal -->
+        <div class="bg-white rounded shadow-lg w-1/3 border border-gray-200 rounded-lg overflow-hidden">
+            <!-- modal header -->
+            <div class="border-b px-4 py-2 flex justify-between items-center">
+                <h3 class="font-semibold text-lg">Crear Categoría</h3>
+                <button class="text-black close-create">&cross;</button>
             </div>
-            @error('nombre')
-            <span class="error">{{ $message }}</span>
-            <p>error</p>
-            @enderror
-        </div>
-        <div class="flex items-center justify-end p-1 text-center bg-gray-200">
-            <div class="m-3">
-                <button type="submit" class="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-1 px-1 inline-flex items-center">
-                    <span class="mr-2">Guardar</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24">
-                        <path fill="currentcolor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
-                    </svg>
-                </button>
+            <!-- modal body -->
+            <div class="flex place-content-center">
+                <form wire:submit.prevent="storeCategoria" class="w-full max-w-lg">
+                    <div class="p-5 pb-6">
+                        <div class="flex flex-wrap">
+                            <div class="w-full px-3">
+                                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+                                       for="grid-email">
+                                    Nombre
+                                </label>
+                                <input type="text" wire:model="nombre" class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+                            </div>
+                        </div>
+                        @error('nombre')
+                        <span class="error">{{ $message }}</span>
+                        <p>error</p>
+                        @enderror
+                    </div>
+                    <div class="flex items-center justify-end p-1 text-center bg-gray-200">
+                        <div class="m-3">
+                            <button type="submit" class="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-1 px-1 inline-flex items-center @if (!$errors->has('nombre')) close-create @endif">
+                                <span class="mr-2">Guardar</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24">
+                                    <path fill="currentcolor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-    </form>
-</x-modal>
+    </div>
+
+    <div class="modal-see h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
+        <!-- modal -->
+        <div class="bg-white rounded shadow-lg w-1/3 border border-gray-200 rounded-lg overflow-hidden">
+            <!-- modal header -->
+            <div class="border-b px-4 py-2 flex justify-between items-center">
+                <h3 class="font-semibold text-lg">Información sobre la categoría</h3>
+                <button class="text-black close-see">&cross;</button>
+            </div>
+            <!-- modal body -->
+            <div class="flex place-content-center">
+                <p class="text-left">Id:</p>
+                <br>
+                <p class="text-left">Nombre:</p>
+            </div>
+        </div>
+    </div>
+
+    @push('modals')
+        <script>
+            const modalCreate = document.querySelector('.modal-create');
+            const modalSee = document.querySelector('.modal-see');
+            const modalEdit = document.querySelector('.modal-edit');
+            const modalDelete = document.querySelector('.modal-delete');
+
+            const showModalCreate = document.querySelectorAll('.show-create');
+            const showModalSee = document.querySelectorAll('.show-see');
+            const showModalEdit = document.querySelectorAll('.show-edit');
+            const showModalDelete = document.querySelectorAll('.show-delete');
+
+            const closeModalCreate = document.querySelectorAll('.close-create');
+            const closeModalSee = document.querySelectorAll('.close-see');
+            const closeModalEdit = document.querySelectorAll('.close-edit');
+            const closeModalDelete = document.querySelectorAll('.close-delete');
+
+            //para ocultar los modales
+            closeModalCreate.forEach(close => {
+                close.addEventListener('click', function (){
+                    modalCreate.classList.add('hidden')
+                });
+            });
+            closeModalSee.forEach(close => {
+                close.addEventListener('click', function (){
+                    modalSee.classList.add('hidden')
+                });
+            });
+
+
+
+            //para mostrar los modales
+            showModalCreate.forEach(open => {
+                open.addEventListener('click', function (){
+                    modalCreate.classList.remove('hidden')
+                });
+            });
+
+            showModalSee.forEach(open => {
+                open.addEventListener('click', function (){
+                    modalSee.classList.remove('hidden')
+                });
+            });
+
+
+
+        </script>
+    @endpush
 </div>
