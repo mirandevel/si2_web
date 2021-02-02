@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="crud de categorias en proceso">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="cambio de compu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/CategoriasTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/CategoriasTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_16_154822_create_categorias_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154822_create_categorias_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/EmpresaSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/EmpresaSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/categorias-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/categorias-table.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -224,13 +221,12 @@
       <workItem from="1611619852127" duration="2000" />
       <workItem from="1611624416304" duration="2017000" />
       <workItem from="1611677577450" duration="7736000" />
-    </task>
-    <task id="LOCAL-00006" summary="with role table">
-      <created>1610755296480</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1610755296481</updated>
+      <workItem from="1611938709838" duration="202000" />
+      <workItem from="1612016613998" duration="4959000" />
+      <workItem from="1612022515559" duration="7699000" />
+      <workItem from="1612047840973" duration="2528000" />
+      <workItem from="1612229209665" duration="3717000" />
+      <workItem from="1612274717269" duration="417000" />
     </task>
     <task id="LOCAL-00007" summary="with role table">
       <created>1610759189086</created>
@@ -568,7 +564,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611508457507</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="cambio de compu">
+      <created>1611938857771</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1611938857771</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -579,7 +582,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/oscar" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -600,7 +615,8 @@
     <MESSAGE value="repare login" />
     <MESSAGE value="with email" />
     <MESSAGE value="modified routes" />
-    <option name="LAST_COMMIT_MESSAGE" value="modified routes" />
+    <MESSAGE value="cambio de compu" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambio de compu" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
