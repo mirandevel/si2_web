@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\AuthController;
+use App\Http\Controllers\api\CategoriaController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\DatoMaestroController;
 use Illuminate\Http\Request;
@@ -35,4 +36,5 @@ Route::post('send-mail', [AuthController::class, 'sendEmail'] )->name('email');
 Route::get('/datalogin', [DatoMaestroController::class, 'datalogin']);
 Route::middleware('auth:sanctum')->post('/store/token', [DatoMaestroController::class, 'storetoken']);
 Route::post('/register/bitacora', [DatoMaestroController::class, 'registrarbitacora']);
+Route::get('/categorias', [CategoriaController::class, 'getcategorias']);
 
