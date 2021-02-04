@@ -17,18 +17,22 @@ class EmpresaSeeder extends Seeder
         Empresa::create([
             'nombre' => 'Ikea',
             'nit' => '1234',
+            'image_url' => '',
         ]);
         Empresa::create([
             'nombre' => 'Multicenter',
             'nit' => '4321',
+            'image_url' => '',
         ]);
         Empresa::create([
             'nombre' => 'Hipermaxi',
             'nit' => '1243',
+            'image_url' => '',
         ]);
         Empresa::create([
             'nombre' => 'Tienda Amiga',
             'nit' => '4312',
+            'image_url' => '',
         ]);
     }
 }

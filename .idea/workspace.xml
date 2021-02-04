@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="modified routes">
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="crud de categorias terminado">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/api/CategoriaController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/ProductosTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/productos-table.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/start-card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/start-card.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/start.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/start.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="oscar" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -174,7 +175,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="Configurable.PHP.Blade" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -217,20 +218,17 @@
       <workItem from="1611154909828" duration="936000" />
       <workItem from="1611326891654" duration="1662000" />
       <workItem from="1611332977650" duration="764000" />
-    </task>
-    <task id="LOCAL-00006" summary="with role table">
-      <created>1610755296480</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1610755296481</updated>
-    </task>
-    <task id="LOCAL-00007" summary="with role table">
-      <created>1610759189086</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1610759189087</updated>
+      <workItem from="1611611233948" duration="68000" />
+      <workItem from="1611611324091" duration="723000" />
+      <workItem from="1611619852127" duration="2000" />
+      <workItem from="1611624416304" duration="2017000" />
+      <workItem from="1611677577450" duration="7736000" />
+      <workItem from="1611938709838" duration="202000" />
+      <workItem from="1612016613998" duration="4959000" />
+      <workItem from="1612022515559" duration="7699000" />
+      <workItem from="1612047840973" duration="2528000" />
+      <workItem from="1612229209665" duration="3717000" />
+      <workItem from="1612274717269" duration="4007000" />
     </task>
     <task id="LOCAL-00008" summary="with role table">
       <created>1610760477963</created>
@@ -561,7 +559,21 @@
       <option name="project" value="LOCAL" />
       <updated>1611508457507</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="cambio de compu">
+      <created>1611938857771</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1611938857771</updated>
+    </task>
+    <task id="LOCAL-00056" summary="crud de categorias terminado">
+      <created>1612275302033</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1612275302034</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,7 +584,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/oscar" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -593,6 +617,12 @@
     <MESSAGE value="repare login" />
     <MESSAGE value="with email" />
     <MESSAGE value="modified routes" />
-    <option name="LAST_COMMIT_MESSAGE" value="modified routes" />
+    <MESSAGE value="cambio de compu" />
+    <MESSAGE value="crud de categorias terminado" />
+    <option name="LAST_COMMIT_MESSAGE" value="crud de categorias terminado" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
