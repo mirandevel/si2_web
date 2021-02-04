@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="crud de categorias terminado">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/api/CategoriaController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/ProductosTable.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/productos-table.blade.php" afterDir="false" />
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="se creo la api para obtener todas las categorias y la clase para mostrar los productos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/ProductosTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/ProductosTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/categorias-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/categorias-table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/productos-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/productos-table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,14 +228,9 @@
       <workItem from="1612022515559" duration="7699000" />
       <workItem from="1612047840973" duration="2528000" />
       <workItem from="1612229209665" duration="3717000" />
-      <workItem from="1612274717269" duration="4007000" />
-    </task>
-    <task id="LOCAL-00008" summary="with role table">
-      <created>1610760477963</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1610760477963</updated>
+      <workItem from="1612274717269" duration="8838000" />
+      <workItem from="1612296757173" duration="5027000" />
+      <workItem from="1612390098545" duration="17000" />
     </task>
     <task id="LOCAL-00009" summary="with menu">
       <created>1610822028574</created>
@@ -573,7 +568,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612275302034</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="se creo la api para obtener todas las categorias y la clase para mostrar los productos">
+      <created>1612280752828</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1612280752828</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -619,7 +621,8 @@
     <MESSAGE value="modified routes" />
     <MESSAGE value="cambio de compu" />
     <MESSAGE value="crud de categorias terminado" />
-    <option name="LAST_COMMIT_MESSAGE" value="crud de categorias terminado" />
+    <MESSAGE value="se creo la api para obtener todas las categorias y la clase para mostrar los productos" />
+    <option name="LAST_COMMIT_MESSAGE" value="se creo la api para obtener todas las categorias y la clase para mostrar los productos" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

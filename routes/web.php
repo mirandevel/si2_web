@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Empresa\Productos\ProductosTable;
 use Carbon\Carbon;
 use App\Http\Livewire\CategoriasTable;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -23,6 +24,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/start',\App\Http\Livewire
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/{empresa}/dashboard',\App\Http\Livewire\Adm\Dashboard::class)->name('emp.dashboard');
     Route::get('/productos/categorias', CategoriasTable::class);
+    Route::get('/productos', ProductosTable::class);
 });
 
 
