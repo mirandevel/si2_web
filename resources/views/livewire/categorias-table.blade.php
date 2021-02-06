@@ -189,12 +189,12 @@
         <div class="bg-white rounded shadow-lg w-1/3 border border-gray-200 rounded-lg overflow-hidden">
             <!-- modal header -->
             <div class="border-b px-4 py-2 flex justify-between items-center">
-                <h3 class="font-semibold text-lg">Información sobre la categoría</h3>
+                <h3 class="font-semibold text-lg">Eliminar categoría</h3>
                 <button wire:click="resetarValores()" class="text-black" onclick="ocultarModalDelete()">&cross;</button>
             </div>
             <!-- modal body -->
             <div class="p-3">
-                Esta seguro que desea eliminar esta categoria?
+                Está seguro que desea eliminar esta categoria?
             </div>
             <div class="flex justify-end items-center w-100 border-t p-1">
                 <div class="m-3">
@@ -220,7 +220,6 @@
     @push('modals')
         <script>
             const modalCreate = document.querySelector('.modal-create');
-            const modalSee = document.querySelector('.modal-see');
             const modalEdit = document.querySelector('.modal-edit');
             const modalDelete = document.querySelector('.modal-delete');
 
