@@ -21,6 +21,62 @@ use Illuminate\Support\Facades\Route;
 
 
 
+
+
+
+//  DATA MASTER ROUTES
+Route::get('/datalogin', [DatoMaestroController::class, 'datalogin']);
+Route::middleware('auth:sanctum')->post('/store/token', [DatoMaestroController::class, 'storetoken']);
+Route::post('/register/bitacora', [DatoMaestroController::class, 'registrarbitacora']);
+
+//CATEGORIAS
+Route::middleware('auth:sanctum')->get('/categorias', [CategoriaController::class, 'getcategorias']);
+Route::middleware('auth:sanctum')->post('/guardarcategorias', [CategoriaController::class, 'guardarPreferencias']);
+Route::middleware('auth:sanctum')->post('/obtenerporcategoria', [CategoriaController::class, 'obtenerPorCategoria']);
+
+//PRODUCTOS
+//Route::get('/productos',[])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //LOGIN ROUTES
 Route::post('/login', [AuthController::class, 'login']);
 Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);
@@ -29,12 +85,7 @@ Route::middleware('guest')->post('/forgot-password', [AuthController::class, 'fo
 
 
 
+
+
 //VERIFICATION ROUTES
 Route::post('send-mail', [AuthController::class, 'sendEmail'] )->name('email');
-
-//  DATA MASTER ROUTES
-Route::get('/datalogin', [DatoMaestroController::class, 'datalogin']);
-Route::middleware('auth:sanctum')->post('/store/token', [DatoMaestroController::class, 'storetoken']);
-Route::post('/register/bitacora', [DatoMaestroController::class, 'registrarbitacora']);
-Route::get('/categorias', [CategoriaController::class, 'getcategorias']);
-
