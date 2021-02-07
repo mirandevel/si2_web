@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="se creo la api para obtener todas las categorias y la clase para mostrar los productos">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/api/ProductoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/si2_web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/si2_web.iml" afterDir="false" />
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="apis de ali">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DatoMaestroController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/DatoMaestroController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/CategoriaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/CategoriaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,14 +230,8 @@
       <workItem from="1612274717269" duration="8838000" />
       <workItem from="1612296757173" duration="5027000" />
       <workItem from="1612390098545" duration="17000" />
-      <workItem from="1612577021754" duration="3416000" />
-    </task>
-    <task id="LOCAL-00009" summary="with menu">
-      <created>1610822028574</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1610822028575</updated>
+      <workItem from="1612577021754" duration="3778000" />
+      <workItem from="1612661701994" duration="910000" />
     </task>
     <task id="LOCAL-00010" summary="api recover password">
       <created>1610847058951</created>
@@ -583,7 +569,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612280752828</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="apis de ali">
+      <created>1612580687478</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1612580687479</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -630,7 +623,8 @@
     <MESSAGE value="cambio de compu" />
     <MESSAGE value="crud de categorias terminado" />
     <MESSAGE value="se creo la api para obtener todas las categorias y la clase para mostrar los productos" />
-    <option name="LAST_COMMIT_MESSAGE" value="se creo la api para obtener todas las categorias y la clase para mostrar los productos" />
+    <MESSAGE value="apis de ali" />
+    <option name="LAST_COMMIT_MESSAGE" value="apis de ali" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
