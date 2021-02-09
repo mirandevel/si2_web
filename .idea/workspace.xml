@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="se creo la api para obtener todas las categorias y la clase para mostrar los productos">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/ProductosTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/ProductosTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/categorias-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/categorias-table.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/productos-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/productos-table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,6 +230,12 @@
       <workItem from="1612274717269" duration="8838000" />
       <workItem from="1612296757173" duration="5027000" />
       <workItem from="1612390098545" duration="17000" />
+      <workItem from="1612722001933" duration="2129000" />
+      <workItem from="1612737237150" duration="129000" />
+      <workItem from="1612794123623" duration="5660000" />
+      <workItem from="1612808166952" duration="90000" />
+      <workItem from="1612881592888" duration="2340000" />
+      <workItem from="1612891673996" duration="3345000" />
     </task>
     <task id="LOCAL-00009" summary="with menu">
       <created>1610822028574</created>
@@ -592,7 +597,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/oscar" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
