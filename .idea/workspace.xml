@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="apis de ali">
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="api de categoria">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/CategoriaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/CategoriaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,14 +233,8 @@
       <workItem from="1612296757173" duration="5027000" />
       <workItem from="1612390098545" duration="17000" />
       <workItem from="1612577021754" duration="3778000" />
-      <workItem from="1612661701994" duration="910000" />
-    </task>
-    <task id="LOCAL-00010" summary="api recover password">
-      <created>1610847058951</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1610847058951</updated>
+      <workItem from="1612661701994" duration="3589000" />
+      <workItem from="1612894708618" duration="5638000" />
     </task>
     <task id="LOCAL-00011" summary="api recover password">
       <created>1610848769812</created>
@@ -576,7 +572,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612580687479</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="api de categoria">
+      <created>1612663333655</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1612663333656</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -624,7 +627,8 @@
     <MESSAGE value="crud de categorias terminado" />
     <MESSAGE value="se creo la api para obtener todas las categorias y la clase para mostrar los productos" />
     <MESSAGE value="apis de ali" />
-    <option name="LAST_COMMIT_MESSAGE" value="apis de ali" />
+    <MESSAGE value="api de categoria" />
+    <option name="LAST_COMMIT_MESSAGE" value="api de categoria" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

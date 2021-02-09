@@ -33,6 +33,8 @@ Route::post('/register/bitacora', [DatoMaestroController::class, 'registrarbitac
 Route::middleware('auth:sanctum')->get('/categorias', [CategoriaController::class, 'getcategorias']);
 Route::middleware('auth:sanctum')->post('/guardarcategorias', [CategoriaController::class, 'guardarPreferencias']);
 Route::middleware('auth:sanctum')->post('/obtenerporcategoria', [CategoriaController::class, 'obtenerPorCategoria']);
+Route::middleware('auth:sanctum')->post('/obtenerproductos', [CategoriaController::class, 'obtenerProductos']);
+Route::middleware('auth:sanctum')->post('/categoriasconproductos', [CategoriaController::class, 'categoriasConProductos']);
 
 //PRODUCTOS
 //Route::get('/productos',[])
