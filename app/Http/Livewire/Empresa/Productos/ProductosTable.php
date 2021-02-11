@@ -2,9 +2,6 @@
 
 namespace App\Http\Livewire\Empresa\Productos;
 
-//use App\Models\Empresa;
-//use App\Models\Garantia;
-//use App\Models\Marca;
 use App\Models\Empresa;
 use App\Models\Garantia;
 use App\Models\Marca;
@@ -17,11 +14,8 @@ class ProductosTable extends Component
     use WithPagination;
 
     public $cantidadDeItemsPorPagina = 5;
-//    public $nombreDeProductoABuscar;
+    public $nombreDeProductoABuscar;
     public $idDeProductoSeleccionado;
-//    public $empresas;
-//    public $marcas;
-//    public $garantias;
 
     /*para el producto*/
     public $nombre;
@@ -51,14 +45,14 @@ class ProductosTable extends Component
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName, [
-            'nombre' => 'string|between:3,30',
-            'descripcion' => 'string|min:5',
-            'precio' => 'numeric|min:1',
-            'calificacion' => 'numeric|between:1,5',
-            'cantidad' => 'numeric|min:0',
-            'empresa_id' => 'numeric|exists:App\Models\Empresa,id',
-            'marca_id' => 'numeric|exists:App\Models\Marca,id',
-            'garantia_id' => 'numeric|exists:App\Models\Garantia,id',
+            'nombre' => 'required|string|between:3,30',
+            'descripcion' => 'required|string|min:5',
+            'precio' => 'required|numeric|min:1',
+            'calificacion' => 'required|numeric|between:1,5',
+            'cantidad' => 'required|numeric|min:1',
+            'empresa_id' => 'required|numeric|exists:App\Models\Empresa,id',
+            'marca_id' => 'required|numeric|exists:App\Models\Marca,id',
+            'garantia_id' => 'required|numeric|exists:App\Models\Garantia,id',
         ]);
     }
 
@@ -76,24 +70,34 @@ class ProductosTable extends Component
         $this->garantia_id = $producto->garantia_id;
     }
 
-    public function editProducto()
+    public function cargarDatosPorDefecto()
     {
-
+        $this->garantia_id = 1;
+        $this->marca_id = 1;
+        $this->empresa_id = 1;
+        $this->calificacion = 1;
     }
 
-    public function storeProductostoreProducto()
+    public function editProducto()
     {
-        $datosValidados = $this->validate([
-            'nombre' => 'required|string|between:3,30',
-            'descripcion' => 'required|string|min:5',
-            'precio' => 'required|numeric|min:1',
-            'calificacion' => 'required|numeric|between:1,5',
-            'cantidad' => 'required|numeric|min:0',
-            'empresa_id' => 'required|numeric|exists:App\Models\Empresa,id',
-            'marca_id' => 'required|numeric|exists:App\Models\Marca,id',
-            'garantia_id' => 'required|numeric|exists:App\Models\Garantia,id',
-        ]);
+        $productoAEditar = Producto::findOrFail($this->idDeProductoSeleccionado);
+        $productoAEditar->nombre = $this->nombre;
+        $productoAEditar->descripcion = $this->descripcion;
+        $productoAEditar->precio = $this->precio;
+        $productoAEditar->url_imagen = 'gs://si-2-5abca.appspot.com/products-images/image-silla1.jpg'; //cambiar
+        $productoAEditar->url_3d = 'gs://si-2-5abca.appspot.com/3d-models-obj/3d-model-silla1.obj'; //cambiar
+        $productoAEditar->calificacion = $this->calificacion;
+        $productoAEditar->cantidad = $this->cantidad;
+        $productoAEditar->empresa_id = $this->empresa_id;
+        $productoAEditar->marca_id = $this->marca_id;
+        $productoAEditar->garantia_id = $this->garantia_id;
+        $productoAEditar->save();
 
+        $this->resetarValores();
+    }
+
+    public function storeProducto()
+    {
         Producto::create([
             'nombre' => $this->nombre,
             'descripcion' => $this->descripcion,
@@ -113,6 +117,7 @@ class ProductosTable extends Component
     public function eliminarProducto()
     {
         Producto::destroy($this->idDeProductoSeleccionado);
+
         $this->resetarValores();
     }
 
@@ -121,6 +126,7 @@ class ProductosTable extends Component
         return view('livewire.empresa.productos.productos-table', [
             'productos' => Producto::select('productos.id', 'productos.nombre', 'productos.cantidad', 'productos.precio', 'empresas.nombre as empresa')
                 ->join('empresas', 'empresas.id', '=', 'productos.empresa_id')
+                ->where('productos.nombre', 'LIKE', '%'.$this->nombreDeProductoABuscar.'%')
                 ->orderBy('productos.id', 'asc')
                 ->paginate($this->cantidadDeItemsPorPagina),
             'empresas' => Empresa::select('id', 'nombre')
