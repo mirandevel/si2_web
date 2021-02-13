@@ -28,7 +28,7 @@ class Crear extends Component
             'nit' => 'integer',
             'nombre' => 'string',
         ]);
-        $path = $this->photo->store('photos','public');
+        $path = $this->photo->store('img_empresas','public');
 
         $empresa = new Empresa();
         $empresa->nombre = $this->nombre;
