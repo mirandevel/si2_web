@@ -16,6 +16,8 @@ class CreateBitacorasTable extends Migration
         Schema::create('bitacoras', function (Blueprint $table) {
             $table->id();
             $table->string('descripcion', 255);
+            $table->date('fecha');
+            $table->time('hora');
             $table->unsignedBigInteger('usuario_id');
             $table->timestamps();
 

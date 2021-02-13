@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="avance">
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="crud de productos-table.blade.php terminado">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/ProductosTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/ProductosTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/productos-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/productos-table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Bitacora.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Bitacora.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/EmpresaUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/EmpresaUsuario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_16_151606_create_bitacoras_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_151606_create_bitacoras_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_16_155157_create_empresa_usuarios_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_155157_create_empresa_usuarios_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/EmpresaUsuarioSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/EmpresaUsuarioSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,14 +239,8 @@
       <workItem from="1612881592888" duration="2340000" />
       <workItem from="1612891673996" duration="3382000" />
       <workItem from="1612997331450" duration="16000" />
-      <workItem from="1613052891116" duration="9940000" />
-    </task>
-    <task id="LOCAL-00010" summary="api recover password">
-      <created>1610847058951</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1610847058951</updated>
+      <workItem from="1613052891116" duration="10534000" />
+      <workItem from="1613226912338" duration="1901000" />
     </task>
     <task id="LOCAL-00011" summary="api recover password">
       <created>1610848769812</created>
@@ -581,7 +578,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612895057391</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="crud de productos-table.blade.php terminado">
+      <created>1613069574721</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1613069574735</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,6 +606,12 @@
                       </list>
                     </value>
                   </entry>
+                </map>
+              </option>
+              <option name="COLUMN_ID_WIDTH">
+                <map>
+                  <entry key="Table.Default.Author.ColumnIdWidth" value="131" />
+                  <entry key="Table.Default.Date.ColumnIdWidth" value="130" />
                 </map>
               </option>
             </State>
@@ -629,7 +639,8 @@
     <MESSAGE value="crud de categorias terminado" />
     <MESSAGE value="se creo la api para obtener todas las categorias y la clase para mostrar los productos" />
     <MESSAGE value="avance" />
-    <option name="LAST_COMMIT_MESSAGE" value="avance" />
+    <MESSAGE value="crud de productos-table.blade.php terminado" />
+    <option name="LAST_COMMIT_MESSAGE" value="crud de productos-table.blade.php terminado" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
