@@ -14,6 +14,7 @@ class CreateEmpresaUsuariosTable extends Migration
     public function up()
     {
         Schema::create('empresa_usuarios', function (Blueprint $table) {
+            $table->boolean('estado');
             $table->unsignedBigInteger('usuario_id');
             $table->unsignedBigInteger('empresa_id');
             $table->timestamps();

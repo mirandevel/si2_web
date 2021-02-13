@@ -12,7 +12,7 @@ class Bitacora extends Model
     protected $table = 'bitacoras';
 
     protected $fillable = [
-        'descripcion', 'usuario_id'
+        'descripcion', 'fecha', 'hora', 'usuario_id'
     ];
 
     protected $hidden = [

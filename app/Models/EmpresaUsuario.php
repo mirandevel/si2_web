@@ -14,7 +14,11 @@ class EmpresaUsuario extends Model
     protected $keyType = ['int', 'int'];
     public $incrementing = false;
 
-    protected $fillable = ['usuario_id', 'empresa_id'];
+    protected $fillable = [
+        'estado',
+        'usuario_id',
+        'empresa_id',
+    ];
 
     protected $hidden = [
         'created_at', 'updated_at',
