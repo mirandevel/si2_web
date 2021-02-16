@@ -91,7 +91,7 @@
                                         </div>
 
                                         <div class="m-3">
-                                            <button class="bg-white text-gray-800 font-bold rounded border-b-2 border-yellow-500 hover:border-yellow-600 hover:bg-yellow-500 hover:text-white shadow-md py-1 px-1 inline-flex items-center">
+                                            <button wire:click="cargarDatos({{ $producto->id }})" onclick="mostrarModalEdit()" class="bg-white text-gray-800 font-bold rounded border-b-2 border-yellow-500 hover:border-yellow-600 hover:bg-yellow-500 hover:text-white shadow-md py-1 px-1 inline-flex items-center">
                                                 <span class="mr-2">Editar</span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24">
                                                     <path fill="currentcolor" d="M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5l-4-4V4h8v3.5l-4 4z"></path>
@@ -140,13 +140,264 @@
                                        for="grid-email">
                                     Nombre
                                 </label>
-                                <input type="text"  class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+                                <input type="text" wire:model="nombre" class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+                                <div class="flex flex-wrap m-6 mb-2 -mx-3">
+                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                                        <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
+                                            Precio
+                                        </label>
+                                        <input type="number" wire:model="precio"
+                                            class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+                                    </div>
+                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                                        <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+                                               for="grid-state">
+                                            Calificación
+                                        </label>
+                                        <div class="relative">
+                                            <select type="number" wire:model="calificacion"
+                                                class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                                                id="grid-state">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                                        <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
+                                            Cantidad
+                                        </label>
+                                        <input type="number" wire:model="cantidad"
+                                            class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+                                    </div>
+                                </div>
+                                <label>
+                                    <span class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">Descripción</span>
+                                    <textarea type="text" wire:model="descripcion"
+                                        class="block w-full px-4 py-3 mt-1 mb-3 text-gray-700 bg-gray-200 border border-gray-200 rounded form-textarea focus:outline-none"
+                                        rows="2" placeholder=""></textarea>
+                                </label>
+                                <div class="flex flex-wrap m-6 mb-2 -mx-3">
+                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                                        <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+                                               for="grid-state">
+                                            Empresa
+                                        </label>
+                                        <div class="relative">
+                                            <select
+                                                class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                                                id="grid-state">
+                                                @foreach($empresas as $empresa)
+                                                    <option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                                        <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+                                               for="grid-state">
+                                            Marca
+                                        </label>
+                                        <div class="relative">
+                                            <select
+                                                class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                                                id="grid-state">
+                                                @foreach($marcas as $marca)
+                                                    <option value="{{ $marca->id }}">{{ $marca->nombre }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                                        <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+                                               for="grid-state">
+                                            Garantía
+                                        </label>
+                                        <div class="relative">
+                                            <select
+                                                class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                                                id="grid-state">
+                                                @foreach($garantias as  $garantia)
+                                                    <option value="{{ $garantia->id }}">{{ $garantia->tiempo }} meses</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    @error('nombre')
+                                        <span class="error">{{ $message }}</span>
+                                        <p>error</p>
+                                    @enderror
+                                    @error('descripcion')
+                                    <span class="error">{{ $message }}</span>
+                                    <p>error</p>
+                                    @enderror
+                                    @error('precio')
+                                    <span class="error">{{ $message }}</span>
+                                    <p>error</p>
+                                    @enderror
+                                    @error('calificacion')
+                                    <span class="error">{{ $message }}</span>
+                                    <p>error</p>
+                                    @enderror
+                                    @error('cantidad')
+                                    <span class="error">{{ $message }}</span>
+                                    <p>error</p>
+                                    @enderror
+                                </div>
                             </div>
+
                         </div>
                     </div>
                     <div class="flex items-center justify-end p-1 text-center bg-gray-200">
                         <div class="m-3">
                             <button wire:click="storeProducto" class="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-1 px-1 inline-flex items-center disabled:opacity-50" @if (!$errors->has('nombre'))  onclick="ocultarModalCreate()" @else disabled @endif>
+                                <span class="mr-2">Guardar</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24">
+                                    <path fill="currentcolor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal para editar -->
+    <div wire:ignore.self class="modal-edit h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
+        <!-- modal -->
+        <div class="bg-white rounded shadow-lg w-1/3 border border-gray-200 rounded-lg overflow-hidden">
+            <!-- modal header -->
+            <div class="border-b px-4 py-2 flex justify-between items-center">
+                <h3 class="font-semibold text-lg">Editar Producto</h3>
+                <button wire:click="resetarValores()" class="text-black" onclick="ocultarModalEdit()">&cross;</button>
+            </div>
+            <!-- modal body -->
+            <div class="flex place-content-center">
+                <div class="w-full max-w-lg">
+                    <div class="p-5 pb-6">
+                        <div class="flex flex-wrap">
+                            <div class="w-full px-3">
+                                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+                                       for="grid-email">
+                                    Nombre
+                                </label>
+                                <input type="text" wire:model="nombre" value="{{ $nombre }}" class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+                                <div class="flex flex-wrap m-6 mb-2 -mx-3">
+                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                                        <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
+                                            Precio
+                                        </label>
+                                        <input type="number" wire:model="precio" value="{{ $precio }}"
+                                               class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+                                    </div>
+                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                                        <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+                                               for="grid-state">
+                                            Calificación
+                                        </label>
+                                        <div class="relative">
+                                            <select type="number" wire:model="calificacion"
+                                                    class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+                                                <option value="1" {{ $calificacion == 1 ? 'selected' : '' }}>1</option>
+                                                <option value="2" {{ $calificacion == 2 ? 'selected' : '' }}>2</option>
+                                                <option value="3" {{ $calificacion == 3 ? 'selected' : '' }}>3</option>
+                                                <option value="4" {{ $calificacion == 4 ? 'selected' : '' }}>4</option>
+                                                <option value="5" {{ $calificacion == 5 ? 'selected' : '' }}>5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                                        <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
+                                            Cantidad
+                                        </label>
+                                        <input type="number" wire:model="cantidad" value="{{ $cantidad }}"
+                                               class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+                                    </div>
+                                </div>
+                                <label>
+                                    <span class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">Descripción</span>
+                                    <textarea type="text" wire:model="descripcion"
+                                              class="block w-full px-4 py-3 mt-1 mb-3 text-gray-700 bg-gray-200 border border-gray-200 rounded form-textarea focus:outline-none"
+                                              rows="2" placeholder="">{{ $descripcion }}</textarea>
+                                </label>
+                                <div class="flex flex-wrap m-6 mb-2 -mx-3">
+                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                                        <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+                                               for="grid-state">
+                                            Empresa
+                                        </label>
+                                        <div class="relative">
+                                            <select
+                                                class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                                                id="grid-state">
+                                                @foreach($empresas as $empresa)
+                                                    <option value="{{ $empresa->id }}" {{ $empresa_id === $empresa->id ? 'selected' : '' }}>{{ $empresa->nombre }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                                        <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+                                               for="grid-state">
+                                            Marca
+                                        </label>
+                                        <div class="relative">
+                                            <select
+                                                class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                                                id="grid-state">
+                                                @foreach($marcas as $marca)
+                                                    <option value="{{ $marca->id }}" {{ $marca_id === $marca->id ? 'selected' : '' }}>{{ $marca->nombre }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                                        <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+                                               for="grid-state">
+                                            Garantía
+                                        </label>
+                                        <div class="relative">
+                                            <select
+                                                class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                                                id="grid-state">
+                                                @foreach($garantias as  $garantia)
+                                                    <option value="{{ $garantia->id }}" {{ $garantia_id === $garantia->id ? 'selected' : '' }}>{{ $garantia->tiempo }} meses</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    @error('nombre')
+                                    <span class="error">{{ $message }}</span>
+                                    <p>error</p>
+                                    @enderror
+                                    @error('descripcion')
+                                    <span class="error">{{ $message }}</span>
+                                    <p>error</p>
+                                    @enderror
+                                    @error('precio')
+                                    <span class="error">{{ $message }}</span>
+                                    <p>error</p>
+                                    @enderror
+                                    @error('calificacion')
+                                    <span class="error">{{ $message }}</span>
+                                    <p>error</p>
+                                    @enderror
+                                    @error('cantidad')
+                                    <span class="error">{{ $message }}</span>
+                                    <p>error</p>
+                                    @enderror
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-end p-1 text-center bg-gray-200">
+                        <div class="m-3">
+                            <button wire:click="editProducto" class="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-1 px-1 inline-flex items-center disabled:opacity-50" @if (!$errors->has('nombre'))  onclick="ocultarModalCreate()" @else disabled @endif>
                                 <span class="mr-2">Guardar</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24">
                                     <path fill="currentcolor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>

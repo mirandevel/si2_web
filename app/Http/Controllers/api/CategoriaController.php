@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Categoria;
 use App\Models\CategoriaUsuario;
 use App\Models\Producto;
+use App\Models\User;
 use Illuminate\Http\Request;
+
 
 class CategoriaController extends Controller
 {
@@ -61,10 +63,69 @@ class CategoriaController extends Controller
     public function categoriasConProductos(Request $request)
     {
         $categorias = Categoria::select("categorias.*")
-                ->join('categoria_productos', 'categoria_productos.categoria_id', '=', 'categorias.id')
-                ->orderBy('categorias.id', 'asc')
-                ->groupBy('categorias.id')->get();
+            ->join('categoria_productos', 'categoria_productos.categoria_id', '=', 'categorias.id')
+            ->orderBy('categorias.id', 'asc')
+            ->groupBy('categorias.id')->get();
         return $categorias;
     }
 
+    public function categoriasConProducto(Request $request)
+    {
+        $productos = Producto::select("productos.*", "categorias.nombre")
+            ->join('categoria_productos', 'productos.id', '=', 'producto_id')
+            ->join('categorias', 'categoria_productos.categoria_id', '=', 'categorias.id')
+            ->orderBy('productos.id', 'desc', 'categorias.nombre', 'desc')
+            ->groupBy('productos.id', 'categorias.nombre')
+            ->get();
+        return $productos;
+    }
+
+    public function categoriasDeUsuario(Request $request)
+    {$usuarioID = $request["usuarioID"];
+        $categorias = Categoria::select("categorias.*")
+            ->join('categoria_usuarios', 'categorias.id', '=', 'categoria_id')
+
+            ->where('categoria_usuarios.user_id', '=', $usuarioID)
+            ->orderBy('categorias.id', 'desc')
+            ->groupBy('categorias.id')
+            ->get();
+        return $categorias;
+
+    }
+    public function cate(Request $request)
+    {    $usuarioID = $request["usuarioID"];
+        $categorias = Categoria::whereExists(function ($query) use ($usuarioID) {
+            $query->from('categoria_usuarios')->select('categoria_usuarios.categoria_id')->
+            where('categoria_usuarios.user_id','=',$usuarioID);
+        })->orderBy('categorias.id', 'asc')
+            ->groupBy('categorias.id')->get();
+        /*     ->join('categoria_usuarios', 'categorias.id', '=', 'categoria_id')
+             ->join('users','categoria_usuarios.user_id', '=', $usuarioID)
+             ->where('categoria_usuarios.user_id', '=', $usuarioID)
+             ->orderBy('categorias.id', 'desc')
+             ->groupBy('categorias.id')
+             ->get();*/
+        return $categorias;
+    }
+
+    public function guardarCategoriasDeUsuario(Request $request)
+    {  $usuarioID = $request["usuarioID"];
+        CategoriaUsuario::where('user_id','=',$usuarioID)->delete();
+       $userID = $request["usuarioID"];
+        $categorias = $request["preferencias"];
+
+        foreach ($categorias as $categoriaID) {
+            CategoriaUsuario::create([
+                'categoria_id' => $categoriaID,
+                'user_id' => $userID
+            ]);
+        }
+        return true;
+    }
+    public function prueba(Request $request)
+    {
+        $usuario = User::where('id','=',1)->get();
+            return $usuario;
+
+    }
 }
