@@ -34,14 +34,14 @@ Route::middleware('auth:sanctum')->get('/categorias', [CategoriaController::clas
 Route::middleware('auth:sanctum')->post('/guardarcategorias', [CategoriaController::class, 'guardarPreferencias']);
 Route::post('/obtenerporcategoria', [CategoriaController::class, 'obtenerPorCategoria']);
 Route::middleware('auth:sanctum')->post('/obtenerproductos', [CategoriaController::class, 'obtenerProductos']);
+Route::post('/obtenermasvendido', [CategoriaController::class, 'masVendido']);
 Route::middleware('auth:sanctum')->post('/categoriasconproductos', [CategoriaController::class, 'categoriasConProductos']);
 Route::middleware('auth:sanctum')->post('/categoriasconproducto', [CategoriaController::class, 'categoriasConProducto']);
 
 Route::middleware('auth:sanctum')->post('/categoriasdeusuario',[CategoriaController::class,'categoriasDeUsuario']);
 Route::middleware('auth:sanctum')->post('/guardarcategoriasdeusuario',[CategoriaController::class,'guardarCategoriasDeUsuario']);
 
-Route::middleware('auth:sanctum')->post('/prueba',[CategoriaController::class,'prueba']);
-Route::post('/cate',[CategoriaController::class,'cate']);
+
 //PRODUCTOS
 //Route::get('/productos',[])
 

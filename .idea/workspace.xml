@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="se creo la api para obtener todas las categorias y la clase para mostrar los productos">
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="guardar y cargar preferencias">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/CategoriaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/CategoriaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/ProductosTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/ProductosTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Marca.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Marca.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/productos-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/productos-table.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -239,14 +236,7 @@
       <workItem from="1612881592888" duration="2340000" />
       <workItem from="1612891673996" duration="3345000" />
       <workItem from="1612921802830" duration="1645000" />
-      <workItem from="1613505678025" duration="9992000" />
-    </task>
-    <task id="LOCAL-00009" summary="with menu">
-      <created>1610822028574</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1610822028575</updated>
+      <workItem from="1613505678025" duration="17450000" />
     </task>
     <task id="LOCAL-00010" summary="api recover password">
       <created>1610847058951</created>
@@ -584,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612280752828</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="guardar y cargar preferencias">
+      <created>1613518110350</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1613518110351</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -631,7 +628,8 @@
     <MESSAGE value="cambio de compu" />
     <MESSAGE value="crud de categorias terminado" />
     <MESSAGE value="se creo la api para obtener todas las categorias y la clase para mostrar los productos" />
-    <option name="LAST_COMMIT_MESSAGE" value="se creo la api para obtener todas las categorias y la clase para mostrar los productos" />
+    <MESSAGE value="guardar y cargar preferencias" />
+    <option name="LAST_COMMIT_MESSAGE" value="guardar y cargar preferencias" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

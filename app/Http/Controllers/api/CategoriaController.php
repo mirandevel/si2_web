@@ -5,6 +5,7 @@ namespace App\Http\Controllers\api;
 use App\Http\Controllers\Controller;
 use App\Models\Categoria;
 use App\Models\CategoriaUsuario;
+use App\Models\Marca;
 use App\Models\Producto;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -84,7 +85,6 @@ class CategoriaController extends Controller
     {$usuarioID = $request["usuarioID"];
         $categorias = Categoria::select("categorias.*")
             ->join('categoria_usuarios', 'categorias.id', '=', 'categoria_id')
-
             ->where('categoria_usuarios.user_id', '=', $usuarioID)
             ->orderBy('categorias.id', 'desc')
             ->groupBy('categorias.id')
@@ -126,6 +126,19 @@ class CategoriaController extends Controller
     {
         $usuario = User::where('id','=',1)->get();
             return $usuario;
+
+    }
+    public function masVendido()
+    {
+        $producto = Producto::select('productos.*')
+            ->join('detalles','productos.id','=','detalles.producto_id')
+            ->orderBy('detalles.cantidad','desc','productos.id','desc')
+            ->groupBy('detalles.cantidad','productos.id')
+            ->first();
+        $marca_id =$producto->marca_id;
+        echo $marca_id;
+        $marca = Marca::where('id','=',$marca_id)->first();
+        return ['producto'=>$producto,'marca'=>$marca];
 
     }
 }
