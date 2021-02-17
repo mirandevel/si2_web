@@ -136,7 +136,7 @@ class CategoriaController extends Controller
             ->groupBy('detalles.cantidad','productos.id')
             ->first();
         $marca_id =$producto->marca_id;
-        echo $marca_id;
+
         $marca = Marca::where('id','=',$marca_id)->first();
         return ['producto'=>$producto,'marca'=>$marca];
 
