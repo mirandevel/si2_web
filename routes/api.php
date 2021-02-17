@@ -34,7 +34,7 @@ Route::middleware('auth:sanctum')->get('/categorias', [CategoriaController::clas
 Route::middleware('auth:sanctum')->post('/guardarcategorias', [CategoriaController::class, 'guardarPreferencias']);
 Route::post('/obtenerporcategoria', [CategoriaController::class, 'obtenerPorCategoria']);
 Route::middleware('auth:sanctum')->post('/obtenerproductos', [CategoriaController::class, 'obtenerProductos']);
-Route::post('/obtenermasvendido', [CategoriaController::class, 'masVendido']);
+Route::middleware('auth:sanctum')->post('/obtenermasvendido', [CategoriaController::class, 'masVendido']);
 Route::middleware('auth:sanctum')->post('/categoriasconproductos', [CategoriaController::class, 'categoriasConProductos']);
 Route::middleware('auth:sanctum')->post('/categoriasconproducto', [CategoriaController::class, 'categoriasConProducto']);
 
