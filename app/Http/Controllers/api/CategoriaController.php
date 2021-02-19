@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Categoria;
+use App\Models\CategoriaProducto;
 use App\Models\CategoriaUsuario;
 use App\Models\Marca;
 use App\Models\Producto;
@@ -136,9 +137,26 @@ class CategoriaController extends Controller
             ->groupBy('detalles.cantidad','productos.id')
             ->first();
         $marca_id =$producto->marca_id;
-
         $marca = Marca::where('id','=',$marca_id)->first();
         return ['producto'=>$producto,'marca'=>$marca];
+
+    }
+    public function obtenerSimilaes(Request $request)
+    { $productoID = $request["productoID"];
+        $categoriaID = CategoriaProducto::select('categoria_productos.categoria_id')
+            ->where('producto_id','=',$productoID)->first();
+        $productos = Producto::select('productos.*')
+            ->join('categoria_productos','productos.id','=','categoria_productos.producto_id')
+            ->where('categoria_productos.categoria_id','=',function ($query) use ($productoID) {
+                $query->from('categoria_productos')->select('categoria_productos.categoria_id')
+                    ->where('categoria_productos.producto_id','=',$productoID)->first();
+            })
+            ->where('productos.id','!=',$productoID)
+            ->inRandomOrder()
+            ->groupby('productos.id')
+            ->limit(6)
+            ->get();
+        return $productos;
 
     }
 }
