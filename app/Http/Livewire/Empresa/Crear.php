@@ -13,27 +13,34 @@ class Crear extends Component
     use WithFileUploads;
 
     public $photo;
+    public $photoTemp='https://customercare.igloosoftware.com/.api2/api/v1/communities/10068556/previews/thumbnails/4fc20722-5368-e911-80d5-b82a72db46f2?width=680&height=680&crop=False';
     public $nit;
     public $nombre;
+
+    protected $listeners=[
+      'registrar',
+      'temp'
+    ];
 
     public function render()
     {
         return view('livewire.empresa.crear');
     }
 
-    public function save()
+    public function registrar($imageURL)
     {
+        $this->photo=$imageURL;
         $this->validate([
-            'photo' => 'image',
-            'nit' => 'integer',
-            'nombre' => 'string',
+            'photo' => 'string|required',
+            'nit' => 'integer|required',
+            'nombre' => 'string|required',
         ]);
-        $path = $this->photo->store('img_empresas','public');
+        //$path = $this->photo->store('img_empresas','public');
 
         $empresa = new Empresa();
         $empresa->nombre = $this->nombre;
         $empresa->nit = $this->nit;
-        $empresa->image_url = $path;
+        $empresa->image_url = $this->photo;
         $empresa->save();
 
         $empresa_usuario=new EmpresaUsuario();
@@ -43,5 +50,8 @@ class Crear extends Component
 
 
         $this->redirect(route('start'));
+    }
+    public function temp($tempURL){
+        $this->photoTemp=$tempURL;
     }
 }

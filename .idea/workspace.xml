@@ -3,11 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="crud de productos-table.blade.php terminado">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Bitacora.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Bitacora.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/EmpresaUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/EmpresaUsuario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_16_151606_create_bitacoras_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_151606_create_bitacoras_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_16_155157_create_empresa_usuarios_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_155157_create_empresa_usuarios_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/EmpresaUsuarioSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/EmpresaUsuarioSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Emp/Dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Crear.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Crear.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/start-card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/start-card.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/guest.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/guest.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/emp/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/crear.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/crear.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/start.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/start.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +24,7 @@
     <execution />
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/oscar" />
+    <option name="BRANCH" value="origin/miranda" />
   </component>
   <component name="Git.Rebase.Settings">
     <option name="NEW_BASE" value="origin/oscar" />
@@ -27,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="oscar" />
+        <entry key="$PROJECT_DIR$" value="miranda" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -184,6 +189,8 @@
       <recent name="E:\si2\si2_web" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\UNIVERSIDAD\2020-2\SI2\proyecto\si2_web\app\Http\Livewire\Empresa" />
+      <recent name="D:\UNIVERSIDAD\2020-2\SI2\proyecto\si2_web\resources\views\livewire\empresa" />
       <recent name="E:\si2\si2_web\app\Http\Controllers\api" />
       <recent name="E:\si2\si2_web\app\Http\Controllers\web" />
     </key>
