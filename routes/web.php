@@ -22,7 +22,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/start',\App\Http\Livewire
 
 //COMPANY ROUTES
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/{empresa}/dashboard',\App\Http\Livewire\Adm\Dashboard::class)->name('emp.dashboard');
+    Route::get('/{empresa}/dashboard',\App\Http\Livewire\Empresa\Dashboard::class)->name('emp.dashboard');
     Route::get('/productos/categorias', CategoriasTable::class);
     Route::get('/productos', ProductosTable::class);
 });

@@ -16,9 +16,13 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body >
+
+
         <div class="min-h-screen  font-sans text-gray-900 bg-paleta-5 antialiased">
             {{ $slot }}
         </div>
+
+
         @livewireScripts
     </body>
 </html>
