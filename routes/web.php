@@ -26,6 +26,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/productos/categorias', CategoriasTable::class)->name('categorias');
     Route::get('/productos/marcas', \App\Http\Livewire\Empresa\Productos\MarcasTable::class)->name('marcas');
     Route::get('/productos/garantias', \App\Http\Livewire\Empresa\Productos\GarantiasTable::class)->name('garantias');
+    Route::get('/productos/promociones', \App\Http\Livewire\Empresa\Productos\PromocionesTable::class)->name('promociones');
     Route::get('/productos', ProductosTable::class)->name('productos');
 });
 
