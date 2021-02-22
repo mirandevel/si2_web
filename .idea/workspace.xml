@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with image and menu">
-      <change afterPath="$PROJECT_DIR$/resources/views/components/buscador.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/categoria.blade.php" afterDir="false" />
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with categorias">
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/GarantiasTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/MarcasTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/garantias-table.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/marcas-table.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/components/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/categorias-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/categorias-table.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -184,10 +185,11 @@
       <recent name="E:\si2\si2_web" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\UNIVERSIDAD\2020-2\SI2\proyecto\si2_web\resources\views\livewire\empresa\productos" />
+      <recent name="D:\UNIVERSIDAD\2020-2\SI2\proyecto\si2_web\app\Http\Livewire\Empresa\Productos" />
       <recent name="D:\UNIVERSIDAD\2020-2\SI2\proyecto\si2_web\app\Http\Livewire\Empresa" />
       <recent name="D:\UNIVERSIDAD\2020-2\SI2\proyecto\si2_web\resources\views\livewire\empresa" />
       <recent name="E:\si2\si2_web\app\Http\Controllers\api" />
-      <recent name="E:\si2\si2_web\app\Http\Controllers\web" />
     </key>
   </component>
   <component name="RunManager">
@@ -244,14 +246,7 @@
       <workItem from="1613052891116" duration="10534000" />
       <workItem from="1613226912338" duration="1901000" />
       <workItem from="1613959165152" duration="11000" />
-      <workItem from="1614007287836" duration="1314000" />
-    </task>
-    <task id="LOCAL-00012" summary="api recover password">
-      <created>1610849268806</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1610849268806</updated>
+      <workItem from="1614007287836" duration="2621000" />
     </task>
     <task id="LOCAL-00013" summary="api recover password">
       <created>1610849728259</created>
@@ -589,7 +584,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613946419256</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="with categorias">
+      <created>1614008709065</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1614008709065</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,7 +647,8 @@
     <MESSAGE value="avance" />
     <MESSAGE value="crud de productos-table.blade.php terminado" />
     <MESSAGE value="with image and menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="with image and menu" />
+    <MESSAGE value="with categorias" />
+    <option name="LAST_COMMIT_MESSAGE" value="with categorias" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
