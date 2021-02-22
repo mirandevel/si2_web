@@ -2,10 +2,13 @@
 
 namespace App\Http\Livewire\Empresa\Productos;
 
+use App\Models\Bitacora;
 use App\Models\Empresa;
 use App\Models\Garantia;
 use App\Models\Marca;
 use App\Models\Producto;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -101,6 +104,14 @@ class ProductosTable extends Component
         $productoAEditar->garantia_id = $this->garantia_id;
         $productoAEditar->save();
 
+        $id=Auth::user()->id;
+        Bitacora::create([
+            'descripcion'=>'Editó un producto',
+            'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
+            'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
+            'usuario_id'=>$id,
+        ]);
+
         $this->resetarValores();
     }
 
@@ -118,14 +129,26 @@ class ProductosTable extends Component
             'marca_id' => $this->marca_id,
             'garantia_id' => $this->garantia_id,
         ]);
-
+        $id=Auth::user()->id;
+        Bitacora::create([
+            'descripcion'=>'Creó un producto',
+            'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
+            'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
+            'usuario_id'=>$id,
+        ]);
         $this->resetarValores();
     }
 
     public function eliminarProducto()
     {
         Producto::destroy($this->idDeProductoSeleccionado);
-
+        $id=Auth::user()->id;
+        Bitacora::create([
+            'descripcion'=>'Eliminó un producto',
+            'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
+            'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
+            'usuario_id'=>$id,
+        ]);
         $this->resetarValores();
     }
 

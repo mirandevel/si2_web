@@ -2,8 +2,11 @@
 
 namespace App\Http\Livewire\Empresa\Productos;
 
+use App\Models\Bitacora;
 use App\Models\Categoria;
 use App\Models\Marca;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -40,6 +43,13 @@ class MarcasTable extends Component
         Marca::create([
             'nombre' => $this->nombre
         ]);
+        $id=Auth::user()->id;
+        Bitacora::create([
+            'descripcion'=>'Creó una marca',
+            'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
+            'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
+            'usuario_id'=>$id,
+        ]);
 
         $this->resetarValores();
     }
@@ -59,6 +69,13 @@ class MarcasTable extends Component
         $categoriaAEditar = Marca::findOrFail($this->idDeCategoriaSeleccionada);
         $categoriaAEditar->nombre = $this->nombre;
         $categoriaAEditar->save();
+        $id=Auth::user()->id;
+        Bitacora::create([
+            'descripcion'=>'Editó una marca',
+            'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
+            'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
+            'usuario_id'=>$id,
+        ]);
 
         $this->resetarValores();
     }
@@ -66,6 +83,13 @@ class MarcasTable extends Component
     public function eliminarCategoria()
     {
         Marca::destroy($this->idDeCategoriaSeleccionada);
+        $id=Auth::user()->id;
+        Bitacora::create([
+            'descripcion'=>'Eliminó una marca',
+            'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
+            'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
+            'usuario_id'=>$id,
+        ]);
         $this->resetarValores();
     }
 

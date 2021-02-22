@@ -2,8 +2,11 @@
 
 namespace App\Http\Livewire\Empresa\Productos;
 
+use App\Models\Bitacora;
 use App\Models\Marca;
 use App\Models\Promocion;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -48,7 +51,13 @@ class PromocionesTable extends Component
             'descripcion' => $this->descripcion,
             'descuento' => $this->descuento
         ]);
-
+        $id=Auth::user()->id;
+        Bitacora::create([
+            'descripcion'=>'Creó una promoción',
+            'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
+            'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
+            'usuario_id'=>$id,
+        ]);
         $this->resetarValores();
     }
 
@@ -73,13 +82,28 @@ class PromocionesTable extends Component
         $categoriaAEditar->descripcion = $this->descripcion;
         $categoriaAEditar->descuento = $this->descuento;
         $categoriaAEditar->save();
-
+        $id=Auth::user()->id;
+        Bitacora::create([
+            'descripcion'=>'Editó una promoción',
+            'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
+            'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
+            'usuario_id'=>$id,
+        ]);
         $this->resetarValores();
     }
 
     public function eliminarCategoria()
     {
         Promocion::destroy($this->idDeCategoriaSeleccionada);
+
+        $id=Auth::user()->id;
+        Bitacora::create([
+            'descripcion'=>'Eliminó una promoción',
+            'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
+            'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
+            'usuario_id'=>$id,
+        ]);
+
         $this->resetarValores();
     }
 

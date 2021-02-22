@@ -2,8 +2,11 @@
 
 namespace App\Http\Livewire\Empresa\Productos;
 
+use App\Models\Bitacora;
 use App\Models\Garantia;
 use App\Models\Marca;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -41,6 +44,14 @@ class GarantiasTable extends Component
             'tiempo' => $this->tiempo
         ]);
 
+        $id=Auth::user()->id;
+        Bitacora::create([
+            'descripcion'=>'Creó una garantia',
+            'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
+            'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
+            'usuario_id'=>$id,
+        ]);
+
         $this->resetarValores();
     }
 
@@ -59,13 +70,26 @@ class GarantiasTable extends Component
         $categoriaAEditar = Garantia::findOrFail($this->idDeCategoriaSeleccionada);
         $categoriaAEditar->tiempo = $this->tiempo;
         $categoriaAEditar->save();
-
+        $id=Auth::user()->id;
+        Bitacora::create([
+            'descripcion'=>'Editó una garantia',
+            'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
+            'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
+            'usuario_id'=>$id,
+        ]);
         $this->resetarValores();
     }
 
     public function eliminarCategoria()
     {
         Garantia::destroy($this->idDeCategoriaSeleccionada);
+        $id=Auth::user()->id;
+        Bitacora::create([
+            'descripcion'=>'Eliminó una garantia',
+            'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
+            'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
+            'usuario_id'=>$id,
+        ]);
         $this->resetarValores();
     }
     public function render()
