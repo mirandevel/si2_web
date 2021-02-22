@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-paleta-4 border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -7,7 +7,7 @@
                 <div class="flex-shrink-0 flex items-center">
                         <button class="mt-6 mb-2" x-data="{}" @click="$dispatch('menu')">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                 style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:">
+                                 style="fill:rgb(255,255,255);transform:;-ms-filter:">
                                 <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z"></path>
                             </svg>
                         </button>
