@@ -257,7 +257,12 @@
                     <div class="p-5 pb-6">
                         <div class="flex flex-wrap">
                             <div class="w-full px-3">
-                                <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+                                <div class="mt-4 flex justify-center">
+                                    <img  id="image" class="h-2/3 w-2/3" src="{{$photoTemp}}">
+                                </div>
+                                <x-jet-button id="select" type="button">Seleccionar imagen</x-jet-button>
+                                <x-jet-button id="select3d" type="button">Seleccionar 3D</x-jet-button>
+                                <label class="block my-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                                        for="grid-email">
                                     Nombre
                                 </label>
@@ -594,6 +599,75 @@
             </div>
         </div>
     </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
+    <script>
+        var ImgName,ImgURl;
+        var files=[];
+        var reader=new FileReader();
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyBU9StoOCTr5N17b8w7MpiAU0MGgGks8K8",
+            authDomain: "si-2-5abca.firebaseapp.com",
+            projectId: "si-2-5abca",
+            storageBucket: "si-2-5abca.appspot.com",
+            messagingSenderId: "784239077649",
+            appId: "1:784239077649:web:97c63a985cc3dacde944b0",
+            measurementId: "G-6EDF0QWQZ3"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        document.getElementById("select").onclick=function (e){
+            var input=document.createElement('input');
+            input.type='file';
+
+            input.onchange=e=>{
+                files=e.target.files;
+                reader=new FileReader();
+                reader.onload=function (){
+                    //document.getElementById("image").src=reader.result;
+                    Livewire.emit('temp',reader.result);
+                }
+                reader.readAsDataURL(files[0]);
+            }
+            input.click();
+        }
+
+        document.getElementById("send").onclick=function (){
+            if( document.getElementById('nit').value === '' || document.getElementById('nombre').value === '' ){
+                alert('rellene todos los campos');
+            }else{
+                ImgName=document.getElementById('nombre').value;
+                var uploadTask=firebase.storage().ref('Empresas/'+ImgName+".png").put(files[0]);
+
+                uploadTask.on('state_changed', function(snapshot){
+                    var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    console.log('Upload is ' + progress + '% done');
+                }, function(error) {
+                    // Handle unsuccessful uploads
+                    console.log(error);
+                }, function() {
+                    // Handle successful uploads on complete
+                    // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+                    uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+                        console.log('File available at', downloadURL);
+                        Livewire.emit('registrar',downloadURL);
+                    });
+                });
+            }
+
+
+        }
+
+    </script>
 
     @push('modals')
         <script>
