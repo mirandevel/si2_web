@@ -4,32 +4,34 @@
             <div>
                 <h2 class="text-2xl font-semibold leading-tight">Productos</h2>
             </div>
-            <div class="my-2 flex sm:flex-row flex-col">
-                <div class="flex flex-row mb-1 sm:mb-0">
-                    <div class="relative">
-                        <select wire:model="cantidadDeItemsPorPagina" type="int"
-                            class="appearance-none h-full rounded-l border block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                            <option value="5">5</option>
-                            <option value="10">10</option>
-                            <option value="15">15</option>
-                        </select>
-                    </div>
+
+            <div class="relative flex justify-center">
+                <x-buscador wire:model="nombreDeProductoABuscar">
+                </x-buscador >
+                <div class="absolute right-0">
+                    <x-jet-button type="button" wire:click="cargarDatosPorDefecto()" onclick="mostrarModalCreate()">
+                        Crear +
+                    </x-jet-button>
                 </div>
-                <div class="block relative">
-                    <span class="h-full absolute inset-y-0 left-0 flex items-center pl-2">
-                        <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current text-gray-500">
-                            <path
-                                d="M10 4a6 6 0 100 12 6 6 0 000-12zm-8 6a8 8 0 1114.32 4.906l5.387 5.387a1 1 0 01-1.414 1.414l-5.387-5.387A8 8 0 012 10z">
-                            </path>
-                        </svg>
-                    </span>
-                    <input placeholder="Buscar producto" wire:model="nombreDeProductoABuscar" type="text"
-                           class="appearance-none rounded-r rounded-l sm:rounded-l-none border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white text-sm placeholder-gray-400 text-gray-700 focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none" />
-                </div>
-                <button type="button" wire:click="cargarDatosPorDefecto()" onclick="mostrarModalCreate()" class="border bg-white text-gray-800 font-bold rounded-md px-4 ml-1 transition duration-500 ease select-none hover:bg-green-300 focus:outline-none focus:shadow-outline">
-                    Crear +
-                </button>
             </div>
+            <div class="my-2 flex sm:flex-row flex justify-center">
+            </div>
+
+            <div class="flex justify-center my-5">
+                <div class="flex flex-col">
+                    <x-jet-label for="cantidad" class="text-black text-base text-center" value="{{ __('Cantidad') }}" />
+                    <select wire:model="cantidadDeItemsPorPagina" type="int"
+                            id="cantidad"
+                            class="appearance-none h-full rounded border block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                    </select>
+                </div>
+            </div>
+
+
+
             <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                 @if(count($productos) > 0)
                     <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
