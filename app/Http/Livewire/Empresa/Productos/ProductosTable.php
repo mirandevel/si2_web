@@ -124,7 +124,7 @@ class ProductosTable extends Component
     public function render()
     {
         return view('livewire.empresa.productos.productos-table', [
-            'productos' => Producto::select('productos.id', 'productos.nombre', 'productos.cantidad', 'productos.precio', 'empresas.nombre as empresa')
+            'productos' => Producto::select('productos.id', 'productos.nombre','productos.url_imagen', 'productos.cantidad', 'productos.calificacion','productos.precio', 'empresas.nombre as empresa')
                 ->join('empresas', 'empresas.id', '=', 'productos.empresa_id')
                 ->where('productos.nombre', 'LIKE', '%'.$this->nombreDeProductoABuscar.'%')
                 ->orderBy('productos.id', 'asc')
