@@ -26,7 +26,15 @@ class ProductosTable extends Component
     public $empresa_id;
     public $marca_id;
     public $garantia_id;
+    public $photoTemp='https://customercare.igloosoftware.com/.api2/api/v1/communities/10068556/previews/thumbnails/4fc20722-5368-e911-80d5-b82a72db46f2?width=680&height=680&crop=False';
 
+    protected $listeners=[
+        'registrar',
+        'temp'
+    ];
+    public function temp($tempURL){
+        $this->photoTemp=$tempURL;
+    }
     public function resetarValores()
     {
         $this->reset([
@@ -124,7 +132,7 @@ class ProductosTable extends Component
     public function render()
     {
         return view('livewire.empresa.productos.productos-table', [
-            'productos' => Producto::select('productos.id', 'productos.nombre', 'productos.cantidad', 'productos.precio', 'empresas.nombre as empresa')
+            'productos' => Producto::select('productos.id', 'productos.nombre','productos.url_imagen', 'productos.cantidad', 'productos.calificacion','productos.precio', 'empresas.nombre as empresa')
                 ->join('empresas', 'empresas.id', '=', 'productos.empresa_id')
                 ->where('productos.nombre', 'LIKE', '%'.$this->nombreDeProductoABuscar.'%')
                 ->orderBy('productos.id', 'asc')
