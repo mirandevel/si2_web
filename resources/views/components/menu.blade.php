@@ -86,7 +86,7 @@
                         <a class="py-2 px-16 block text-sm text-gray-100 hover:bg-blue-500 hover:text-white"
                            href="{{route('marcas')}}">Marcas</a>
                         <a class="py-2 px-16 block text-sm text-gray-100 hover:bg-blue-500 hover:text-white"
-                           href="#">Garantias</a>
+                           href="{{route('garantias')}}">Garantias</a>
                         <a class="py-2 px-16 block text-sm text-gray-100 hover:bg-blue-500 hover:text-white"
                            href="#">Promociones</a>
                     </div>
