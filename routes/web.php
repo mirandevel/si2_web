@@ -28,6 +28,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/productos/garantias', \App\Http\Livewire\Empresa\Productos\GarantiasTable::class)->name('garantias');
     Route::get('/productos/promociones', \App\Http\Livewire\Empresa\Productos\PromocionesTable::class)->name('promociones');
     Route::get('/productos', ProductosTable::class)->name('productos');
+    Route::get('/bitacora', \App\Http\Livewire\Empresa\Miembro\BitacoraTable::class)->name('bitacora');
 });
 
 

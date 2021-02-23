@@ -139,7 +139,7 @@
                 </div>
 
                 <div >
-                    <a href="#"
+                    <a href="{{route('bitacora')}}"
                        class="w-full flex justify-between items-center py-3 px-6 text-gray-100 cursor-pointer hover:bg-gray-700 hover:text-gray-100 focus:outline-none">
                         <span class="flex items-center">
                             <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

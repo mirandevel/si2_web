@@ -24,7 +24,7 @@
 
         <x-jet-banner />
 
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen bg-gray-100 bg-paleta-5">
             @livewire('navigation-menu')
 
             <!-- Page Heading -->
@@ -35,7 +35,7 @@
 {{--            </header>--}}
 
             <!-- Page Content -->
-            <main>
+            <main >
                 <x-modal-menu>
                     <x-menu></x-menu>
                 </x-modal-menu>

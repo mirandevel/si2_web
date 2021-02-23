@@ -2,7 +2,10 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Bitacora;
 use App\Models\Categoria;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -46,6 +49,14 @@ class CategoriasTable extends Component
             'nombre' => $this->nombre
         ]);
 
+        $id=Auth::user()->id;
+        Bitacora::create([
+            'descripcion'=>'Creó una categoria',
+            'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
+            'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
+            'usuario_id'=>$id,
+        ]);
+
         $this->resetarValores();
     }
 
@@ -64,13 +75,26 @@ class CategoriasTable extends Component
         $categoriaAEditar = Categoria::findOrFail($this->idDeCategoriaSeleccionada);
         $categoriaAEditar->nombre = $this->nombre;
         $categoriaAEditar->save();
-
+        $id=Auth::user()->id;
+        Bitacora::create([
+            'descripcion'=>'Editó una categoria',
+            'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
+            'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
+            'usuario_id'=>$id,
+        ]);
         $this->resetarValores();
     }
 
     public function eliminarCategoria()
     {
         Categoria::destroy($this->idDeCategoriaSeleccionada);
+        $id=Auth::user()->id;
+        Bitacora::create([
+            'descripcion'=>'Eliminó una categoria',
+            'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
+            'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
+            'usuario_id'=>$id,
+        ]);
         $this->resetarValores();
     }
 

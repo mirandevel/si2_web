@@ -2,8 +2,10 @@
 
 namespace App\Http\Livewire\Empresa;
 
+use App\Models\Bitacora;
 use App\Models\Empresa;
 use App\Models\EmpresaUsuario;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -47,6 +49,14 @@ class Crear extends Component
         $empresa_usuario->usuario_id=Auth::user()->id;
         $empresa_usuario->empresa_id=$empresa->id;
         $empresa_usuario->save();
+
+        $id=Auth::user()->id;
+        Bitacora::create([
+            'descripcion'=>'Registro una empresa',
+            'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
+            'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
+            'usuario_id'=>$id,
+        ]);
 
 
         $this->redirect(route('start'));
