@@ -2,10 +2,13 @@
 
 namespace App\Http\Livewire\Empresa\Productos;
 
+use App\Models\Bitacora;
 use App\Models\Empresa;
 use App\Models\Garantia;
 use App\Models\Marca;
 use App\Models\Producto;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -26,7 +29,15 @@ class ProductosTable extends Component
     public $empresa_id;
     public $marca_id;
     public $garantia_id;
+    public $photoTemp='https://customercare.igloosoftware.com/.api2/api/v1/communities/10068556/previews/thumbnails/4fc20722-5368-e911-80d5-b82a72db46f2?width=680&height=680&crop=False';
 
+    protected $listeners=[
+        'registrar',
+        'temp'
+    ];
+    public function temp($tempURL){
+        $this->photoTemp=$tempURL;
+    }
     public function resetarValores()
     {
         $this->reset([
@@ -93,6 +104,14 @@ class ProductosTable extends Component
         $productoAEditar->garantia_id = $this->garantia_id;
         $productoAEditar->save();
 
+        $id=Auth::user()->id;
+        Bitacora::create([
+            'descripcion'=>'Editó un producto',
+            'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
+            'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
+            'usuario_id'=>$id,
+        ]);
+
         $this->resetarValores();
     }
 
@@ -110,21 +129,33 @@ class ProductosTable extends Component
             'marca_id' => $this->marca_id,
             'garantia_id' => $this->garantia_id,
         ]);
-
+        $id=Auth::user()->id;
+        Bitacora::create([
+            'descripcion'=>'Creó un producto',
+            'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
+            'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
+            'usuario_id'=>$id,
+        ]);
         $this->resetarValores();
     }
 
     public function eliminarProducto()
     {
         Producto::destroy($this->idDeProductoSeleccionado);
-
+        $id=Auth::user()->id;
+        Bitacora::create([
+            'descripcion'=>'Eliminó un producto',
+            'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
+            'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
+            'usuario_id'=>$id,
+        ]);
         $this->resetarValores();
     }
 
     public function render()
     {
         return view('livewire.empresa.productos.productos-table', [
-            'productos' => Producto::select('productos.id', 'productos.nombre', 'productos.cantidad', 'productos.precio', 'empresas.nombre as empresa')
+            'productos' => Producto::select('productos.id', 'productos.nombre','productos.url_imagen', 'productos.cantidad', 'productos.calificacion','productos.precio', 'empresas.nombre as empresa')
                 ->join('empresas', 'empresas.id', '=', 'productos.empresa_id')
                 ->where('productos.nombre', 'LIKE', '%'.$this->nombreDeProductoABuscar.'%')
                 ->orderBy('productos.id', 'asc')

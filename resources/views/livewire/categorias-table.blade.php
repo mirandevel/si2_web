@@ -4,33 +4,68 @@
         <div>
             <h2 class="text-2xl font-semibold leading-tight">Categorias</h2>
         </div>
-        <div class="my-2 flex sm:flex-row flex-col">
-            <div class="flex flex-row mb-1 sm:mb-0">
-                <div class="relative">
-                    <select wire:model="cantidadDeItemsPorPagina" type="int"
-                        class="appearance-none h-full rounded-l border block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                        <option value="5">5</option>
-                        <option value="10">10</option>
-                        <option value="15">15</option>
-                    </select>
+        <div class="relative flex justify-center">
+            <x-buscador wire:model="nombreDeCategoriaABuscar">
+            </x-buscador >
+            <div class="absolute right-0">
+                <x-jet-button type="button" onclick="mostrarModalCreate()">
+                    Crear +
+                </x-jet-button>
+            </div>
+        </div>
+        <div class="my-2 flex sm:flex-row flex justify-center">
+
+
+
+
+        </div>
+
+        <div class="flex justify-center my-5">
+            <div class="flex flex-col">
+                <x-jet-label for="cantidad" class="text-black text-base text-center" value="{{ __('Cantidad') }}" />
+                <select wire:model="cantidadDeItemsPorPagina" type="int"
+                        id="cantidad"
+                        class="appearance-none h-full rounded border block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-10">
+        @foreach($categorias as $categoria)
+            <div class="border-2 border-paleta-4  p-5 rounded bg-white">
+                <p class="text-black text-center text-2xl">{{$categoria->nombre}}</p>
+                <div class="flex justify-between pt-5">
+                    <button type="button" wire:click="$set('idDeCategoriaSeleccionada', {{ $categoria->id }})" onclick="mostrarModalDelete()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="24" viewBox="0 0 21 27">
+                            <path id="Icon_material-delete" data-name="Icon material-delete" d="M9,28.5a3.009,3.009,0,0,0,3,3H24a3.009,3.009,0,0,0,3-3v-18H9ZM28.5,6H23.25l-1.5-1.5h-7.5L12.75,6H7.5V9h21Z" transform="translate(-7.5 -4.5)" fill="#6b7280"/>
+                        </svg>
+
+                    </button>
+                    <button type="button" wire:click="cargarDatosDelFormularioEdit({{ $categoria->id }}, '{{ $categoria->nombre }}')" onclick="mostrarModalEdit()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="26" viewBox="0 0 30 28.682">
+                            <g id="Icon_feather-edit-3" data-name="Icon feather-edit-3" transform="translate(-3 -2.818)">
+                                <path id="Trazado_19" data-name="Trazado 19" d="M18,30H31.5" fill="none" stroke="#6b7280" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                                <path id="Trazado_20" data-name="Trazado 20" d="M24.75,5.25a3.182,3.182,0,0,1,4.5,4.5L10.5,28.5,4.5,30,6,24Z" fill="none" stroke="#6b7280" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                            </g>
+                        </svg>
+                    </button>
+                    <button type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="27" viewBox="0 0 40.5 27">
+                            <path id="Icon_awesome-eye" data-name="Icon awesome-eye" d="M40.255,16.973A22.552,22.552,0,0,0,20.25,4.5,22.555,22.555,0,0,0,.245,16.974a2.275,2.275,0,0,0,0,2.052A22.552,22.552,0,0,0,20.25,31.5,22.555,22.555,0,0,0,40.255,19.026,2.275,2.275,0,0,0,40.255,16.973ZM20.25,28.125A10.125,10.125,0,1,1,30.375,18,10.125,10.125,0,0,1,20.25,28.125Zm0-16.875a6.7,6.7,0,0,0-1.78.266,3.364,3.364,0,0,1-4.7,4.7,6.735,6.735,0,1,0,6.484-4.97Z" transform="translate(0 -4.5)" fill="#6b7280"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
-            <div class="block relative">
-                    <span class="h-full absolute inset-y-0 left-0 flex items-center pl-2">
-                        <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current text-gray-500">
-                            <path
-                                d="M10 4a6 6 0 100 12 6 6 0 000-12zm-8 6a8 8 0 1114.32 4.906l5.387 5.387a1 1 0 01-1.414 1.414l-5.387-5.387A8 8 0 012 10z">
-                            </path>
-                        </svg>
-                    </span>
-                <input placeholder="Buscar" wire:model="nombreDeCategoriaABuscar"
-                       class="appearance-none rounded-r rounded-l sm:rounded-l-none border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white text-sm placeholder-gray-400 text-gray-700 focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none" />
-            </div>
-            <button type="button" onclick="mostrarModalCreate()" class="border bg-white text-gray-800 font-bold rounded-md px-4 ml-1 transition duration-500 ease select-none hover:bg-green-300 focus:outline-none focus:shadow-outline">
-                Crear +
-            </button>
+        @endforeach
+
         </div>
-        <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+        <div class="px-5 py-5 bg-white border-t items-center xs:justify-between">
+            {{ $categorias->links() }}
+        </div>
+       {{-- <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
             @if(count($categorias) > 0)
                 <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
                     <table class="min-w-full leading-normal">
@@ -95,7 +130,7 @@
                     </div>
                 </div>
             @endif
-        </div>
+        </div>--}}
     </div>
 </div>
 
