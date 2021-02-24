@@ -20,6 +20,16 @@ use Illuminate\Http\Request;
 Route::middleware(['auth:sanctum', 'verified'])->get('/start',\App\Http\Livewire\Start::class)->name('start');
 
 
+//ADMINISTRATION ROUTES
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/adm/dashboard',\App\Http\Livewire\Adm\Dashboard::class)->name('adm.dashboard');
+    Route::get('/adm/bitacora', \App\Http\Livewire\Adm\Bitacora::class)->name('adm.bitacora');
+    Route::get('/adm/usuarios', \App\Http\Livewire\Adm\Usuarios::class)->name('adm.usuarios');
+    Route::get('/adm/empresas', \App\Http\Livewire\Adm\Empresas::class)->name('adm.empresas');
+
+});
+
+
 //COMPANY ROUTES
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/{empresa}/dashboard',\App\Http\Livewire\Empresa\Dashboard::class)->name('emp.dashboard');
@@ -32,10 +42,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 });
 
 
-//ADMINISTRATION ROUTES
-Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/adm/dashboard',\App\Http\Livewire\Adm\Dashboard::class)->name('adm.dashboard');
-});
+
 
 
 

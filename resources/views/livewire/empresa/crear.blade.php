@@ -73,6 +73,7 @@
     }
 
     document.getElementById("send").onclick=function (){
+        console.log('click');
         if( document.getElementById('nit').value === '' || document.getElementById('nombre').value === '' ){
             alert('rellene todos los campos');
         }else{

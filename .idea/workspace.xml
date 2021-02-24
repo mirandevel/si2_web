@@ -2,12 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with bitacora">
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Adm/Bitacora.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Adm/Empresas.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Adm/Usuarios.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/menu-adm.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/adm.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/adm/bitacora.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/adm/empresas.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/adm/usuarios.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Miembro/BitacoraTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Miembro/BitacoraTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Adm/Dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Adm/Dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/ProductosTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/ProductosTable.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/components/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/miembro/bitacora-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/miembro/bitacora-table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/navigation-menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/navigation-menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/adm/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/adm/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/crear.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/crear.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/productos-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/productos-table.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -177,7 +186,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -190,6 +199,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\UNIVERSIDAD\2020-2\SI2\proyecto\si2_web\resources\views\components" />
+      <recent name="D:\UNIVERSIDAD\2020-2\SI2\proyecto\si2_web\resources\views\layouts" />
       <recent name="E:\si2\si2_web" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -255,6 +266,11 @@
       <workItem from="1613226912338" duration="1901000" />
       <workItem from="1613959165152" duration="11000" />
       <workItem from="1614007287836" duration="21702000" />
+      <workItem from="1614108427377" duration="608000" />
+      <workItem from="1614128726646" duration="4948000" />
+      <workItem from="1614168545132" duration="597000" />
+      <workItem from="1614180072175" duration="9023000" />
+      <workItem from="1614200054151" duration="4884000" />
     </task>
     <task id="LOCAL-00020" summary="repare login">
       <created>1610937830780</created>
