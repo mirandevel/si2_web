@@ -15,7 +15,9 @@ class CompraController extends Controller
 {
     public function compra(Request $request){
 
-        $total=0;
+        $ubi=$request['direccion'];
+        return $ubi;
+        /*$total=0;
         $precio=0;
         foreach ($request['detalles'] as $item){
             $total=$total+$item->cantidadCompra;
@@ -47,6 +49,6 @@ class CompraController extends Controller
                 'promocion_id'=>1,
                 'comision_id'=>1,
             ]);
-        }
+        }*/
     }
 }
