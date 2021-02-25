@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with compra" />
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with compra">
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/CompraController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/CompraController.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -260,13 +262,6 @@
       <workItem from="1614168545132" duration="597000" />
       <workItem from="1614180072175" duration="9023000" />
       <workItem from="1614200054151" duration="4884000" />
-    </task>
-    <task id="LOCAL-00025" summary="repare login">
-      <created>1610938792416</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1610938792417</updated>
     </task>
     <task id="LOCAL-00026" summary="repare login">
       <created>1610938864965</created>
@@ -604,7 +599,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614241414363</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="with compra">
+      <created>1614241522430</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1614241522432</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

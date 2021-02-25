@@ -13,7 +13,7 @@ use function MongoDB\BSON\toCanonicalExtendedJSON;
 
 class CompraController extends Controller
 {
-    public function compra(Request $request){
+    public function compra(){
 
        // $ubi=$request['direccion'];
         return 'hola';
