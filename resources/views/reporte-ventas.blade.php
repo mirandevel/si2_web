@@ -2,7 +2,7 @@
     <tr>
         <th>ID</th>
         <th>Nombre</th>
-        <th>Precio</th>
+        <th>Precio(Unitario)</th>
         <th>Cantidad</th>
         <th>Marca</th>
         <th>Fecha(venta)</th>

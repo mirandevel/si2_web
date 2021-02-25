@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/reporte-ventas.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/EnviosPendientesTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/envios-pendientes-table.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/ShowReportes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/ShowReportes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Detalle.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Detalle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Factura.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Factura.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_16_154805_create_facturas_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154805_create_facturas_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_16_155034_create_detalles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_155034_create_detalles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/menu.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/show-reportes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/show-reportes.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/reporte-productos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reporte-productos.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/reporte-ventas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reporte-ventas.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,14 +273,7 @@
       <workItem from="1614202338552" duration="5756000" />
       <workItem from="1614217333005" duration="1660000" />
       <workItem from="1614221824725" duration="28000" />
-      <workItem from="1614221855375" duration="11482000" />
-    </task>
-    <task id="LOCAL-00022" summary="repare login">
-      <created>1610938096990</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1610938096991</updated>
+      <workItem from="1614221855375" duration="17670000" />
     </task>
     <task id="LOCAL-00023" summary="repare login">
       <created>1610938320334</created>
@@ -610,7 +611,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614230054375</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="aumentado filtos a reportes">
+      <created>1614234647423</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1614234647423</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -675,7 +683,8 @@
     <MESSAGE value="with bitacora" />
     <MESSAGE value="cambios2" />
     <MESSAGE value="haciendo reportes-producto" />
-    <option name="LAST_COMMIT_MESSAGE" value="haciendo reportes-producto" />
+    <MESSAGE value="aumentado filtos a reportes" />
+    <option name="LAST_COMMIT_MESSAGE" value="aumentado filtos a reportes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

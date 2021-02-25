@@ -16,6 +16,7 @@ class Detalle extends Model
     public $incrementing = false;
 
     protected $fillable = [
+        'estado',
         'factura_id',
         'producto_id',
         'cantidad',

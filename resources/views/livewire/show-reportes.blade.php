@@ -3,8 +3,10 @@
         <div class="container relative max-w-2xl px-5 pt-12 mx-auto sm:py-12 lg:px-0">
             <h2 class="mb-1 text-4xl font-extrabold leading-10 tracking-tight text-left text-gray-900 sm:text-5xl sm:leading-none md:text-6xl sm:text-center">
                 Reportes</h2>
-            <p>{{ $message ? 'uno' : 'cero' }}</p>
-            <p>{{ gettype($message) }}</p>
+{{--            <p>{{ $message ? 'uno' : 'cero' }}</p>--}}
+{{--            <p>{{ gettype($message) }}</p>--}}
+{{--            <p>{{ $fechaInicio }}</p>--}}
+{{--            <p>{{ $fechaFin }}</p>--}}
         </div>
         <div class="my-1">
             <div class="max-w-xl px-4 mx-auto sm:px-6 lg:max-w-screen-xl lg:px-8">
@@ -17,23 +19,23 @@
                         <div class="mt-3 mb-6">
                             <h5 class="pb-2 text-xl font-bold leading-6 text-gray-600">Reporte de ventas</h5>
                             <div class="flex flex-wrap m-6 mb-2 -mx-3">
-                                <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                                <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
                                     <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                                            for="grid-zip">
                                         Fecha inicio
                                     </label>
-                                    <input
+                                    <input wire:model="fechaInicio"
                                         class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
-                                        id="grid-zip" type="date" placeholder="90210">
+                                        type="date" value="{{ $fechaInicio }}">
                                 </div>
-                                <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                                <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
                                     <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                                            for="grid-zip">
                                         Fecha Fin
                                     </label>
-                                    <input
+                                    <input wire:model="fechaFin"
                                         class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
-                                        id="grid-zip" type="date" placeholder="90210">
+                                        type="date" value="{{ $fechaFin }}">
                                 </div>
                             </div>
                             <div class="m-3">
