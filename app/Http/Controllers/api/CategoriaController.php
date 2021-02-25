@@ -72,11 +72,17 @@ class CategoriaController extends Controller
             ->orderBy('categoria_usuarios.categoria_id')
             ->groupBy('categoria_usuarios.categoria_id')->get();
 
-        $categorias = Categoria::select("categorias.*")
-            ->join('categoria_productos', 'categoria_productos.categoria_id', '=', 'categorias.id')
-            ->orderBy('categorias.id', 'asc')
-            ->groupBy('categorias.id')->get();
+
         return $listaCa;
+    }
+    public function susCategorias (Request $request)
+    {  $userID = $request->user()->id;
+        $categorias = Categoria::select("categorias.*")
+        ->join('categoria_productos', 'categoria_productos.categoria_id', '=', 'categorias.id')
+        ->orderBy('categorias.id', 'asc')
+        ->groupBy('categorias.id')->get();
+        return $categorias;
+
     }
 
     public function categoriasConProducto(Request $request)

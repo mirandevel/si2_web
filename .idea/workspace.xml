@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="progresando">
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="terminando">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/CategoriaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/CategoriaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/ProductoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/ProductoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,13 +264,6 @@
       <workItem from="1614180072175" duration="9023000" />
       <workItem from="1614200054151" duration="10539000" />
       <workItem from="1614220441082" duration="842000" />
-    </task>
-    <task id="LOCAL-00022" summary="repare login">
-      <created>1610938096990</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1610938096991</updated>
     </task>
     <task id="LOCAL-00023" summary="repare login">
       <created>1610938320334</created>
@@ -608,7 +601,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614223668729</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="terminando">
+      <created>1614229634445</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1614229634445</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,7 +673,8 @@
     <MESSAGE value="with bitacora" />
     <MESSAGE value="actualizacion de producto" />
     <MESSAGE value="progresando" />
-    <option name="LAST_COMMIT_MESSAGE" value="progresando" />
+    <MESSAGE value="terminando" />
+    <option name="LAST_COMMIT_MESSAGE" value="terminando" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
