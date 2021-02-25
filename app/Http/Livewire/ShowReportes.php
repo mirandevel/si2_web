@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\RolUser;
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class ShowReportes extends Component
@@ -13,17 +14,31 @@ class ShowReportes extends Component
 
     public function descargarReporteDeVentas()
     {
-        $pdf = app('dompdf.wrapper');
-        $data = [0 => 4, 1 => 23];
-        $pdf->loadView('prueba', compact($data));
-        $pdf->save(storage_path('app/public/') . 'archivo.pdf');
 
-        return response()->download(storage_path('app/public/') . 'archivo.pdf');
     }
 
     public function descargarReporteDeProductos()
     {
+        $pdf = app('dompdf.wrapper');
 
+        //id de la empresa del usuaruo actual
+        $idEmpresa = DB::table('empresa_usuarios')
+            ->select('empresa_id')
+            ->where('usuario_id', '=', Auth::user()->id)
+            ->get()->pluck('empresa_id')->toArray();
+        $idEmpresa = $idEmpresa[0];
+
+        $productosDeLaEmpresa = DB::table('productos')
+            ->select('productos.id', 'productos.nombre', 'precio', 'calificacion', 'cantidad', 'marcas.nombre as marca', 'garantias.tiempo')
+            ->join('marcas', 'productos.marca_id', '=', 'marcas.id')
+            ->join('garantias', 'productos.garantia_id', '=', 'garantias.id')
+            ->where('empresa_id', '=', $idEmpresa)
+            ->get();
+
+        $pdf->loadView('reporte-productos', ['productos' => $productosDeLaEmpresa]);
+        $pdf->save(storage_path('app/public/') . 'reporte-productos.pdf');
+
+        return response()->download(storage_path('app/public/') . 'reporte-productos.pdf');
     }
 
     public function esAdministrador()

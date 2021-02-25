@@ -127,6 +127,14 @@
             function ocultarModalAdd(){
                 modalCreate.classList.add('hidden')
             }
+
+            window.addEventListener('respuesta', event => {
+                if (event.detail.admin) {
+                    alert('el administrador no esta en nungun grupo');
+                } else {
+                    alert(event.detail.valor);
+                }
+            })
         </script>
     @endpush
 </div>
