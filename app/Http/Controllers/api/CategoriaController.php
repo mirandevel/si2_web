@@ -46,8 +46,10 @@ class CategoriaController extends Controller
     {
         $categoriaID = $request["categoriaID"];
         $productos = Producto::select("productos.*")
+            ->distinct()
             ->join('categoria_productos', 'productos.id', '=', 'producto_id')
-            ->where('categoria_productos.categoria_id', $categoriaID)->get();
+            ->where('categoria_productos.categoria_id', $categoriaID)
+            ->get();
         return $productos;
     }
 
