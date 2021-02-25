@@ -15,8 +15,8 @@ class CompraController extends Controller
 {
     public function compra(Request $request){
 
-        $ubi=$request['direccion'];
-        return $ubi;
+       // $ubi=$request['direccion'];
+        return 'hola';
         /*$total=0;
         $precio=0;
         foreach ($request['detalles'] as $item){
