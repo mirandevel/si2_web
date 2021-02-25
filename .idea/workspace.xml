@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="falta bandera" />
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="falta bb">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/ProductoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/ProductoController.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -260,13 +263,6 @@
       <workItem from="1614180072175" duration="9023000" />
       <workItem from="1614200054151" duration="10539000" />
       <workItem from="1614220441082" duration="842000" />
-    </task>
-    <task id="LOCAL-00024" summary="repare login">
-      <created>1610938520593</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1610938520593</updated>
     </task>
     <task id="LOCAL-00025" summary="repare login">
       <created>1610938792416</created>
@@ -604,7 +600,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614231792633</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="falta bb">
+      <created>1614232466289</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1614232466289</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,7 +648,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="with register" />
     <MESSAGE value="with role table" />
     <MESSAGE value="with menu" />
     <MESSAGE value="api recover password" />
@@ -670,7 +672,8 @@
     <MESSAGE value="progresando" />
     <MESSAGE value="terminando" />
     <MESSAGE value="falta bandera" />
-    <option name="LAST_COMMIT_MESSAGE" value="falta bandera" />
+    <MESSAGE value="falta bb" />
+    <option name="LAST_COMMIT_MESSAGE" value="falta bb" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
