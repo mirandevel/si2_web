@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with bitacora">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/api/CompraController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/CompraController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/CompraController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Detalle.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Detalle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Factura.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Factura.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_16_154805_create_facturas_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154805_create_facturas_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_16_155034_create_detalles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_155034_create_detalles_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +181,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -191,6 +194,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\si2_web" />
       <recent name="D:\UNIVERSIDAD\2020-2\SI2\proyecto\si2_web\resources\views\components" />
       <recent name="D:\UNIVERSIDAD\2020-2\SI2\proyecto\si2_web\resources\views\layouts" />
       <recent name="E:\si2\si2_web" />
@@ -263,13 +267,6 @@
       <workItem from="1614168545132" duration="597000" />
       <workItem from="1614180072175" duration="9023000" />
       <workItem from="1614200054151" duration="4884000" />
-    </task>
-    <task id="LOCAL-00020" summary="repare login">
-      <created>1610937830780</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1610937830781</updated>
     </task>
     <task id="LOCAL-00021" summary="repare login">
       <created>1610938004120</created>
@@ -607,7 +604,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614033343011</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="with bitacora">
+      <created>1614237291293</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1614237291300</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

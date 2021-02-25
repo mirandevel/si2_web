@@ -20,6 +20,7 @@ class Detalle extends Model
         'producto_id',
         'cantidad',
         'precio',
+        'estado',
         'promocion_id',
         'comision_id'
     ];
