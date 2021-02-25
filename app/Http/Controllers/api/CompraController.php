@@ -20,8 +20,8 @@ class CompraController extends Controller
         $total=0;
         $precio=0;
         foreach ($request['detalles'] as $item){
-            $total=$total+$item->cantidadCompra;
-            $precio=$total+$item->precio;
+            $total=$total+$item['cantidadCompra'];
+            //$precio=$total+$item->precio;
         }
 /*
         $user=$request->user()->id;
