@@ -14,7 +14,7 @@ class CarritoProducto extends Model
     protected $keyType = ['int', 'int'];
     public $incrementing = false;
 
-    protected $fillable = ['carrito_id', 'producto_id', 'fecha'];
+    protected $fillable = ['carrito_id', 'producto_id', 'fecha','cantidad'];
 
     protected $hidden = [
         'created_at', 'updated_at',

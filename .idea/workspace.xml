@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="cargar el mas vendido v2">
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="cargar el mas vendido v3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/CategoriaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/CategoriaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/ProductoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/ProductoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/CarritoProducto.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CarritoProducto.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -239,13 +240,10 @@
       <workItem from="1613505678025" duration="20029000" />
       <workItem from="1613687787574" duration="530000" />
       <workItem from="1613688586560" duration="5421000" />
-    </task>
-    <task id="LOCAL-00013" summary="api recover password">
-      <created>1610849728259</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1610849728259</updated>
+      <workItem from="1613764326847" duration="1532000" />
+      <workItem from="1614131252079" duration="6977000" />
+      <workItem from="1614165835732" duration="19158000" />
+      <workItem from="1614197502778" duration="5263000" />
     </task>
     <task id="LOCAL-00014" summary="api recover password">
       <created>1610850723281</created>
@@ -583,7 +581,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613530580355</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="cargar el mas vendido v3">
+      <created>1613764489159</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1613764489160</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -634,7 +639,8 @@
     <MESSAGE value="cargar el mas valorado" />
     <MESSAGE value="cargar el mas vendido" />
     <MESSAGE value="cargar el mas vendido v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="cargar el mas vendido v2" />
+    <MESSAGE value="cargar el mas vendido v3" />
+    <option name="LAST_COMMIT_MESSAGE" value="cargar el mas vendido v3" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\api\AuthController;
 use App\Http\Controllers\api\CategoriaController;
+use App\Http\Controllers\api\ProductoController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\DatoMaestroController;
 use Illuminate\Http\Request;
@@ -42,6 +43,13 @@ Route::middleware('auth:sanctum')->post('/obtenersimilares',[CategoriaController
 Route::middleware('auth:sanctum')->post('/categoriasdeusuario',[CategoriaController::class,'categoriasDeUsuario']);
 Route::middleware('auth:sanctum')->post('/guardarcategoriasdeusuario',[CategoriaController::class,'guardarCategoriasDeUsuario']);
 
+Route::middleware('auth:sanctum')->post('/datosextradeproducto',[ProductoController::class,'datosExtraDeProducto']);
+Route::middleware('auth:sanctum')->post('/productoalcarrito',[ProductoController::class,'productoAlCarrito']);
+Route::middleware('auth:sanctum')->post('/productosdecarrito',[ProductoController::class,'productosDeCarrito']);
+Route::middleware('auth:sanctum')->post('/eliminarproducto',[ProductoController::class,'eliminarProducto']);
+Route::middleware('auth:sanctum')->post('/actualizarcompraproducto',[ProductoController::class,'actualizarCompraProducto']);
+Route::middleware('auth:sanctum')->post('/buscarproductos',[ProductoController::class,'buscarProductos']);
+Route::middleware('auth:sanctum')->post('/buscarproductosfiltrados',[ProductoController::class,'buscarProductosFiltrados']);
 
 //PRODUCTOS
 //Route::get('/productos',[])
