@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with bitacora">
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Adm/Bitacora.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Adm/Empresas.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Adm/Usuarios.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/menu-adm.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/adm.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/adm/bitacora.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/adm/empresas.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/adm/usuarios.blade.php" afterDir="false" />
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="actualizacion de producto">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Adm/Dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Adm/Dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/ProductosTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/ProductosTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/adm/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/adm/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/crear.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/crear.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/productos-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/productos-table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Factura.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Factura.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/dashboard.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,14 +258,7 @@
       <workItem from="1614128726646" duration="4948000" />
       <workItem from="1614168545132" duration="597000" />
       <workItem from="1614180072175" duration="9023000" />
-      <workItem from="1614200054151" duration="4884000" />
-    </task>
-    <task id="LOCAL-00020" summary="repare login">
-      <created>1610937830780</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1610937830781</updated>
+      <workItem from="1614200054151" duration="10539000" />
     </task>
     <task id="LOCAL-00021" summary="repare login">
       <created>1610938004120</created>
@@ -615,7 +596,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614033343011</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="actualizacion de producto">
+      <created>1614206995990</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1614206995991</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -678,7 +666,8 @@
     <MESSAGE value="with profile" />
     <MESSAGE value="with producto" />
     <MESSAGE value="with bitacora" />
-    <option name="LAST_COMMIT_MESSAGE" value="with bitacora" />
+    <MESSAGE value="actualizacion de producto" />
+    <option name="LAST_COMMIT_MESSAGE" value="actualizacion de producto" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
