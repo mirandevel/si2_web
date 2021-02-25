@@ -139,7 +139,7 @@ class CategoriaController extends Controller
         $marca_id =$producto->marca_id;
         $marca = Marca::where('id','=',$marca_id)->first();
         return ['producto'=>$producto,'marca'=>$marca];
-
+//fg
     }
     public function obtenerSimilaes(Request $request)
     { $productoID = $request["productoID"];
