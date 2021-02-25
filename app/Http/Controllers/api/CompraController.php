@@ -34,7 +34,7 @@ class CompraController extends Controller
             'usuario_id'=>$user,
         ]);
 
-      /*  foreach ($request['detalles'] as $item){
+        foreach ($request['detalles'] as $item){
             $producto=Producto::find($item->id);
             $producto->cantidad=$producto->cantidad-$item->cantidadCompra;
             $producto->save();
@@ -48,7 +48,7 @@ class CompraController extends Controller
                 'promocion_id'=>1,
                 'comision_id'=>1,
             ]);
-        }*/
+        }
 
         return response()->json(['status_code'=>$total,'message'=>$precio]);
     }
