@@ -33,6 +33,9 @@
                         <thead>
                         <tr>
                             <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                Id factura
+                            </th>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                 Nombre
                             </th>
                             <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
@@ -51,6 +54,9 @@
                             @foreach($productos as $producto)
                                 <tr>
                                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <p class="text-gray-900 whitespace-no-wrap">{{ $producto->factura_id }}</p>
+                                    </td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                         <p class="text-gray-900 whitespace-no-wrap">{{ $producto->nombre }}</p>
                                     </td>
                                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -62,7 +68,6 @@
                                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                         <div class="m-3">
                                             <button wire:click="enviarPedido({{ $producto->id }})"
-                                                    onclick="mostrarModalSee()"
                                                     class="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-1 px-1 inline-flex items-center">
                                                 <span class="mr-2">Ver</span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"

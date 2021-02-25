@@ -22,7 +22,7 @@ class EnviosRealizadosTable extends Component
     {
         // p = pendiente, e = enviado
         $enviosRealizados = DB::table('detalles')
-            ->select('productos.id', 'productos.nombre', 'detalles.cantidad', 'detalles.precio')
+            ->select('detalles.factura_id', 'productos.id', 'productos.nombre', 'detalles.cantidad', 'detalles.precio')
             ->where('detalles.estado', '=', 'e')
             ->where('productos.nombre', 'LIKE', '%'.$this->nombreDeProductoABuscar.'%')
             ->join('productos', 'detalles.producto_id', '=', 'productos.id')

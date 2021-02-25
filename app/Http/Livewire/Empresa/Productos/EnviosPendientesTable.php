@@ -21,16 +21,16 @@ class EnviosPendientesTable extends Component
 
     public function enviarPedido($idDeProducto)
     {
-        $detalle = Detalle::findOrFail($idDeProducto);
-        $detalle->estado = 'e';
-        $detalle->save();
+        DB::table('detalles')
+            ->where('producto_id', '=', $idDeProducto)
+            ->update(['estado' => 'e']);
     }
 
     public function render()
     {
         // p = pendiente, e = enviado
         $enviosPendientes = DB::table('detalles')
-            ->select('productos.id', 'productos.nombre', 'detalles.cantidad', 'detalles.precio')
+            ->select('detalles.factura_id', 'productos.id', 'productos.nombre', 'detalles.cantidad', 'detalles.precio')
             ->where('detalles.estado', '=', 'p')
             ->where('productos.nombre', 'LIKE', '%'.$this->nombreDeProductoABuscar.'%')
             ->join('productos', 'detalles.producto_id', '=', 'productos.id')
