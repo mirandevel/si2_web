@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="actualizacion de producto">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Factura.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Factura.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/dashboard.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="actualizacion de producto" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +12,7 @@
     <execution />
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/miranda" />
+    <option name="BRANCH" value="origin/oscar" />
   </component>
   <component name="Git.Rebase.Settings">
     <option name="NEW_BASE" value="origin/oscar" />
@@ -43,7 +38,6 @@
       <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
       <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
-      <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
       <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
@@ -76,7 +70,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation" />
-      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
@@ -158,6 +151,8 @@
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/vendor/jaybizzle/crawler-detect" />
       <path value="$PROJECT_DIR$/vendor/laraveles/spanish" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
     </include_path>
   </component>
   <component name="ProjectId" id="1mr80h0SAXbZ1uzi8wO0ehMweVr" />
@@ -259,6 +254,7 @@
       <workItem from="1614168545132" duration="597000" />
       <workItem from="1614180072175" duration="9023000" />
       <workItem from="1614200054151" duration="10539000" />
+      <workItem from="1614220441082" duration="842000" />
     </task>
     <task id="LOCAL-00021" summary="repare login">
       <created>1610938004120</created>
