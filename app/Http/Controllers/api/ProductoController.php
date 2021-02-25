@@ -7,6 +7,7 @@ use App\Models\Carrito;
 use App\Models\CarritoProducto;
 use App\Models\Categoria;
 use App\Models\CategoriaProducto;
+use App\Models\Empresa;
 use App\Models\Garantia;
 use App\Models\Marca;
 use App\Models\Producto;
@@ -37,6 +38,10 @@ class ProductoController extends Controller
             ->where('carritos.usuario_id', '=', $userID)
             ->first();
         $agregado = ['agregado' => true];
+        $empresa = Empresa::select('empresas.*')
+            ->join('productos','empresas.id','=','productos.empresa_id')
+            ->where('productos.id','=',$productoID)
+            ->first();
 
         if ($carritoID == null) {
             $agregado['agregado'] = false;
@@ -44,14 +49,15 @@ class ProductoController extends Controller
             $pr = CarritoProducto::select('carrito_productos.producto_id')
                 ->where('carrito_productos.carrito_id', '=', $carritoID)
                 ->where('carrito_productos.producto_id', '=', $productoID)
-                ->first();
+                ->get();
 
             if ($pr == null) {
                 $agregado['agregado'] = false;
             }
         }
         //aqui
-        return ['marca' => $marca, 'promocion' => $promocion, 'garantia' => $garantia, 'agregado' => $agregado];
+       //return $pr;
+        return ['marca' => $marca, 'promocion' => $promocion, 'garantia' => $garantia, 'agregado' => $agregado,'empresa'=>$empresa];
     }
 
     public function productoAlCarrito(Request $request)

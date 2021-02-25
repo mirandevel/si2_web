@@ -37,6 +37,7 @@ Route::post('/obtenerporcategoria', [CategoriaController::class, 'obtenerPorCate
 Route::middleware('auth:sanctum')->post('/obtenerproductos', [CategoriaController::class, 'obtenerProductos']);
 Route::middleware('auth:sanctum')->post('/obtenermasvendido', [CategoriaController::class, 'masVendido']);
 Route::middleware('auth:sanctum')->post('/categoriasconproductos', [CategoriaController::class, 'categoriasConProductos']);
+Route::middleware('auth:sanctum')->post('/suscategorias', [CategoriaController::class, 'susCategorias']);
 Route::middleware('auth:sanctum')->post('/categoriasconproducto', [CategoriaController::class, 'categoriasConProducto']);
 Route::middleware('auth:sanctum')->post('/obtenersimilares',[CategoriaController::class,'obtenerSimilaes']);
 
