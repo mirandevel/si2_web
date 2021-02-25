@@ -21,9 +21,9 @@ class CompraController extends Controller
         $precio=0;
         foreach ($request['detalles'] as $item){
             $total=$total+$item['cantidadCompra'];
-            //$precio=$total+$item->precio;
+            $precio=$total+$item['precio'];
         }
-/*
+
         $user=$request->user()->id;
         $factura=Factura::create([
             'total'=>$precio,
@@ -35,7 +35,6 @@ class CompraController extends Controller
         ]);
 
         foreach ($request['detalles'] as $item){
-            $total=$total+$item->cantidadCompra;
             $producto=Producto::find($item->id);
             $producto->cantidad=$producto->cantidad-$item->cantidadCompra;
             $producto->save();
@@ -43,13 +42,13 @@ class CompraController extends Controller
             Detalle::create([
                 'factura_id'=>$factura->id,
                 'producto_id'=>$producto->id,
-                'cantidad'=>$item->cantidadCompra,
+                'cantidad'=>$item['cantidadCompra'],
                 'estado'=>'p',
-                'precio'=>$item->precio,
+                'precio'=>$item['precio'],
                 'promocion_id'=>1,
                 'comision_id'=>1,
             ]);
-        }*/
+        }
 
         return response()->json(['status_code'=>$total,'message'=>$precio]);
     }
