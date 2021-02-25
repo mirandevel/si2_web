@@ -26,6 +26,7 @@ class CompraController extends Controller
 
         $user=$request->user()->id;
         $factura=Factura::create([
+            'estado'=>'p',
             'total'=>$precio,
             'ubicacion'=>$request['ubicacion'],
             'telefono'=>$request['telefono'],
