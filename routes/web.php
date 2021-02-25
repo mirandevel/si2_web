@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Livewire\Empresa\Miembro\MiembrosTable;
+use App\Http\Livewire\Empresa\Productos\EnviosPendientesTable;
+use App\Http\Livewire\Empresa\Productos\EnviosRealizadosTable;
 use App\Http\Livewire\Empresa\Productos\ProductosTable;
 use App\Http\Livewire\ShowReportes;
 use Carbon\Carbon;
@@ -43,6 +45,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/bitacora', \App\Http\Livewire\Empresa\Miembro\BitacoraTable::class)->name('bitacora');
     Route::get('/reportes', ShowReportes::class)->name('reportes');
     Route::get('/miembros', MiembrosTable::class)->name('miembros');
+    Route::get('/productos/pendientes', EnviosPendientesTable::class)->name('envio.productos.pendientes');
+    Route::get('/productos/realizados', EnviosRealizadosTable::class)->name('envio.productos.realizados');
 //    Route::get('/prueba/{data}', function ($data){
 //        $pdf = PDF::loadView('prueba', $data);
 //        return $pdf->download('prueba.pdf');

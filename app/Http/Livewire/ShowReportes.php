@@ -2,15 +2,20 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\RolUser;
-use Barryvdh\DomPDF\PDF;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class ShowReportes extends Component
 {
-    public $message = 'ini';
+    public $fechaInicio;
+    public $fechaFin;
+
+    public function mount()
+    {
+        $this->fechaInicio = '2021-01-25';
+        $this->fechaFin = '2021-02-28';
+    }
 
     public function descargarReporteDeVentas()
     {
@@ -28,6 +33,7 @@ class ShowReportes extends Component
             $productosVendidos = DB::table('productos')
                 ->select('productos.id', 'productos.nombre', 'detalles.precio', 'detalles.cantidad', 'marcas.nombre as marca', 'detalles.created_at as fecha')
                 ->where('productos.empresa_id', '=', $idEmpresa)
+                ->whereBetween('detalles.created_at', [$this->fechaInicio, $this->fechaFin])
                 ->join('detalles', 'productos.id', '=', 'detalles.producto_id')
                 ->join('marcas', 'productos.marca_id', '=', 'marcas.id')
                 ->get();

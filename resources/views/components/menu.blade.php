@@ -45,9 +45,9 @@
                         <a class="py-2 px-16 block text-sm text-gray-100 hover:bg-blue-500 hover:text-white"
                            href="#">Ver estadísticas</a>
                         <a class="py-2 px-16 block text-sm text-gray-100 hover:bg-blue-500 hover:text-white"
-                           href="#">Envios realizados</a>
+                           href="{{ route('envio.productos.realizados') }}">Envios realizados</a>
                         <a class="py-2 px-16 block text-sm text-gray-100 hover:bg-blue-500 hover:text-white"
-                           href="#">Envios pendientes</a>
+                           href="{{ route('envio.productos.pendientes') }}">Envios pendientes</a>
                     </div>
                 </div>
 
