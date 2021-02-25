@@ -12,7 +12,7 @@
     <execution />
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="master" />
+    <option name="BRANCH" value="origin/ali" />
   </component>
   <component name="Git.Rebase.Settings">
     <option name="NEW_BASE" value="origin/oscar" />
@@ -153,11 +153,11 @@
       <path value="$PROJECT_DIR$/vendor/laraveles/spanish" />
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
       <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
-      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
-      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
       <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
       <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
     </include_path>
   </component>
   <component name="ProjectId" id="1mr80h0SAXbZ1uzi8wO0ehMweVr" />
@@ -260,13 +260,6 @@
       <workItem from="1614168545132" duration="597000" />
       <workItem from="1614180072175" duration="9023000" />
       <workItem from="1614200054151" duration="4884000" />
-    </task>
-    <task id="LOCAL-00024" summary="repare login">
-      <created>1610938520593</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1610938520593</updated>
     </task>
     <task id="LOCAL-00025" summary="repare login">
       <created>1610938792416</created>
@@ -604,7 +597,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614241057159</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="with compra">
+      <created>1614241414358</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1614241414363</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
