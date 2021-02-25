@@ -36,7 +36,7 @@ class ProductoController extends Controller
         $carritoID = Carrito::select('carritos.id')
             ->where('carritos.usuario_id', '=', $userID)
             ->first();
-        $agregado = ['agregado' => true];
+        $agregado =  true;
 
         if ($carritoID == null) {
             $agregado['agregado'] = false;
@@ -47,7 +47,7 @@ class ProductoController extends Controller
                 ->first();
 
             if ($pr == null) {
-                $agregado['agregado'] = false;
+                $agregado = false;
             }
         }
 
