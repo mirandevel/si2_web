@@ -28,7 +28,7 @@ class CompraController extends Controller
         $factura=Factura::create([
             'estado'=>'p',
             'total'=>$precio,
-            'ubicacion'=>$request['ubicacion'],
+            'ubicacion'=>$request['direccion'],
             'telefono'=>$request['telefono'],
             'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
             'usuario_id'=>$user,
