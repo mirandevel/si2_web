@@ -39,7 +39,7 @@ class CompraController extends Controller
            // $producto->cantidad=$producto->cantidad-$item->cantidadCompra;
             $producto->save();
 
-           /* Detalle::create([
+            Detalle::create([
                 'factura_id'=>$factura->id,
                 'producto_id'=>$producto->id,
                 'cantidad'=>$item['cantidadCompra'],
@@ -47,7 +47,7 @@ class CompraController extends Controller
                 'estado'=>'p',
                 'promocion_id'=>1,
                 'comision_id'=>1,
-            ]);*/
+            ]);
         }
 
         return response()->json(['status_code'=>$total,'message'=>$precio]);
