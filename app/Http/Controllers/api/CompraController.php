@@ -31,7 +31,6 @@ class CompraController extends Controller
             'telefono'=>$request['telefono'],
             'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
             'usuario_id'=>$user,
-            'tipo_pago_id'=>null,
         ]);
 
         foreach ($request['detalles'] as $item){
