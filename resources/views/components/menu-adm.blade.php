@@ -84,7 +84,6 @@
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round"></path>
                             </svg>
-
                             <span class="mx-4 font-medium">Usuarios</span>
                         </span>
                         <span>
@@ -152,7 +151,6 @@
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round"></path>
                             </svg>
-
                             <span class="mx-4 font-medium">Cerrar administración</span>
                         </span>
                         <span>
@@ -165,7 +163,6 @@
                     </a>
                 </div>
             </nav>
-
 
         </div>
     </div>
