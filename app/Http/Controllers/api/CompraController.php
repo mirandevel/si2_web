@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Carrito;
 use App\Models\Detalle;
 use App\Models\Factura;
 use App\Models\Producto;
@@ -36,7 +37,7 @@ class CompraController extends Controller
 
         foreach ($request['detalles'] as $item){
             $producto=Producto::findOrFail($item['id']);
-           // $producto->cantidad=$producto->cantidad-$item->cantidadCompra;
+            $producto->cantidad=$producto->cantidad-$item['cantidadCompra'];
             $producto->save();
 
             Detalle::create([
@@ -49,7 +50,7 @@ class CompraController extends Controller
                 'comision_id'=>1,
             ]);
         }
-
+        Carrito::destroy($request['carrito_id']);
         return response()->json(['status_code'=>$total,'message'=>$precio]);
     }
 }
