@@ -13,10 +13,10 @@ use function MongoDB\BSON\toCanonicalExtendedJSON;
 
 class CompraController extends Controller
 {
-    public function compra(){
+    public function compra(Request $request){
 
        // $ubi=$request['direccion'];
-        return response()->json(['status_code'=>200,'message'=>'token deleted']);
+        return $request;
         /*$total=0;
         $precio=0;
         foreach ($request['detalles'] as $item){
