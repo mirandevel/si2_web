@@ -7,6 +7,8 @@ use App\Models\Empresa;
 use App\Models\Garantia;
 use App\Models\Marca;
 use App\Models\Producto;
+use App\Models\ProductoPromocion;
+use App\Models\Promocion;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -30,55 +32,14 @@ class ProductosTable extends Component
     public $marca_id;
     public $garantia_id;
     public $photoTemp='https://customercare.igloosoftware.com/.api2/api/v1/communities/10068556/previews/thumbnails/4fc20722-5368-e911-80d5-b82a72db46f2?width=680&height=680&crop=False';
-    public $temp3d;
+    public $promocion;
 
-    public $image_url=null;
-    public $model_url=null;
-
-    public $subido=0;
     protected $listeners=[
-        'image',
-        'model',
-        'imageEdit',
-        'modelEdit',
-        'temp',
-        'temp3d',
+        'registrar',
+        'temp'
     ];
-    public function image($url)
-    {
-        $this->image_url = $url;
-        $this->subido=$this->subido+1;
-        if($this->subido==2){
-            $this->store();
-        }
-    }
-    public function model($url){
-        $this->model_url=$url;
-        $this->subido=$this->subido+1;
-        if($this->subido==2){
-            $this->store();
-        }
-    }
-
-    public function imageEdit($url){
-        $this->image_url=$url;
-        $this->subido=$this->subido+1;
-        if($this->subido==2){
-            $this->editProducto();
-        }
-    }
-    public function modelEdit($url){
-        $this->model_url=$url;
-        $this->subido=$this->subido+1;
-        if($this->subido==2){
-            $this->editProducto();
-        }
-    }
     public function temp($tempURL){
         $this->photoTemp=$tempURL;
-    }
-    public function temp3d($tempURL){
-        $this->temp3d=$tempURL;
     }
     public function resetarValores()
     {
@@ -87,8 +48,10 @@ class ProductosTable extends Component
             'nombre',
             'descripcion',
             'precio',
+            'promocion',
             'calificacion',
             'cantidad',
+            'promocion',
             'empresa_id',
             'marca_id',
             'garantia_id',
@@ -101,6 +64,8 @@ class ProductosTable extends Component
             'nombre' => 'required|string|between:3,30',
             'descripcion' => 'required|string|min:5',
             'precio' => 'required|numeric|min:1',
+            'promocion' => 'required|numeric',
+            'calificacion' => 'required|numeric|between:1,5',
             'cantidad' => 'required|numeric|min:1',
             'empresa_id' => 'required|numeric|exists:App\Models\Empresa,id',
             'marca_id' => 'required|numeric|exists:App\Models\Marca,id',
@@ -120,11 +85,6 @@ class ProductosTable extends Component
         $this->empresa_id = $producto->empresa_id;
         $this->marca_id = $producto->marca_id;
         $this->garantia_id = $producto->garantia_id;
-
-        $this->photoTemp=$producto->url_imagen;
-        $this->image_url=$producto->url_imagen;
-        $this->model_url=$producto->url_3d;
-
     }
 
     public function cargarDatosPorDefecto()
@@ -134,22 +94,29 @@ class ProductosTable extends Component
         $this->empresa_id = 1;
         $this->calificacion = 1;
     }
+
     public function editProducto()
     {
         $productoAEditar = Producto::findOrFail($this->idDeProductoSeleccionado);
         $productoAEditar->nombre = $this->nombre;
         $productoAEditar->descripcion = $this->descripcion;
         $productoAEditar->precio = $this->precio;
-        $productoAEditar->url_imagen = $this->image_url; //cambiar
-        $productoAEditar->url_3d = $this->model_url; //cambiar
-        //$productoAEditar->calificacion = $this->calificacion;
+        $productoAEditar->url_imagen = 'gs://si-2-5abca.appspot.com/products-images/image-silla1.jpg'; //cambiar
+        $productoAEditar->url_3d = 'gs://si-2-5abca.appspot.com/3d-models-obj/3d-model-silla1.obj'; //cambiar
+        $productoAEditar->calificacion = $this->calificacion;
         $productoAEditar->cantidad = $this->cantidad;
         $productoAEditar->empresa_id = $this->empresa_id;
         $productoAEditar->marca_id = $this->marca_id;
         $productoAEditar->garantia_id = $this->garantia_id;
         $productoAEditar->save();
 
-        $this->subido=0;
+        if ($this->promocion != 0)
+        {
+            ProductoPromocion::create([
+                'producto_id' => $this->idDeProductoSeleccionado,
+                'promocion_id' => $this->promocion,
+            ]);
+        }
 
         $id=Auth::user()->id;
         Bitacora::create([
@@ -158,35 +125,32 @@ class ProductosTable extends Component
             'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
             'usuario_id'=>$id,
         ]);
+
         $this->resetarValores();
     }
 
-    public function store()
+    public function storeProducto()
     {
         Producto::create([
             'nombre' => $this->nombre,
             'descripcion' => $this->descripcion,
             'precio' => $this->precio,
-            'url_imagen' => $this->image_url, //poner url
-            'url_3d' => $this->model_url,  //poner url
-            'calificacion' => 0,
+            'url_imagen' => 'gs://si-2-5abca.appspot.com/products-images/image-silla1.jpg', //poner url
+            'url_3d' => 'gs://si-2-5abca.appspot.com/3d-models-obj/3d-model-silla1.obj',  //poner url
+            'calificacion' => $this->calificacion,
             'cantidad' => $this->cantidad,
             'empresa_id' => $this->empresa_id,
             'marca_id' => $this->marca_id,
             'garantia_id' => $this->garantia_id,
         ]);
-        $id = Auth::user()->id;
+        $id=Auth::user()->id;
         Bitacora::create([
-            'descripcion' => 'Creó un producto',
-            'fecha' => Carbon::now('America/La_Paz')->toDateString(),
-            'hora' => Carbon::now('America/La_Paz')->toTimeString(),
-            'usuario_id' => $id,
+            'descripcion'=>'Creó un producto',
+            'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
+            'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
+            'usuario_id'=>$id,
         ]);
-
-        $this->subido=0;
-
         $this->resetarValores();
-
     }
 
     public function eliminarProducto()
@@ -215,6 +179,8 @@ class ProductosTable extends Component
             'marcas' => Marca::select('id', 'nombre')
                 ->get(),
             'garantias' => Garantia::select('id', 'tiempo')
+                ->get(),
+            'promociones' => Promocion::where('id', 'nombre')
                 ->get(),
         ]);
     }

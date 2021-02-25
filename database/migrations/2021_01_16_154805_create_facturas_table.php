@@ -17,8 +17,11 @@ class CreateFacturasTable extends Migration
             $table->id();
             $table->char('estado', 1);
             $table->float('total');
+            $table->string('ubicacion');
+            $table->date('fecha');
+            $table->unsignedInteger('telefono');
             $table->unsignedBigInteger('usuario_id');
-            $table->unsignedBigInteger('tipo_pago_id');
+            $table->unsignedBigInteger('tipo_pago_id')->nullable();
             $table->timestamps();
 
             $table->foreign('usuario_id')

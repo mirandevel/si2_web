@@ -31,7 +31,7 @@
             </div>
             <div class="grid grid-cols-5 gap-10">
                 @foreach($productos as $producto)
-                    <div class="border-2 border-paleta-4 rounded relative bg-white">
+                    <div class="border-2 border-paleta-4 rounded relative">
                         <div class="absolute top-0 right-0 ...">
                             <div class="ml-3 relative">
                                 <x-jet-dropdown align="right" width="60">
@@ -262,12 +262,11 @@
                                 </div>
                                 <x-jet-button id="select" type="button">Seleccionar imagen</x-jet-button>
                                 <x-jet-button id="select3d" type="button">Seleccionar 3D</x-jet-button>
-                                <x-jet-label for="select3d" id="label3d">{{$temp3d}}</x-jet-label>
                                 <label class="block my-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                                        for="grid-email">
                                     Nombre
                                 </label>
-                                <input type="text" wire:model="nombre" id="nombre"
+                                <input type="text" wire:model="nombre"
                                        class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
                                 <div class="flex flex-wrap m-6 mb-2 -mx-3">
                                     <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
@@ -278,13 +277,13 @@
                                         <input type="number" wire:model="precio"
                                                class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
                                     </div>
-                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0 ">
+                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
                                         <label
-                                            class="hidden block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+                                            class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                                             for="grid-state">
                                             Calificación
                                         </label>
-                                        <div class="relative hidden">
+                                        <div class="relative">
                                             <select type="number" wire:model="calificacion"
                                                     class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                                                     id="grid-state">
@@ -387,9 +386,15 @@
                     </div>
                     <div class="flex items-center justify-end p-1 text-center bg-gray-200">
                         <div class="m-3">
-                            <x-jet-button class="ml-4" id="send" type="button">
-                                {{ __('Guardar') }}
-                            </x-jet-button>
+                            <button wire:click="storeProducto"
+                                    class="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-1 px-1 inline-flex items-center disabled:opacity-50"
+                                    @if ($errors->has('nombre') || $errors->has('descripcion') || $errors->has('precio') || $errors->has('cantidad') || empty($nombre) || empty($descripcion) || empty($precio) || empty($cantidad)) disabled
+                                    @else onclick="ocultarModalCreate()" @endif>
+                                <span class="mr-2">Guardar</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24">
+                                    <path fill="currentcolor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -413,18 +418,11 @@
                     <div class="p-5 pb-6">
                         <div class="flex flex-wrap">
                             <div class="w-full px-3">
-                                <div class="mt-4 flex justify-center">
-                                    <img  id="image" class="h-2/3 w-2/3" src="{{$photoTemp}}">
-                                </div>
-                                <x-jet-button id="select1" type="button">Seleccionar imagen</x-jet-button>
-                                <x-jet-button id="select3d1" type="button">Seleccionar 3D</x-jet-button>
-                                <x-jet-label for="select3d1" id="label3d">{{$temp3d}}</x-jet-label>
-
                                 <label class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                                        for="grid-email">
                                     Nombre
                                 </label>
-                                <input type="text" id="nombre1" wire:model="nombre" value="{{ $nombre }}"
+                                <input type="text" wire:model="nombre" value="{{ $nombre }}"
                                        class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
                                 <div class="flex flex-wrap m-6 mb-2 -mx-3">
                                     <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
@@ -437,18 +435,17 @@
                                     </div>
                                     <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
                                         <label
-                                            class="hidden block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+                                            class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                                             for="grid-state">
-                                            Calificación
+                                            Promoción
                                         </label>
-                                        <div class="relative hidden">
-                                            <select type="number" wire:model="calificacion"
+                                        <div class="relative">
+                                            <select type="number" wire:model="promocion"
                                                     class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
-                                                <option value="1" {{ $calificacion === 1 ? 'selected' : '' }}>1</option>
-                                                <option value="2" {{ $calificacion === 2 ? 'selected' : '' }}>2</option>
-                                                <option value="3" {{ $calificacion === 3 ? 'selected' : '' }}>3</option>
-                                                <option value="4" {{ $calificacion === 4 ? 'selected' : '' }}>4</option>
-                                                <option value="5" {{ $calificacion === 5 ? 'selected' : '' }}>5</option>
+                                                <option value="0">nunguna</option>
+                                                @foreach($promociones as $promocion)
+                                                    <option value="{{ $promocion->id }}">{{ $promocion->nombre }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -548,10 +545,15 @@
                     </div>
                     <div class="flex items-center justify-end p-1 text-center bg-gray-200">
                         <div class="m-3">
-
-                            <x-jet-button class="ml-4" id="send1" type="button">
-                                {{ __('Guardar') }}
-                            </x-jet-button>
+                            <button wire:click="editProducto"
+                                    class="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-1 px-1 inline-flex items-center disabled:opacity-50"
+                                    @if ($errors->has('nombre') || $errors->has('descripcion') || $errors->has('precio') || $errors->has('cantidad') || empty($nombre) || empty($descripcion) || empty($precio) || empty($cantidad)) disabled
+                                    @else onclick="ocultarModalEdit()" @endif>
+                                <span class="mr-2">Guardar</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24">
+                                    <path fill="currentcolor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -598,13 +600,16 @@
     </div>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
     <script>
         var ImgName,ImgURl;
         var files=[];
-        var files1=[];
         var reader=new FileReader();
-        var reader1=new FileReader();
 
         var firebaseConfig = {
             apiKey: "AIzaSyBU9StoOCTr5N17b8w7MpiAU0MGgGks8K8",
@@ -616,25 +621,8 @@
             measurementId: "G-6EDF0QWQZ3"
         };
         // Initialize Firebase
-
-
-        document.getElementById("select3d").onclick=function (e){
-            var input=document.createElement('input');
-            input.type='file';
-
-            input.onchange=e=>{
-                files1=e.target.files;
-                reader1=new FileReader();
-                reader1.onload=function (){
-                   // document.getElementById("image").src=reader.result;
-                    //document.getElementById("label3d").label = "newLabel";
-                    //document.getElementById("label3d").innerHTML('holaaaaa');
-                    Livewire.emit('temp3d','3D cargado');
-                }
-                reader1.readAsDataURL(files1[0]);
-            }
-            input.click();
-        }
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
 
         document.getElementById("select").onclick=function (e){
             var input=document.createElement('input');
@@ -653,39 +641,11 @@
         }
 
         document.getElementById("send").onclick=function (){
-            console.log('click');
-
-
-
-
-
-            if(document.getElementById('nombre').value === ''){
+            if( document.getElementById('nit').value === '' || document.getElementById('nombre').value === '' ){
                 alert('rellene todos los campos');
             }else{
                 ImgName=document.getElementById('nombre').value;
-
-
-                var extension = files1[0].name.split('.').pop().toLowerCase();
-                console.log(extension);
-                var uploadTask1=firebase.storage().ref('Productos/3d/'+ImgName+"."+extension).put(files1[0]);
-
-                uploadTask1.on('state_changed', function(snapshot){
-                    var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    console.log('Upload is ' + progress + '% done');
-                }, function(error) {
-                    // Handle unsuccessful uploads
-                    console.log(error);
-                }, function() {
-                    // Handle successful uploads on complete
-                    // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-                    uploadTask1.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-                        console.log('Model: ', downloadURL);
-                        Livewire.emit('model',downloadURL);
-                    });
-                });
-
-
-                var uploadTask=firebase.storage().ref('Productos/'+ImgName+".png").put(files[0]);
+                var uploadTask=firebase.storage().ref('Empresas/'+ImgName+".png").put(files[0]);
 
                 uploadTask.on('state_changed', function(snapshot){
                     var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -697,12 +657,10 @@
                     // Handle successful uploads on complete
                     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
                     uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-                        console.log('image: ', downloadURL);
-                        Livewire.emit('image',downloadURL);
+                        console.log('File available at', downloadURL);
+                        Livewire.emit('registrar',downloadURL);
                     });
                 });
-
-
             }
 
 
@@ -710,119 +668,7 @@
 
     </script>
 
-    <script>
-        var ImgName,ImgURl;
-        var files=[];
-        var files1=[];
-        var reader=new FileReader();
-        var reader1=new FileReader();
-
-        var firebaseConfig = {
-            apiKey: "AIzaSyBU9StoOCTr5N17b8w7MpiAU0MGgGks8K8",
-            authDomain: "si-2-5abca.firebaseapp.com",
-            projectId: "si-2-5abca",
-            storageBucket: "si-2-5abca.appspot.com",
-            messagingSenderId: "784239077649",
-            appId: "1:784239077649:web:97c63a985cc3dacde944b0",
-            measurementId: "G-6EDF0QWQZ3"
-        };
-        // Initialize Firebase
-
-
-        document.getElementById("select3d1").onclick=function (e){
-            var input=document.createElement('input');
-            input.type='file';
-
-            input.onchange=e=>{
-                files1=e.target.files;
-                reader1=new FileReader();
-                reader1.onload=function (){
-                    // document.getElementById("image").src=reader.result;
-                    //document.getElementById("label3d").label = "newLabel";
-                    //document.getElementById("label3d").innerHTML('holaaaaa');
-                    Livewire.emit('temp3d','3D cargado');
-                }
-                reader1.readAsDataURL(files1[0]);
-            }
-            input.click();
-        }
-
-        document.getElementById("select1").onclick=function (e){
-            var input=document.createElement('input');
-            input.type='file';
-
-            input.onchange=e=>{
-                files=e.target.files;
-                reader=new FileReader();
-                reader.onload=function (){
-                    //document.getElementById("image").src=reader.result;
-                    Livewire.emit('temp',reader.result);
-                }
-                reader.readAsDataURL(files[0]);
-            }
-            input.click();
-        }
-
-        document.getElementById("send1").onclick=function (){
-            console.log('click');
-
-
-
-
-
-            if(document.getElementById('nombre1').value === ''){
-                alert('rellene todos los campos');
-            }else{
-                ImgName=document.getElementById('nombre1').value;
-
-
-                var extension = files1[0].name.split('.').pop().toLowerCase();
-                console.log(extension);
-                var uploadTask1=firebase.storage().ref('Productos/3d/'+ImgName+"."+extension).put(files1[0]);
-
-                uploadTask1.on('state_changed', function(snapshot){
-                    var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    console.log('Upload is ' + progress + '% done');
-                }, function(error) {
-                    // Handle unsuccessful uploads
-                    console.log(error);
-                }, function() {
-                    // Handle successful uploads on complete
-                    // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-                    uploadTask1.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-                        console.log('Model: ', downloadURL);
-                        Livewire.emit('modelEdit',downloadURL);
-                    });
-                });
-
-
-                var uploadTask=firebase.storage().ref('Productos/'+ImgName+".png").put(files[0]);
-
-                uploadTask.on('state_changed', function(snapshot){
-                    var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    console.log('Upload is ' + progress + '% done');
-                }, function(error) {
-                    // Handle unsuccessful uploads
-                    console.log(error);
-                }, function() {
-                    // Handle successful uploads on complete
-                    // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-                    uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-                        console.log('image: ', downloadURL);
-                        Livewire.emit('imageEdit',downloadURL);
-                    });
-                });
-
-
-            }
-
-
-        }
-
-    </script>
-
-
-@push('modals')
+    @push('modals')
         <script>
             const modalCreate = document.querySelector('.modal-create');
             const modalSee = document.querySelector('.modal-see');
