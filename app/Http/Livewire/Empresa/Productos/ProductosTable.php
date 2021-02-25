@@ -7,6 +7,7 @@ use App\Models\Empresa;
 use App\Models\Garantia;
 use App\Models\Marca;
 use App\Models\Producto;
+use App\Models\Promocion;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -30,6 +31,7 @@ class ProductosTable extends Component
     public $marca_id;
     public $garantia_id;
     public $photoTemp='https://customercare.igloosoftware.com/.api2/api/v1/communities/10068556/previews/thumbnails/4fc20722-5368-e911-80d5-b82a72db46f2?width=680&height=680&crop=False';
+    public $promocion;
     public $temp3d;
 
     public $image_url=null;
@@ -89,6 +91,7 @@ class ProductosTable extends Component
             'precio',
             'calificacion',
             'cantidad',
+            'promocion',
             'empresa_id',
             'marca_id',
             'garantia_id',
@@ -101,6 +104,7 @@ class ProductosTable extends Component
             'nombre' => 'required|string|between:3,30',
             'descripcion' => 'required|string|min:5',
             'precio' => 'required|numeric|min:1',
+            'calificacion' => 'required|numeric|between:1,5',
             'cantidad' => 'required|numeric|min:1',
             'empresa_id' => 'required|numeric|exists:App\Models\Empresa,id',
             'marca_id' => 'required|numeric|exists:App\Models\Marca,id',
@@ -134,6 +138,7 @@ class ProductosTable extends Component
         $this->empresa_id = 1;
         $this->calificacion = 1;
     }
+
     public function editProducto()
     {
         $productoAEditar = Producto::findOrFail($this->idDeProductoSeleccionado);
@@ -158,6 +163,7 @@ class ProductosTable extends Component
             'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
             'usuario_id'=>$id,
         ]);
+
         $this->resetarValores();
     }
 
@@ -215,6 +221,8 @@ class ProductosTable extends Component
             'marcas' => Marca::select('id', 'nombre')
                 ->get(),
             'garantias' => Garantia::select('id', 'tiempo')
+                ->get(),
+            'promociones' => Promocion::where('id', 'nombre')
                 ->get(),
         ]);
     }

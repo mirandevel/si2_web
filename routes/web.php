@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Livewire\Empresa\Miembro\MiembrosTable;
 use App\Http\Livewire\Empresa\Productos\ProductosTable;
+use App\Http\Livewire\ShowReportes;
 use Carbon\Carbon;
 use App\Http\Livewire\CategoriasTable;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -39,6 +41,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/productos/promociones', \App\Http\Livewire\Empresa\Productos\PromocionesTable::class)->name('promociones');
     Route::get('/productos', ProductosTable::class)->name('productos');
     Route::get('/bitacora', \App\Http\Livewire\Empresa\Miembro\BitacoraTable::class)->name('bitacora');
+    Route::get('/reportes', ShowReportes::class)->name('reportes');
+    Route::get('/miembros', MiembrosTable::class)->name('miembros');
+//    Route::get('/prueba/{data}', function ($data){
+//        $pdf = PDF::loadView('prueba', $data);
+//        return $pdf->download('prueba.pdf');
+//    })->name('pruebaa');
 });
 
 
@@ -47,7 +55,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
 
 
-
+//Route::get('prueba', function (){
+//    $pdf = PDF::loadView('pdf.invoice', $data);
+//    return $pdf->stream();
+//});
 
 
 
