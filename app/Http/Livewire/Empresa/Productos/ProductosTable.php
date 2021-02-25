@@ -7,6 +7,7 @@ use App\Models\Empresa;
 use App\Models\Garantia;
 use App\Models\Marca;
 use App\Models\Producto;
+use App\Models\Promocion;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -30,6 +31,7 @@ class ProductosTable extends Component
     public $marca_id;
     public $garantia_id;
     public $photoTemp='https://customercare.igloosoftware.com/.api2/api/v1/communities/10068556/previews/thumbnails/4fc20722-5368-e911-80d5-b82a72db46f2?width=680&height=680&crop=False';
+    public $promocion;
 
     protected $listeners=[
         'registrar',
@@ -47,6 +49,7 @@ class ProductosTable extends Component
             'precio',
             'calificacion',
             'cantidad',
+            'promocion',
             'empresa_id',
             'marca_id',
             'garantia_id',
@@ -165,6 +168,8 @@ class ProductosTable extends Component
             'marcas' => Marca::select('id', 'nombre')
                 ->get(),
             'garantias' => Garantia::select('id', 'tiempo')
+                ->get(),
+            'promociones' => Promocion::where('id', 'nombre')
                 ->get(),
         ]);
     }
