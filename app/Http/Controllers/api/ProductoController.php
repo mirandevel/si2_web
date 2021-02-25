@@ -49,13 +49,14 @@ class ProductoController extends Controller
             $pr = CarritoProducto::select('carrito_productos.producto_id')
                 ->where('carrito_productos.carrito_id', '=', $carritoID)
                 ->where('carrito_productos.producto_id', '=', $productoID)
-                ->first();
+                ->get();
 
             if ($pr == null) {
                 $agregado['agregado'] = false;
             }
         }
         //aqui
+       //return $pr;
         return ['marca' => $marca, 'promocion' => $promocion, 'garantia' => $garantia, 'agregado' => $agregado,'empresa'=>$empresa];
     }
 

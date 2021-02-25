@@ -64,11 +64,19 @@ class CategoriaController extends Controller
 
     public function categoriasConProductos(Request $request)
     {
+        $userID = $request->user()->id;
+        $listaCa = Categoria::select("categorias.*")
+            ->leftjoin('categoria_usuarios', 'categoria_usuarios.categoria_id', '=', 'categorias.id')
+            ->rightjoin('categoria_productos', 'categoria_productos.categoria_id', '=', 'categorias.id')
+            ->where('categoria_usuarios.user_id', '=', $userID)
+            ->orderBy('categoria_usuarios.categoria_id')
+            ->groupBy('categoria_usuarios.categoria_id')->get();
+
         $categorias = Categoria::select("categorias.*")
             ->join('categoria_productos', 'categoria_productos.categoria_id', '=', 'categorias.id')
             ->orderBy('categorias.id', 'asc')
             ->groupBy('categorias.id')->get();
-        return $categorias;
+        return $listaCa;
     }
 
     public function categoriasConProducto(Request $request)
@@ -83,7 +91,8 @@ class CategoriaController extends Controller
     }
 
     public function categoriasDeUsuario(Request $request)
-    {$usuarioID = $request["usuarioID"];
+    {
+        $usuarioID = $request["usuarioID"];
         $categorias = Categoria::select("categorias.*")
             ->join('categoria_usuarios', 'categorias.id', '=', 'categoria_id')
             ->where('categoria_usuarios.user_id', '=', $usuarioID)
@@ -93,11 +102,13 @@ class CategoriaController extends Controller
         return $categorias;
 
     }
+
     public function cate(Request $request)
-    {    $usuarioID = $request["usuarioID"];
+    {
+        $usuarioID = $request["usuarioID"];
         $categorias = Categoria::whereExists(function ($query) use ($usuarioID) {
             $query->from('categoria_usuarios')->select('categoria_usuarios.categoria_id')->
-            where('categoria_usuarios.user_id','=',$usuarioID);
+            where('categoria_usuarios.user_id', '=', $usuarioID);
         })->orderBy('categorias.id', 'asc')
             ->groupBy('categorias.id')->get();
         /*     ->join('categoria_usuarios', 'categorias.id', '=', 'categoria_id')
@@ -110,9 +121,10 @@ class CategoriaController extends Controller
     }
 
     public function guardarCategoriasDeUsuario(Request $request)
-    {  $usuarioID = $request["usuarioID"];
-        CategoriaUsuario::where('user_id','=',$usuarioID)->delete();
-       $userID = $request["usuarioID"];
+    {
+        $usuarioID = $request["usuarioID"];
+        CategoriaUsuario::where('user_id', '=', $usuarioID)->delete();
+        $userID = $request["usuarioID"];
         $categorias = $request["preferencias"];
 
         foreach ($categorias as $categoriaID) {
@@ -123,35 +135,39 @@ class CategoriaController extends Controller
         }
         return true;
     }
+
     public function prueba(Request $request)
     {
-        $usuario = User::where('id','=',1)->get();
-            return $usuario;
+        $usuario = User::where('id', '=', 1)->get();
+        return $usuario;
 
     }
+
     public function masVendido()
     {
         $producto = Producto::select('productos.*')
-            ->join('detalles','productos.id','=','detalles.producto_id')
-            ->orderBy('detalles.cantidad','desc','productos.id','desc')
-            ->groupBy('detalles.cantidad','productos.id')
+            ->join('detalles', 'productos.id', '=', 'detalles.producto_id')
+            ->orderBy('detalles.cantidad', 'desc', 'productos.id', 'desc')
+            ->groupBy('detalles.cantidad', 'productos.id')
             ->first();
-        $marca_id =$producto->marca_id;
-        $marca = Marca::where('id','=',$marca_id)->first();
-        return ['producto'=>$producto,'marca'=>$marca];
+        $marca_id = $producto->marca_id;
+        $marca = Marca::where('id', '=', $marca_id)->first();
+        return ['producto' => $producto, 'marca' => $marca];
 
     }
+
     public function obtenerSimilaes(Request $request)
-    { $productoID = $request["productoID"];
+    {
+        $productoID = $request["productoID"];
         $categoriaID = CategoriaProducto::select('categoria_productos.categoria_id')
-            ->where('producto_id','=',$productoID)->first();
+            ->where('producto_id', '=', $productoID)->first();
         $productos = Producto::select('productos.*')
-            ->join('categoria_productos','productos.id','=','categoria_productos.producto_id')
-            ->where('categoria_productos.categoria_id','=',function ($query) use ($productoID) {
+            ->join('categoria_productos', 'productos.id', '=', 'categoria_productos.producto_id')
+            ->where('categoria_productos.categoria_id', '=', function ($query) use ($productoID) {
                 $query->from('categoria_productos')->select('categoria_productos.categoria_id')
-                    ->where('categoria_productos.producto_id','=',$productoID)->first();
+                    ->where('categoria_productos.producto_id', '=', $productoID)->first();
             })
-            ->where('productos.id','!=',$productoID)
+            ->where('productos.id', '!=', $productoID)
             ->inRandomOrder()
             ->groupby('productos.id')
             ->limit(6)
