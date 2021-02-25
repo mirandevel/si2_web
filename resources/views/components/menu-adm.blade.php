@@ -45,9 +45,9 @@
                         <a class="py-2 px-16 block text-sm text-gray-100 hover:bg-blue-500 hover:text-white"
                            href="#">Ver estadísticas</a>
                         <a class="py-2 px-16 block text-sm text-gray-100 hover:bg-blue-500 hover:text-white"
-                           href="#">Envios realizados</a>
+                           href="{{'envio.productos.pendientes'}}">Envios realizados</a>
                         <a class="py-2 px-16 block text-sm text-gray-100 hover:bg-blue-500 hover:text-white"
-                           href="#">Envios pendientes</a>
+                           href="{{'envio.productos.realizados'}}">Envios pendientes</a>
                     </div>
                 </div>
 
@@ -98,7 +98,7 @@
                 </div>
 
                 <div >
-                    <a href="#"
+                    <a href="{{'reportes'}}"
                        class="w-full flex justify-between items-center py-3 px-6 text-gray-100 cursor-pointer hover:bg-gray-700 hover:text-gray-100 focus:outline-none">
                         <span class="flex items-center">
                             <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
