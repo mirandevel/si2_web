@@ -16,7 +16,7 @@ class CompraController extends Controller
     public function compra(){
 
        // $ubi=$request['direccion'];
-        return 'hola';
+        return response()->json(['status_code'=>200,'message'=>'token deleted']);
         /*$total=0;
         $precio=0;
         foreach ($request['detalles'] as $item){
