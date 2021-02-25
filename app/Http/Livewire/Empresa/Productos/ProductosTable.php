@@ -7,6 +7,7 @@ use App\Models\Empresa;
 use App\Models\Garantia;
 use App\Models\Marca;
 use App\Models\Producto;
+use App\Models\ProductoPromocion;
 use App\Models\Promocion;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -106,6 +107,11 @@ class ProductosTable extends Component
         $productoAEditar->marca_id = $this->marca_id;
         $productoAEditar->garantia_id = $this->garantia_id;
         $productoAEditar->save();
+
+        if ($this->)
+        ProductoPromocion::create([
+            ''
+        ]);
 
         $id=Auth::user()->id;
         Bitacora::create([
