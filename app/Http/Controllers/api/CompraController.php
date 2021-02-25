@@ -21,10 +21,10 @@ class CompraController extends Controller
         $precio=0;
         foreach ($request['detalles'] as $item){
             $total=$total+$item['cantidadCompra'];
-            $precio=$total+$item['precio'];
+            $precio=$precio+$item['precio'];
         }
 
-       /* $user=$request->user()->id;
+        $user=$request->user()->id;
         $factura=Factura::create([
             'estado'=>'p',
             'total'=>$precio,
@@ -32,7 +32,7 @@ class CompraController extends Controller
             'telefono'=>$request['telefono'],
             'fecha'=>Carbon::now('America/La_Paz')->toDateString(),
             'usuario_id'=>$user,
-        ]);*/
+        ]);
 
       /*  foreach ($request['detalles'] as $item){
             $producto=Producto::find($item->id);
