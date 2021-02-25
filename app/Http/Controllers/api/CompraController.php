@@ -36,7 +36,7 @@ class CompraController extends Controller
 
         foreach ($request['detalles'] as $item){
             $producto=Producto::findOrFail($item['id']);
-            $producto->cantidad=$producto->cantidad-$item->cantidadCompra;
+           // $producto->cantidad=$producto->cantidad-$item->cantidadCompra;
             $producto->save();
 
            /* Detalle::create([
