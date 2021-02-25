@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with compra" />
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with compra">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/CompraController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/CompraController.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -260,20 +263,6 @@
       <workItem from="1614168545132" duration="597000" />
       <workItem from="1614180072175" duration="9023000" />
       <workItem from="1614200054151" duration="4884000" />
-    </task>
-    <task id="LOCAL-00027" summary="repare login">
-      <created>1610939019134</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1610939019135</updated>
-    </task>
-    <task id="LOCAL-00028" summary="with email">
-      <created>1611020082928</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1611020082928</updated>
     </task>
     <task id="LOCAL-00029" summary="with email">
       <created>1611020704731</created>
@@ -604,7 +593,21 @@
       <option name="project" value="LOCAL" />
       <updated>1614242203619</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="with compra">
+      <created>1614242467665</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1614242467667</updated>
+    </task>
+    <task id="LOCAL-00077" summary="with compra">
+      <created>1614242726431</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1614242726433</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

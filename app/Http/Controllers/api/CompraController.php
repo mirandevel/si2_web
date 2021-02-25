@@ -16,14 +16,14 @@ class CompraController extends Controller
     public function compra(Request $request){
 
        // $ubi=$request['direccion'];
-        return $request;
-        /*$total=0;
+       // return $request;
+        $total=0;
         $precio=0;
         foreach ($request['detalles'] as $item){
             $total=$total+$item->cantidadCompra;
             $precio=$total+$item->precio;
         }
-
+/*
         $user=$request->user()->id;
         $factura=Factura::create([
             'total'=>$precio,
@@ -50,5 +50,7 @@ class CompraController extends Controller
                 'comision_id'=>1,
             ]);
         }*/
+
+        return response()->json(['status_code'=>$total,'message'=>$precio]);
     }
 }
