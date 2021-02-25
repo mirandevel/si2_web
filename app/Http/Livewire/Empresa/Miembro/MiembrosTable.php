@@ -11,12 +11,27 @@ class MiembrosTable extends Component
     public $estado;
     public $cantidadDeItemsPorPagina;
     public $nombreDeMiembroABuscar;
+    public $nombreDeMiembroAnadir;
 
     public function mount()
     {
         $this->estado = 1;
         $this->cantidadDeItemsPorPagina = 6;
         $this->nombreDeMiembroABuscar = '';
+    }
+
+    public function resetarValores()
+    {
+        $this->reset([
+            'nombreDeMiembroAnadir',
+        ]);
+    }
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName, [
+            'nombreDeMiembroAnadir' => 'required|string',
+        ]);
     }
 
     public function esAdministrador()

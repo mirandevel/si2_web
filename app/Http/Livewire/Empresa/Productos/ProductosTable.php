@@ -7,6 +7,7 @@ use App\Models\Empresa;
 use App\Models\Garantia;
 use App\Models\Marca;
 use App\Models\Producto;
+use App\Models\ProductoPromocion;
 use App\Models\Promocion;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -47,6 +48,7 @@ class ProductosTable extends Component
             'nombre',
             'descripcion',
             'precio',
+            'promocion',
             'calificacion',
             'cantidad',
             'promocion',
@@ -62,6 +64,7 @@ class ProductosTable extends Component
             'nombre' => 'required|string|between:3,30',
             'descripcion' => 'required|string|min:5',
             'precio' => 'required|numeric|min:1',
+            'promocion' => 'required|numeric',
             'calificacion' => 'required|numeric|between:1,5',
             'cantidad' => 'required|numeric|min:1',
             'empresa_id' => 'required|numeric|exists:App\Models\Empresa,id',
@@ -106,6 +109,14 @@ class ProductosTable extends Component
         $productoAEditar->marca_id = $this->marca_id;
         $productoAEditar->garantia_id = $this->garantia_id;
         $productoAEditar->save();
+
+        if ($this->promocion != 0)
+        {
+            ProductoPromocion::create([
+                'producto_id' => $this->idDeProductoSeleccionado,
+                'promocion_id' => $this->promocion,
+            ]);
+        }
 
         $id=Auth::user()->id;
         Bitacora::create([

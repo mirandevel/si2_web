@@ -91,17 +91,17 @@
                                        for="grid-email">
                                     Nombre
                                 </label>
-                                <input class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+                                <input wire:model="nombreDeMiembroAnadir" type="text" class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
                             </div>
                         </div>
-                        @error('nombre')
+                        @error('nombreDeMiembroAnadir')
                         <span class="error">{{ $message }}</span>
                         <p>error</p>
                         @enderror
                     </div>
                     <div class="flex items-center justify-end p-1 text-center bg-gray-200">
                         <div class="m-3">
-                            <button class="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-1 px-1 inline-flex items-center disabled:opacity-50">
+                            <button wire:click="storeMiembro" class="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-1 px-1 inline-flex items-center disabled:opacity-50" @if (!$errors->has('nombreDeMiembroAnadir') && $nombreDeMiembroAnadir != '')  onclick="ocultarModalAdd()" @else disabled @endif>
                                 <span class="mr-2">Guardar</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24">
                                     <path fill="currentcolor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>

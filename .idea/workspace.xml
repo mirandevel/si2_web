@@ -2,33 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with bitacora">
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Miembro/MiembrosTable.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/ShowReportes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/dompdf.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/archivo.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/photos/box.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/photos/cart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/photos/shopping-cart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/miembro/miembros-table.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/show-reportes.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/prueba.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/si2_web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/si2_web.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/MarcasTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/MarcasTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Miembro/MiembrosTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Miembro/MiembrosTable.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/ProductosTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/ProductosTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Factura.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Factura.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_16_154805_create_facturas_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154805_create_facturas_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/marcas-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/marcas-table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/miembro/miembros-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/miembro/miembros-table.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/productos-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/productos-table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +182,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../copi/si2_web" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -286,6 +266,8 @@
       <workItem from="1614176243621" duration="12267000" />
       <workItem from="1614202338552" duration="5756000" />
       <workItem from="1614217333005" duration="1660000" />
+      <workItem from="1614221824725" duration="28000" />
+      <workItem from="1614221855375" duration="973000" />
     </task>
     <task id="LOCAL-00020" summary="repare login">
       <created>1610937830780</created>

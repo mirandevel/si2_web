@@ -437,18 +437,14 @@
                                         <label
                                             class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                                             for="grid-state">
-                                            Calificación
+                                            Promoción
                                         </label>
                                         <div class="relative">
                                             <select type="number" wire:model="promocion"
                                                     class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
-                                                <option value="1" {{ $calificacion === 1 ? 'selected' : '' }}>1</option>
-                                                <option value="2" {{ $calificacion === 2 ? 'selected' : '' }}>2</option>
-                                                <option value="3" {{ $calificacion === 3 ? 'selected' : '' }}>3</option>
-                                                <option value="4" {{ $calificacion === 4 ? 'selected' : '' }}>4</option>
-                                                <option value="5" {{ $calificacion === 5 ? 'selected' : '' }}>5</option>
+                                                <option value="0">nunguna</option>
                                                 @foreach($promociones as $promocion)
-                                                    <option value="{{ $promocion->id }}" }}>{{ $promocion->nombre }}</option>
+                                                    <option value="{{ $promocion->id }}">{{ $promocion->nombre }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
