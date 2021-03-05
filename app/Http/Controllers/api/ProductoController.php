@@ -39,16 +39,28 @@ class ProductoController extends Controller
             ->first();
         $agregado = ['agregado' => true];
         $empresa = Empresa::select('empresas.*')
-            ->join('productos', 'empresas.id', '=', 'productos.empresa_id')
-            ->where('productos.id', '=', $productoID)
+            ->join('productos','empresas.id','=','productos.empresa_id')
+            ->where('productos.id','=',$productoID)
             ->first();
 
         if ($carritoID == null) {
             $agregado['agregado'] = false;
+        } else {
+
+            $pr = CarritoProducto::select('carrito_productos.producto_id')
+                ->where('carrito_productos.carrito_id', '=', $carritoID["id"])
+                ->where('carrito_productos.producto_id','=',$productoID)
+                ->first();
+
+            //dsfsd
+
+            if ($pr == null) {
+                $agregado['agregado'] = false;
+            }
         }
-
-
-       return ['marca' => $marca, 'promocion' => $promocion, 'garantia' => $garantia, 'agregado' => $agregado,'empresa'=>$empresa];
+        //aqui
+        // return $pr;
+        return ['marca' => $marca, 'promocion' => $promocion, 'garantia' => $garantia, 'agregado' => $agregado,'empresa'=>$empresa];
     }
 
     public function productoAlCarrito(Request $request)

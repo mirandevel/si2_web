@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="falta bb">
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="parcheo de bandera en rama">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/ProductoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/ProductoController.php" afterDir="false" />
     </list>
@@ -10,6 +10,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true" />
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
@@ -23,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ali" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -185,7 +186,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Configurable.PHP.Blade" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -263,6 +264,22 @@
       <workItem from="1614180072175" duration="9023000" />
       <workItem from="1614200054151" duration="10539000" />
       <workItem from="1614220441082" duration="842000" />
+      <workItem from="1614279488992" duration="1632000" />
+      <workItem from="1614961034989" duration="6286000" />
+    </task>
+    <task id="LOCAL-00023" summary="repare login">
+      <created>1610938320334</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1610938320334</updated>
+    </task>
+    <task id="LOCAL-00024" summary="repare login">
+      <created>1610938520593</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1610938520593</updated>
     </task>
     <task id="LOCAL-00025" summary="repare login">
       <created>1610938792416</created>
@@ -586,28 +603,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614223668729</updated>
     </task>
-    <task id="LOCAL-00071" summary="terminando">
-      <created>1614229634445</created>
+    <task id="LOCAL-00071" summary="parcheo de bandera en rama">
+      <created>1614971143241</created>
       <option name="number" value="00071" />
       <option name="presentableId" value="LOCAL-00071" />
       <option name="project" value="LOCAL" />
-      <updated>1614229634445</updated>
+      <updated>1614971143243</updated>
     </task>
-    <task id="LOCAL-00072" summary="falta bandera">
-      <created>1614231792633</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1614231792633</updated>
-    </task>
-    <task id="LOCAL-00073" summary="falta bb">
-      <created>1614232466289</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1614232466289</updated>
-    </task>
-    <option name="localTasksCounter" value="74" />
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -648,6 +651,8 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
+    <MESSAGE value="with npm" />
+    <MESSAGE value="with register" />
     <MESSAGE value="with role table" />
     <MESSAGE value="with menu" />
     <MESSAGE value="api recover password" />
@@ -670,10 +675,8 @@
     <MESSAGE value="with bitacora" />
     <MESSAGE value="actualizacion de producto" />
     <MESSAGE value="progresando" />
-    <MESSAGE value="terminando" />
-    <MESSAGE value="falta bandera" />
-    <MESSAGE value="falta bb" />
-    <option name="LAST_COMMIT_MESSAGE" value="falta bb" />
+    <MESSAGE value="parcheo de bandera en rama" />
+    <option name="LAST_COMMIT_MESSAGE" value="parcheo de bandera en rama" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
