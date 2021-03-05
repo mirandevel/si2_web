@@ -39,15 +39,27 @@ class ProductoController extends Controller
             ->first();
         $agregado = ['agregado' => true];
         $empresa = Empresa::select('empresas.*')
-            ->join('productos', 'empresas.id', '=', 'productos.empresa_id')
-            ->where('productos.id', '=', $productoID)
+            ->join('productos','empresas.id','=','productos.empresa_id')
+            ->where('productos.id','=',$productoID)
             ->first();
 
         if ($carritoID == null) {
             $agregado['agregado'] = false;
+        } else {
+
+            $pr = CarritoProducto::select('carrito_productos.producto_id')
+                ->where('carrito_productos.carrito_id', '=', $carritoID["id"])
+                ->where('carrito_productos.producto_id','=',$productoID)
+                ->first();
+
+            //dsfsd
+
+            if ($pr == null) {
+                $agregado['agregado'] = false;
+            }
         }
-
-
+        //aqui
+      // return $pr;
        return ['marca' => $marca, 'promocion' => $promocion, 'garantia' => $garantia, 'agregado' => $agregado,'empresa'=>$empresa];
     }
 
@@ -80,18 +92,14 @@ class ProductoController extends Controller
             ]);
 
         } else {
-            try {
-                CarritoProducto::create([
-                    'carrito_id' => $carritoID["id"],
-                    'producto_id' => $productoID,
-                    'fecha' => Carbon::now('America/La_Paz')->format('y-m-d'),
-                    'cantidad' => 1,
-                    'created_at' => Carbon::now('America/La_Paz'),
-                    'updated_at' => Carbon::now('America/La_Paz'),
-                ]);
-            }catch (\Throwable $exception){
-
-            }
+            CarritoProducto::create([
+                'carrito_id' => $carritoID["id"],
+                'producto_id' => $productoID,
+                'fecha' => Carbon::now('America/La_Paz')->format('y-m-d'),
+                'cantidad' => 1,
+                'created_at' => Carbon::now('America/La_Paz'),
+                'updated_at' => Carbon::now('America/La_Paz'),
+            ]);
         }
 
         return $carritoID;
@@ -109,13 +117,13 @@ class ProductoController extends Controller
 
         $productoCarrito = Producto::select('productos.id', 'productos.nombre', 'productos.descripcion',
             'productos.precio', 'productos.url_imagen', 'productos.url_3d', 'productos.calificacion',
-            'productos.cantidad', 'productos.garantia_id', 'marcas.nombre as nombreMarca',
-            'carrito_productos.cantidad as cantidadCompra', 'promociones.descuento',
+            'productos.cantidad', 'productos.garantia_id' , 'marcas.nombre as nombreMarca',
+            'carrito_productos.cantidad as cantidadCompra','promociones.descuento',
             'carrito_productos.carrito_id')
             ->join('carrito_productos', 'productos.id', '=', 'carrito_productos.producto_id')
             ->join('marcas', 'productos.marca_id', '=', 'marcas.id')
-            ->leftjoin('producto_promociones', 'productos.id', '=', 'producto_promociones.producto_id')
-            ->leftjoin('promociones', 'producto_promociones.promocion_id', '=', 'promociones.id')
+            ->leftjoin('producto_promociones','productos.id','=','producto_promociones.producto_id')
+            ->leftjoin('promociones','producto_promociones.promocion_id','=','promociones.id')
             ->where('carrito_productos.carrito_id', '=', $carritoID["id"])
             ->get();
 
@@ -130,24 +138,23 @@ class ProductoController extends Controller
         $carritoID = Carrito::select('carritos.id')
             ->where('carritos.usuario_id', '=', $userID)
             ->first();
-        CarritoProducto::where('carrito_id', '=', $carritoID["id"])
-            ->where('producto_id', '=', $productoID)->delete();
+        CarritoProducto::where('carrito_id','=',$carritoID["id"])
+            ->where('producto_id','=',$productoID)->delete();
         $bandera = 'true';
         return $bandera;
 
     }
 
     public function actualizarCompraProducto(Request $request)
-    {
-        $userID = $request->user()->id;
+    {   $userID = $request->user()->id;
         $productoID = $request["productoID"];
         $valor = $request["valor"];
         $carritoID = Carrito::select('carritos.id')
             ->where('carritos.usuario_id', '=', $userID)
             ->first();
-        CarritoProducto::where('carrito_id', '=', $carritoID["id"])
-            ->where('producto_id', '=', $productoID)
-            ->increment('cantidad', $valor);
+        CarritoProducto::where('carrito_id','=',$carritoID["id"])
+            ->where('producto_id','=',$productoID)
+            ->increment('cantidad',$valor);
         return true;
 
     }
@@ -157,7 +164,7 @@ class ProductoController extends Controller
         $nombre = $request["nombre"];
 
         $productos = Producto::select('productos.*')
-            ->where('productos.nombre', 'like', "$nombre%")
+            ->where('productos.nombre','like',"$nombre%")
             ->get();
         return $productos;
     }
@@ -169,11 +176,11 @@ class ProductoController extends Controller
         $valorado = $request["valorado"];
         $vendido = $request["vendido"];
 
-        if ("$fechaInicio" != "fecha inicio") {
+        if("$fechaInicio" != "fecha inicio"){
 
-            return ['valor' => true, 'f' => $fechaInicio];
-        } else {
-            return ['valor' => false, 'f' => $fechaInicio];
+            return ['valor'=>true,'f'=>$fechaInicio];
+        }else{
+            return ['valor'=>false,'f'=>$fechaInicio];
         }
     }
 

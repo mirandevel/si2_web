@@ -37,7 +37,6 @@ Route::post('/obtenerporcategoria', [CategoriaController::class, 'obtenerPorCate
 Route::middleware('auth:sanctum')->post('/obtenerproductos', [CategoriaController::class, 'obtenerProductos']);
 Route::middleware('auth:sanctum')->post('/obtenermasvendido', [CategoriaController::class, 'masVendido']);
 Route::middleware('auth:sanctum')->post('/categoriasconproductos', [CategoriaController::class, 'categoriasConProductos']);
-Route::middleware('auth:sanctum')->post('/suscategorias', [CategoriaController::class, 'susCategorias']);
 Route::middleware('auth:sanctum')->post('/categoriasconproducto', [CategoriaController::class, 'categoriasConProducto']);
 Route::middleware('auth:sanctum')->post('/obtenersimilares',[CategoriaController::class,'obtenerSimilaes']);
 
@@ -52,7 +51,6 @@ Route::middleware('auth:sanctum')->post('/actualizarcompraproducto',[ProductoCon
 Route::middleware('auth:sanctum')->post('/buscarproductos',[ProductoController::class,'buscarProductos']);
 Route::middleware('auth:sanctum')->post('/buscarproductosfiltrados',[ProductoController::class,'buscarProductosFiltrados']);
 
-Route::middleware('auth:sanctum')->post('/compra',[\App\Http\Controllers\api\CompraController::class,'compra']);
 
 //PRODUCTOS
 //Route::get('/productos',[])
