@@ -9,8 +9,6 @@ use App\Models\Factura;
 use App\Models\Producto;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use function MongoDB\BSON\toCanonicalExtendedJSON;
 
 class CompraController extends Controller
 {
