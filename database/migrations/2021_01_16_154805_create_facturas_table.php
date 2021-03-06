@@ -15,8 +15,8 @@ class CreateFacturasTable extends Migration
     {
         Schema::create('facturas', function (Blueprint $table) {
             $table->id();
-            $table->float('total');
             $table->char('estado');
+            $table->float('total');
             $table->string('ubicacion');
             $table->date('fecha');
             $table->unsignedInteger('telefono');

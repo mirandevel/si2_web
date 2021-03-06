@@ -12,8 +12,8 @@ class Factura extends Model
     protected $table = 'facturas';
 
     protected $fillable = [
-        'total',
         'estado',
+        'total',
         'ubicacion',
         'fecha',
         'telefono',
