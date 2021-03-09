@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\api;
 
+use App\Http\Controllers\Controller;
 use App\Models\Bitacora;
 use App\Models\FcmToken;
 use App\Models\Pais;
 use Illuminate\Http\Request;
+
 
 class DatoMaestroController extends Controller
 {

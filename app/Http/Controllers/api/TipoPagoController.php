@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\api;
 
+use App\Http\Controllers\Controller;
 use App\Models\Tarjeta;
 use App\Models\TipoPago;
 use Illuminate\Http\Request;

@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with compra">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/api/TipoPagoController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/tarjetaTipoPago.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_03_08_211335_create_tarjeta_tipo_pago_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/CompraController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/CompraController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/TipoPago.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/TipoPago.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_16_154709_create_tipo_pagos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154709_create_tipo_pagos_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/TipoPagoSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/TipoPagoSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/DatoMaestroController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/DatoMaestroController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/TipoPagoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/TipoPagoController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -276,21 +269,7 @@
       <workItem from="1615040800477" duration="2828000" />
       <workItem from="1615224974514" duration="228000" />
       <workItem from="1615237688331" duration="2852000" />
-      <workItem from="1615293632228" duration="804000" />
-    </task>
-    <task id="LOCAL-00038" summary="with email">
-      <created>1611025031621</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1611025031621</updated>
-    </task>
-    <task id="LOCAL-00039" summary="with email">
-      <created>1611025303063</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1611025303063</updated>
+      <workItem from="1615293632228" duration="1405000" />
     </task>
     <task id="LOCAL-00040" summary="with email">
       <created>1611025392306</created>
@@ -621,7 +600,21 @@
       <option name="project" value="LOCAL" />
       <updated>1615052875486</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="with compra">
+      <created>1615295049643</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1615295049643</updated>
+    </task>
+    <task id="LOCAL-00088" summary="with compra">
+      <created>1615295236414</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1615295236414</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
