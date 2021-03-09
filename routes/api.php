@@ -4,7 +4,7 @@ use App\Http\Controllers\api\AuthController;
 use App\Http\Controllers\api\CategoriaController;
 use App\Http\Controllers\api\ProductoController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
-use App\Http\Controllers\DatoMaestroController;
+use App\Http\Controllers\Api\DatoMaestroController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
