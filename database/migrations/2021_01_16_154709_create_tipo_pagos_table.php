@@ -16,14 +16,10 @@ class CreateTipoPagosTable extends Migration
         Schema::create('tipo_pagos', function (Blueprint $table) {
             $table->id();
             $table->string('tipo', 50);
-            $table->unsignedBigInteger('tarjeta_id');
+
             $table->timestamps();
 
-            $table->foreign('tarjeta_id')
-                ->references('id')
-                ->on('tarjetas')
-                ->cascadeOnDelete()
-                ->cascadeOnUpdate();
+
         });
     }
 

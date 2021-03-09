@@ -52,7 +52,12 @@ Route::middleware('auth:sanctum')->post('/actualizarcompraproducto',[ProductoCon
 Route::middleware('auth:sanctum')->post('/buscarproductos',[ProductoController::class,'buscarProductos']);
 Route::middleware('auth:sanctum')->post('/buscarproductosfiltrados',[ProductoController::class,'buscarProductosFiltrados']);
 
+
+//COMPRA
 Route::middleware('auth:sanctum')->post('/compra',[\App\Http\Controllers\api\CompraController::class,'compra']);
+
+Route::middleware('auth:sanctum')->post('/obtenertarjeta',[\App\Http\Controllers\api\TipoPagoController::class,'obtenerTarjeta']);
+Route::middleware('auth:sanctum')->post('/registrartarjeta',[\App\Http\Controllers\api\TipoPagoController::class,'registrarTarjeta']);
 
 //PRODUCTOS
 //Route::get('/productos',[])
