@@ -16,7 +16,7 @@ class TipoPagoController extends Controller
     }
 
     public function obtenerTarjeta(Request $request){
-        return Tarjeta::where('usuario_id',$request->user()-id)->first();
+        return Tarjeta::where('usuario_id',$request->user()->id)->first();
     }
 
     public function registrarTarjeta(Request $request)
