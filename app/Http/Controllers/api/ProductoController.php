@@ -122,7 +122,7 @@ class ProductoController extends Controller
         $productoCarrito = Producto::select('productos.id', 'productos.nombre', 'productos.descripcion',
             'productos.precio', 'productos.url_imagen', 'productos.url_3d', 'productos.calificacion',
             'productos.cantidad', 'productos.garantia_id', 'marcas.nombre as nombreMarca',
-            'carrito_productos.cantidad as cantidadCompra', 'promociones.descuento',
+            'carrito_productos.cantidad as cantidadCompra','promociones.id as descuento_id', 'promociones.descuento',
             'carrito_productos.carrito_id')
             ->join('carrito_productos', 'productos.id', '=', 'carrito_productos.producto_id')
             ->join('marcas', 'productos.marca_id', '=', 'marcas.id')
