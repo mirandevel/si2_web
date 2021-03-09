@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="">
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with compra">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/EnviosPendientesTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/EnviosPendientesTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/EnviosRealizadosTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/EnviosRealizadosTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/envios-pendientes-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/envios-pendientes-table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/envios-realizados-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/envios-realizados-table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Factura.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Factura.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_16_154805_create_facturas_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_16_154805_create_facturas_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +16,7 @@
     <execution />
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/miranda" />
+    <option name="BRANCH" value="origin/oscar" />
   </component>
   <component name="Git.Rebase.Settings">
     <option name="NEW_BASE" value="origin/oscar" />
@@ -26,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="miranda" />
+        <entry key="$PROJECT_DIR$" value="oscar" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,7 +42,6 @@
       <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
       <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
-      <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
       <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
@@ -77,7 +74,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation" />
-      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
@@ -159,11 +155,13 @@
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/vendor/jaybizzle/crawler-detect" />
       <path value="$PROJECT_DIR$/vendor/laraveles/spanish" />
-      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
-      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
       <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
       <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
     </include_path>
   </component>
   <component name="ProjectId" id="1mr80h0SAXbZ1uzi8wO0ehMweVr" />
@@ -180,7 +178,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../copi/si2_web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -193,6 +191,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\si2_web" />
+      <recent name="D:\UNIVERSIDAD\2020-2\SI2\proyecto\si2_web\resources\views\components" />
+      <recent name="D:\UNIVERSIDAD\2020-2\SI2\proyecto\si2_web\resources\views\layouts" />
       <recent name="E:\si2\si2_web" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -258,99 +259,14 @@
       <workItem from="1613226912338" duration="1901000" />
       <workItem from="1613959165152" duration="11000" />
       <workItem from="1614007287836" duration="21702000" />
-      <workItem from="1614106013872" duration="1003000" />
-      <workItem from="1614113337567" duration="7026000" />
-      <workItem from="1614122320915" duration="8769000" />
-      <workItem from="1614176243621" duration="12267000" />
-      <workItem from="1614202338552" duration="5756000" />
-      <workItem from="1614217333005" duration="1660000" />
-      <workItem from="1614221824725" duration="28000" />
-      <workItem from="1614221855375" duration="18416000" />
-      <workItem from="1614245644990" duration="2059000" />
-    </task>
-    <task id="LOCAL-00024" summary="repare login">
-      <created>1610938520593</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1610938520593</updated>
-    </task>
-    <task id="LOCAL-00025" summary="repare login">
-      <created>1610938792416</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1610938792417</updated>
-    </task>
-    <task id="LOCAL-00026" summary="repare login">
-      <created>1610938864965</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1610938864965</updated>
-    </task>
-    <task id="LOCAL-00027" summary="repare login">
-      <created>1610939019134</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1610939019135</updated>
-    </task>
-    <task id="LOCAL-00028" summary="with email">
-      <created>1611020082928</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1611020082928</updated>
-    </task>
-    <task id="LOCAL-00029" summary="with email">
-      <created>1611020704731</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1611020704731</updated>
-    </task>
-    <task id="LOCAL-00030" summary="with email">
-      <created>1611023800660</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1611023800661</updated>
-    </task>
-    <task id="LOCAL-00031" summary="with email">
-      <created>1611023959322</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1611023959323</updated>
-    </task>
-    <task id="LOCAL-00032" summary="with email">
-      <created>1611024161586</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1611024161586</updated>
-    </task>
-    <task id="LOCAL-00033" summary="with email">
-      <created>1611024320498</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1611024320498</updated>
-    </task>
-    <task id="LOCAL-00034" summary="with email">
-      <created>1611024453471</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1611024453472</updated>
-    </task>
-    <task id="LOCAL-00035" summary="with email">
-      <created>1611024578224</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1611024578224</updated>
+      <workItem from="1614108427377" duration="608000" />
+      <workItem from="1614128726646" duration="4948000" />
+      <workItem from="1614168545132" duration="597000" />
+      <workItem from="1614180072175" duration="9023000" />
+      <workItem from="1614200054151" duration="4884000" />
+      <workItem from="1614250938646" duration="2772000" />
+      <workItem from="1614279109295" duration="906000" />
+      <workItem from="1615040800477" duration="1350000" />
     </task>
     <task id="LOCAL-00036" summary="with email">
       <created>1611024739843</created>
@@ -583,35 +499,119 @@
       <option name="project" value="LOCAL" />
       <updated>1614033343011</updated>
     </task>
-    <task id="LOCAL-00069" summary="cambios2">
-      <created>1614223048227</created>
+    <task id="LOCAL-00069" summary="with bitacora">
+      <created>1614237291293</created>
       <option name="number" value="00069" />
       <option name="presentableId" value="LOCAL-00069" />
       <option name="project" value="LOCAL" />
-      <updated>1614223048228</updated>
+      <updated>1614237291300</updated>
     </task>
-    <task id="LOCAL-00070" summary="haciendo reportes-producto">
-      <created>1614230054375</created>
+    <task id="LOCAL-00070" summary="with compra">
+      <created>1614238916045</created>
       <option name="number" value="00070" />
       <option name="presentableId" value="LOCAL-00070" />
       <option name="project" value="LOCAL" />
-      <updated>1614230054375</updated>
+      <updated>1614238916050</updated>
     </task>
-    <task id="LOCAL-00071" summary="aumentado filtos a reportes">
-      <created>1614234647423</created>
+    <task id="LOCAL-00071" summary="with compra">
+      <created>1614240371052</created>
       <option name="number" value="00071" />
       <option name="presentableId" value="LOCAL-00071" />
       <option name="project" value="LOCAL" />
-      <updated>1614234647423</updated>
+      <updated>1614240371057</updated>
     </task>
-    <task id="LOCAL-00072" summary="aumentado filtos a reportes">
-      <created>1614240782751</created>
+    <task id="LOCAL-00072" summary="with compra">
+      <created>1614241057156</created>
       <option name="number" value="00072" />
       <option name="presentableId" value="LOCAL-00072" />
       <option name="project" value="LOCAL" />
-      <updated>1614240782751</updated>
+      <updated>1614241057159</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="with compra">
+      <created>1614241414358</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1614241414363</updated>
+    </task>
+    <task id="LOCAL-00074" summary="with compra">
+      <created>1614241522430</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1614241522432</updated>
+    </task>
+    <task id="LOCAL-00075" summary="with compra">
+      <created>1614242203618</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1614242203619</updated>
+    </task>
+    <task id="LOCAL-00076" summary="with compra">
+      <created>1614242467665</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1614242467667</updated>
+    </task>
+    <task id="LOCAL-00077" summary="with compra">
+      <created>1614242726431</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1614242726433</updated>
+    </task>
+    <task id="LOCAL-00078" summary="with compra">
+      <created>1614243011548</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1614243011550</updated>
+    </task>
+    <task id="LOCAL-00079" summary="with compra">
+      <created>1614243208698</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1614243208701</updated>
+    </task>
+    <task id="LOCAL-00080" summary="with compra">
+      <created>1614248048819</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1614248048821</updated>
+    </task>
+    <task id="LOCAL-00081" summary="with compra">
+      <created>1614248146399</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1614248146399</updated>
+    </task>
+    <task id="LOCAL-00082" summary="with compra">
+      <created>1614251858186</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1614251858187</updated>
+    </task>
+    <task id="LOCAL-00083" summary="with compra">
+      <created>1614252037917</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1614252037917</updated>
+    </task>
+    <task id="LOCAL-00084" summary="with compra">
+      <created>1615051905171</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1615051905172</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -674,10 +674,8 @@
     <MESSAGE value="with profile" />
     <MESSAGE value="with producto" />
     <MESSAGE value="with bitacora" />
-    <MESSAGE value="cambios2" />
-    <MESSAGE value="haciendo reportes-producto" />
-    <MESSAGE value="aumentado filtos a reportes" />
-    <option name="LAST_COMMIT_MESSAGE" value="aumentado filtos a reportes" />
+    <MESSAGE value="with compra" />
+    <option name="LAST_COMMIT_MESSAGE" value="with compra" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

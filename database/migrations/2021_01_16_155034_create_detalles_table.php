@@ -19,6 +19,7 @@ class CreateDetallesTable extends Migration
             $table->unsignedBigInteger('producto_id');
             $table->unsignedSmallInteger('cantidad');
             $table->float('precio');
+            $table->char('estado');
 
             $table->unsignedBigInteger('promocion_id');
             $table->unsignedBigInteger('comision_id');
