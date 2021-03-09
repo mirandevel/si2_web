@@ -21,7 +21,7 @@ class TipoPagoController extends Controller
 
     public function registrarTarjeta(Request $request)
     {
-        Tarjeta::create([
+       return Tarjeta::create([
             'numero' => $request['numero'],
             'cvv' => $request['cvv'],
             'fecha' => $request['fecha'],
