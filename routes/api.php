@@ -60,6 +60,8 @@ Route::middleware('auth:sanctum')->post('/compra',[\App\Http\Controllers\api\Com
 Route::middleware('auth:sanctum')->post('/obtenertarjeta',[\App\Http\Controllers\api\TipoPagoController::class,'obtenerTarjeta']);
 Route::middleware('auth:sanctum')->post('/registrartarjeta',[\App\Http\Controllers\api\TipoPagoController::class,'registrarTarjeta']);
 
+Route::middleware('auth:sanctum')->post('/calificarproducto',[ProductoController::class,'calificarProducto']);
+
 //PRODUCTOS
 //Route::get('/productos',[])
 

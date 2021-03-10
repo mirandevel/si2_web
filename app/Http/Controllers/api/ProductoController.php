@@ -12,6 +12,7 @@ use App\Models\Garantia;
 use App\Models\Marca;
 use App\Models\Producto;
 use App\Models\Promocion;
+use App\Models\UsuarioProducto;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\Boolean;
@@ -39,16 +40,28 @@ class ProductoController extends Controller
             ->first();
         $agregado = ['agregado' => true];
         $empresa = Empresa::select('empresas.*')
-            ->join('productos', 'empresas.id', '=', 'productos.empresa_id')
-            ->where('productos.id', '=', $productoID)
+            ->join('productos','empresas.id','=','productos.empresa_id')
+            ->where('productos.id','=',$productoID)
             ->first();
 
         if ($carritoID == null) {
             $agregado['agregado'] = false;
+        } else {
+
+            $pr = CarritoProducto::select('carrito_productos.producto_id')
+                ->where('carrito_productos.carrito_id', '=', $carritoID["id"])
+                ->where('carrito_productos.producto_id','=',$productoID)
+                ->first();
+
+            //dsfsd
+
+            if ($pr == null) {
+                $agregado['agregado'] = false;
+            }
         }
-
-
-       return ['marca' => $marca, 'promocion' => $promocion, 'garantia' => $garantia, 'agregado' => $agregado,'empresa'=>$empresa];
+        //aqui
+        // return $pr;
+        return ['marca' => $marca, 'promocion' => $promocion, 'garantia' => $garantia, 'agregado' => $agregado,'empresa'=>$empresa];
     }
 
     public function productoAlCarrito(Request $request)
@@ -110,7 +123,7 @@ class ProductoController extends Controller
         $productoCarrito = Producto::select('productos.id', 'productos.nombre', 'productos.descripcion',
             'productos.precio', 'productos.url_imagen', 'productos.url_3d', 'productos.calificacion',
             'productos.cantidad', 'productos.garantia_id', 'marcas.nombre as nombreMarca',
-            'carrito_productos.cantidad as cantidadCompra', 'promociones.descuento',
+            'carrito_productos.cantidad as cantidadCompra','promociones.id as descuento_id', 'promociones.descuento',
             'carrito_productos.carrito_id')
             ->join('carrito_productos', 'productos.id', '=', 'carrito_productos.producto_id')
             ->join('marcas', 'productos.marca_id', '=', 'marcas.id')
@@ -177,5 +190,55 @@ class ProductoController extends Controller
         }
     }
 
+
+    public function calificarProducto(Request $request)
+    {
+        $userID = $request->user()->id;
+        $productoID = $request["productoID"];
+        $calificacion = $request["calificar"];
+        $productoUser = UsuarioProducto::select('usuario_producto.producto_id')
+            ->where('usuario_producto.producto_id','=',$productoID)
+            ->where('usuario_producto.user_id','=',$userID)
+            ->first();
+        if($productoUser == null)
+        {
+            UsuarioProducto::create([
+                'producto_id'=>$productoID,
+                'user_id'=>$userID,
+                'calificacion'=>$calificacion,
+            ]);
+            $estrellas = UsuarioProducto::where('producto_id','=',$productoID)
+                ->get()
+            ->sum('calificacion');
+
+            $cantidad = UsuarioProducto::
+                where('producto_id','=',$productoID)
+                ->get()
+                ->count('*');
+
+
+            Producto::where('productos.id','=',$productoID)
+                ->update(['calificacion'=> $estrellas / $cantidad]);
+
+        }else{
+            UsuarioProducto::where('producto_id','=',$productoID)
+                ->where('user_id','=',$userID)
+                ->update(['calificacion'=>$calificacion]);
+            $estrellas = UsuarioProducto::where('producto_id','=',$productoID)
+                ->get()
+                ->sum('calificacion');
+
+
+            $cantidad = UsuarioProducto::
+                where('producto_id','=',$productoID)
+                ->get()
+                ->count('*');
+
+            Producto::where('productos.id','=',$productoID)
+                ->update(['calificacion'=> $estrellas / $cantidad]);
+
+        }
+        return response()->json(['bandera'=>true]);
+    }
 
 }
