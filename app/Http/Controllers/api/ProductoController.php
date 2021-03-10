@@ -238,7 +238,7 @@ class ProductoController extends Controller
                 ->update(['calificacion'=> $estrellas / $cantidad]);
 
         }
-        return ['bandera'=>true];
+        return response()->json(['bandera'=>true]);
     }
 
 }
