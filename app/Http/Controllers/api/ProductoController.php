@@ -12,6 +12,7 @@ use App\Models\Garantia;
 use App\Models\Marca;
 use App\Models\Producto;
 use App\Models\Promocion;
+use App\Models\UsuarioProducto;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\Boolean;
@@ -189,5 +190,55 @@ class ProductoController extends Controller
         }
     }
 
+
+    public function calificarProducto(Request $request)
+    {
+        $userID = $request->user()->id;
+        $productoID = $request["productoID"];
+        $calificacion = $request["calificar"];
+        $productoUser = UsuarioProducto::select('usuario_producto.producto_id')
+            ->where('usuario_producto.producto_id','=',$productoID)
+            ->where('usuario_producto.user_id','=',$userID)
+            ->first();
+        if($productoUser == null)
+        {
+            UsuarioProducto::create([
+                'producto_id'=>$productoID,
+                'user_id'=>$userID,
+                'calificacion'=>$calificacion,
+            ]);
+            $estrellas = UsuarioProducto::where('producto_id','=',$productoID)
+                ->get()
+            ->sum('calificacion');
+
+            $cantidad = UsuarioProducto::
+                where('producto_id','=',$productoID)
+                ->get()
+                ->count('*');
+
+
+            Producto::where('productos.id','=',$productoID)
+                ->update(['calificacion'=> $estrellas / $cantidad]);
+
+        }else{
+            UsuarioProducto::where('producto_id','=',$productoID)
+                ->where('user_id','=',$userID)
+                ->update(['calificacion'=>$calificacion]);
+            $estrellas = UsuarioProducto::where('producto_id','=',$productoID)
+                ->get()
+                ->sum('calificacion');
+
+
+            $cantidad = UsuarioProducto::
+                where('producto_id','=',$productoID)
+                ->get()
+                ->count('*');
+
+            Producto::where('productos.id','=',$productoID)
+                ->update(['calificacion'=> $estrellas / $cantidad]);
+
+        }
+        return ['bandera'=>true];
+    }
 
 }
