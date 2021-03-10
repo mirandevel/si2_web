@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with compra">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/CompraController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/CompraController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -270,14 +269,7 @@
       <workItem from="1615237688331" duration="2852000" />
       <workItem from="1615293632228" duration="3123000" />
       <workItem from="1615307485735" duration="41000" />
-      <workItem from="1615381866223" duration="3378000" />
-    </task>
-    <task id="LOCAL-00044" summary="with email">
-      <created>1611025906946</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1611025906946</updated>
+      <workItem from="1615381866223" duration="3966000" />
     </task>
     <task id="LOCAL-00045" summary="with email">
       <created>1611026253690</created>
@@ -615,7 +607,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615385098925</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="with compra">
+      <created>1615385619833</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1615385619833</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
