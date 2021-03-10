@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with compra">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/DatoMaestroController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/DatoMaestroController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/TipoPagoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/TipoPagoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/api/CompraController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/api/CompraController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,28 +268,9 @@
       <workItem from="1615040800477" duration="2828000" />
       <workItem from="1615224974514" duration="228000" />
       <workItem from="1615237688331" duration="2852000" />
-      <workItem from="1615293632228" duration="1405000" />
-    </task>
-    <task id="LOCAL-00040" summary="with email">
-      <created>1611025392306</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1611025392306</updated>
-    </task>
-    <task id="LOCAL-00041" summary="with email">
-      <created>1611025490485</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1611025490485</updated>
-    </task>
-    <task id="LOCAL-00042" summary="with email">
-      <created>1611025642462</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1611025642462</updated>
+      <workItem from="1615293632228" duration="3123000" />
+      <workItem from="1615307485735" duration="41000" />
+      <workItem from="1615381866223" duration="2875000" />
     </task>
     <task id="LOCAL-00043" summary="with email">
       <created>1611025874129</created>
@@ -614,7 +594,28 @@
       <option name="project" value="LOCAL" />
       <updated>1615295236414</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="with compra">
+      <created>1615295648203</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1615295648203</updated>
+    </task>
+    <task id="LOCAL-00090" summary="with compra">
+      <created>1615296036848</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1615296036849</updated>
+    </task>
+    <task id="LOCAL-00091" summary="with compra">
+      <created>1615296309824</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1615296309825</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

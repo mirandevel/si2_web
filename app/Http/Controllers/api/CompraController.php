@@ -49,7 +49,6 @@ class CompraController extends Controller
                 'comision_id'=>1,
             ]);
         }
-        $this->comision($request);
         Carrito::destroy($request['carrito_id']);
         return response()->json(['status_code'=>$total,'message'=>$precio]);
     }
