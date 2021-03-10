@@ -30,6 +30,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/adm/bitacora', \App\Http\Livewire\Adm\Bitacora::class)->name('adm.bitacora');
     Route::get('/adm/usuarios', \App\Http\Livewire\Adm\Usuarios::class)->name('adm.usuarios');
     Route::get('/adm/empresas', \App\Http\Livewire\Adm\Empresas::class)->name('adm.empresas');
+    Route::get('/adm/estadisticas', \App\Http\Livewire\Adm\Estadisticas::class)->name('adm.estadisticas');
 
 });
 

@@ -28,7 +28,7 @@
                                     stroke-linejoin="round"></path>
                             </svg>
 
-                            <span class="mx-4 font-medium">Ventas</span>
+                            <span class="mx-4 font-medium">Principal</span>
                         </span>
 
                         <span>
@@ -43,11 +43,9 @@
 
                     <div x-show="open" class="bg-gray-700">
                         <a class="py-2 px-16 block text-sm text-gray-100 hover:bg-blue-500 hover:text-white"
-                           href="#">Ver estadísticas</a>
+                           href="{{route('adm.dashboard')}}">Dashboard</a>
                         <a class="py-2 px-16 block text-sm text-gray-100 hover:bg-blue-500 hover:text-white"
-                           href="{{'envio.productos.pendientes'}}">Envios realizados</a>
-                        <a class="py-2 px-16 block text-sm text-gray-100 hover:bg-blue-500 hover:text-white"
-                           href="{{'envio.productos.realizados'}}">Envios pendientes</a>
+                           href="{{route('adm.estadisticas')}}">Ver estadísticas</a>
                     </div>
                 </div>
 
