@@ -14,7 +14,7 @@
     <execution />
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/ali" />
+    <option name="BRANCH" value="origin/oscar" />
   </component>
   <component name="Git.Rebase.Settings">
     <option name="NEW_BASE" value="origin/oscar" />
