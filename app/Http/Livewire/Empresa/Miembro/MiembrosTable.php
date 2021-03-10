@@ -49,7 +49,8 @@ class MiembrosTable extends Component
                     'empresa_id' => session('empresa_id'),
                     'estado' => 1,
                 ]);
-                $this->dispatchBrowserEvent('respuesta', ['valor' => 'usuario añadido']);
+//                $this->dispatchBrowserEvent('respuesta', ['valor' => 'usuario añadido']);
+                return $this->redirect(route('miembros'));
             } catch (\Exception $exception) {
                 $this->dispatchBrowserEvent('respuesta', ['valor' => 'ocurrio un error']);
             }
