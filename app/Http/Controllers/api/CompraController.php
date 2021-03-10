@@ -39,13 +39,18 @@ class CompraController extends Controller
             $producto->cantidad=$producto->cantidad-$item['cantidadCompra'];
             $producto->save();
 
+
+            $promocion_id=$item['promocion_id'];
+            if($promocion_id==0){
+                $promocion_id=null;
+            }
             Detalle::create([
                 'factura_id'=>$factura->id,
                 'producto_id'=>$producto->id,
                 'cantidad'=>$item['cantidadCompra'],
                 'precio'=>$item['precio'],
                 'estado'=>'p',
-                'promocion_id'=>$item['promocion_id'],
+                'promocion_id'=>$promocion_id,
                 'comision_id'=>1,
             ]);
         }
