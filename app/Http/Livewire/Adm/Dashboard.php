@@ -12,6 +12,12 @@ use Livewire\Component;
 class Dashboard extends Component
 {
 
+    public function mount()
+    {
+        session(['entrada_adm' => true]);
+    }
+
+
     public $users;
     public $fechas;
     public $cantidad;

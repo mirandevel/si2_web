@@ -48,26 +48,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/miembros', MiembrosTable::class)->name('miembros');
     Route::get('/productos/pendientes', EnviosPendientesTable::class)->name('envio.productos.pendientes');
     Route::get('/productos/realizados', EnviosRealizadosTable::class)->name('envio.productos.realizados');
-//    Route::get('/prueba/{data}', function ($data){
-//        $pdf = PDF::loadView('prueba', $data);
-//        return $pdf->download('prueba.pdf');
-//    })->name('pruebaa');
 });
-
-
-
-
-
-
-
-//Route::get('prueba', function (){
-//    $pdf = PDF::loadView('pdf.invoice', $data);
-//    return $pdf->stream();
-//});
-
-
-
-
 
 
 //LOGIN ROUTES
