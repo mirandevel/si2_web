@@ -21,7 +21,7 @@ class CreateDetallesTable extends Migration
             $table->float('precio');
             $table->char('estado');
 
-            $table->unsignedBigInteger('promocion_id');
+            $table->unsignedBigInteger('promocion_id')->nullable();
             $table->unsignedBigInteger('comision_id');
             $table->timestamps();
 
