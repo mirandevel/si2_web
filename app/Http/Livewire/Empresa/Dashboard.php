@@ -5,7 +5,7 @@ namespace App\Http\Livewire\Empresa;
 use App\Models\Factura;
 use App\Models\Producto;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class Dashboard extends Component
@@ -20,8 +20,14 @@ class Dashboard extends Component
 
     public function mount($empresa)
     {
-        $user = Auth::user()->id_empresa = $empresa;
-        dd(Auth::user()->id_empresa);
+        $idEmpresa = DB::table('empresas')
+            ->where('nombre', '=', $empresa)
+            ->value('id');
+        //aumento el id de la empresa a la session y que no esta entrando como administrador
+        session([
+            'empresa_id' => $idEmpresa,
+            'entrada_adm' => false
+            ]);
     }
 
     public function render()

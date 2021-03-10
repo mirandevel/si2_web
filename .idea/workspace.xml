@@ -7,7 +7,17 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Adm/Dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Adm/Dashboard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Miembro/MiembrosTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Miembro/MiembrosTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/ProductosTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/ProductosTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/ShowReportes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/ShowReportes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/menu-adm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/menu-adm.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/miembro/miembros-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/miembro/miembros-table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/productos-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/productos-table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/show-reportes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/show-reportes.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/reporte-productos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reporte-productos.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/reporte-ventas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reporte-ventas.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -273,6 +283,8 @@
       <workItem from="1615260560618" duration="782000" />
       <workItem from="1615274178404" duration="1307000" />
       <workItem from="1615326463692" duration="7714000" />
+      <workItem from="1615341027431" duration="5261000" />
+      <workItem from="1615352674993" duration="8760000" />
     </task>
     <task id="LOCAL-00036" summary="with email">
       <created>1611024739843</created>

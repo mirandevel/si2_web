@@ -12,6 +12,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
+use function PHPUnit\Framework\isEmpty;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -72,27 +73,5 @@ class User extends Authenticatable implements MustVerifyEmail
                 ->where('rol_id', '=', 1)
                 ->where('user_id', '=', Auth::user()->id)
                 ->count() == 1;
-    }
-
-    /**
-     * mutator para definir al empresa actual con la que se esta trabajando
-     * @param $nombreEmpresa
-     */
-    public function setIdEmpresaAttribute($nombreEmpresa)
-    {
-        $idEmpresa = DB::table('empresas')
-            ->where('nombre', '=', $nombreEmpresa)
-            ->value('id');
-        $this->attributes['id_empresa'] = $idEmpresa;
-    }
-
-    /**
-     * accessor, se lo llama con: Auth::user()->id_empresa
-     * se lo usa para saber cual empresa se esta trabajando actualmente
-     * @return mixed
-     */
-    public function getIdEmpresaAttribute()
-    {
-        return $this->attributes['id_empresa'];
     }
 }

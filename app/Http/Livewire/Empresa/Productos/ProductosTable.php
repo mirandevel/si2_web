@@ -28,7 +28,6 @@ class ProductosTable extends Component
     public $precio;
     public $calificacion;
     public $cantidad;
-    public $empresa_id;
     public $marca_id;
     public $garantia_id;
     public $photoTemp='https://customercare.igloosoftware.com/.api2/api/v1/communities/10068556/previews/thumbnails/4fc20722-5368-e911-80d5-b82a72db46f2?width=680&height=680&crop=False';
@@ -52,7 +51,6 @@ class ProductosTable extends Component
             'calificacion',
             'cantidad',
             'promocion',
-            'empresa_id',
             'marca_id',
             'garantia_id',
         ]);
@@ -67,7 +65,6 @@ class ProductosTable extends Component
             'promocion' => 'required|numeric',
             'calificacion' => 'required|numeric|between:1,5',
             'cantidad' => 'required|numeric|min:1',
-            'empresa_id' => 'required|numeric|exists:App\Models\Empresa,id',
             'marca_id' => 'required|numeric|exists:App\Models\Marca,id',
             'garantia_id' => 'required|numeric|exists:App\Models\Garantia,id',
         ]);
@@ -82,7 +79,6 @@ class ProductosTable extends Component
         $this->precio = $producto->precio;
         $this->calificacion = $producto->calificacion;
         $this->cantidad = $producto->cantidad;
-        $this->empresa_id = $producto->empresa_id;
         $this->marca_id = $producto->marca_id;
         $this->garantia_id = $producto->garantia_id;
     }
@@ -91,7 +87,6 @@ class ProductosTable extends Component
     {
         $this->garantia_id = 1;
         $this->marca_id = 1;
-        $this->empresa_id = 1;
         $this->calificacion = 1;
     }
 
@@ -101,11 +96,10 @@ class ProductosTable extends Component
         $productoAEditar->nombre = $this->nombre;
         $productoAEditar->descripcion = $this->descripcion;
         $productoAEditar->precio = $this->precio;
-        $productoAEditar->url_imagen = 'gs://si-2-5abca.appspot.com/products-images/image-silla1.jpg'; //cambiar
-        $productoAEditar->url_3d = 'gs://si-2-5abca.appspot.com/3d-models-obj/3d-model-silla1.obj'; //cambiar
+        $productoAEditar->url_imagen = 'gs://si-2-5abca.appspot.com/products-images/image-silla1.jpg'; //todo cambiar
+        $productoAEditar->url_3d = 'gs://si-2-5abca.appspot.com/3d-models-obj/3d-model-silla1.obj'; //todo cambiar
         $productoAEditar->calificacion = $this->calificacion;
         $productoAEditar->cantidad = $this->cantidad;
-        $productoAEditar->empresa_id = $this->empresa_id;
         $productoAEditar->marca_id = $this->marca_id;
         $productoAEditar->garantia_id = $this->garantia_id;
         $productoAEditar->save();
@@ -139,7 +133,7 @@ class ProductosTable extends Component
             'url_3d' => 'gs://si-2-5abca.appspot.com/3d-models-obj/3d-model-silla1.obj',  //poner url
             'calificacion' => $this->calificacion,
             'cantidad' => $this->cantidad,
-            'empresa_id' => $this->empresa_id,
+            'empresa_id' => session('empresa_id'),
             'marca_id' => $this->marca_id,
             'garantia_id' => $this->garantia_id,
         ]);
@@ -171,6 +165,7 @@ class ProductosTable extends Component
         return view('livewire.empresa.productos.productos-table', [
             'productos' => Producto::select('productos.id', 'productos.nombre','productos.url_imagen', 'productos.cantidad', 'productos.calificacion','productos.precio', 'empresas.nombre as empresa')
                 ->join('empresas', 'empresas.id', '=', 'productos.empresa_id')
+                ->where('productos.empresa_id', '=', session('empresa_id'))
                 ->where('productos.nombre', 'LIKE', '%'.$this->nombreDeProductoABuscar.'%')
                 ->orderBy('productos.id', 'asc')
                 ->paginate($this->cantidadDeItemsPorPagina),

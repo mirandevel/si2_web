@@ -7,6 +7,8 @@
 {{--            <p>{{ gettype($message) }}</p>--}}
 {{--            <p>{{ $fechaInicio }}</p>--}}
 {{--            <p>{{ $fechaFin }}</p>--}}
+            <p>{{ $adm ? 'es admin' : 'no es admin' }}</p>
+            <p>{{ $empresaid }}</p>
         </div>
         <div class="my-1">
             <div class="max-w-xl px-4 mx-auto sm:px-6 lg:max-w-screen-xl lg:px-8">
@@ -66,12 +68,4 @@
             </div>
         </div>
     </div>
-
-    @push('modals')
-        <script>
-            window.addEventListener('respuesta', event => {
-                alert(event.detail.value);
-            })
-        </script>
-    @endpush
 </div>
