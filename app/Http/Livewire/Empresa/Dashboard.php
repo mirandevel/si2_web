@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Empresa;
 use App\Models\Factura;
 use App\Models\Producto;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class Dashboard extends Component
@@ -16,6 +17,13 @@ class Dashboard extends Component
     public $monto;
     public $mes;
     public $fechaActual;
+
+    public function mount($empresa)
+    {
+        $user = Auth::user()->id_empresa = $empresa;
+        dd(Auth::user()->id_empresa);
+    }
+
     public function render()
     {
         $this->fecha=[
