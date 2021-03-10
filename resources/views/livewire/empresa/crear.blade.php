@@ -14,11 +14,12 @@
             Vista previa:
             <img src="{{ $photo->temporaryUrl() }}">
         @endif
-        <input type="file" wire:model="photo">
+        <x-jet-label for="upload" value="{{ __('Selecciona una imagen') }}" />
+        <x-jet-input id="upload" type="file" wire:model="photo" class="block mt-1 w-full"/>
+
 
         @error('photo') <span class="error">{{ $message }}</span> @enderror
-        <div wire:loading wire:target="photo">Uploading...</div>
-
+        <div wire:loading wire:target="photo">Cargando...</div>
         <div class="mt-4">
             <x-jet-label for="nit" value="{{ __('NIT') }}" />
             <x-jet-input id="nit" wire:model="nit" class="block mt-1 w-full" type="number" name="nit" :value="old('nit')" required autofocus/>
