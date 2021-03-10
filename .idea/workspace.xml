@@ -14,7 +14,7 @@
     <execution />
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/oscar" />
+    <option name="BRANCH" value="origin/ali" />
   </component>
   <component name="Git.Rebase.Settings">
     <option name="NEW_BASE" value="origin/oscar" />
@@ -269,14 +269,7 @@
       <workItem from="1615237688331" duration="2852000" />
       <workItem from="1615293632228" duration="3123000" />
       <workItem from="1615307485735" duration="41000" />
-      <workItem from="1615381866223" duration="3966000" />
-    </task>
-    <task id="LOCAL-00045" summary="with email">
-      <created>1611026253690</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1611026253690</updated>
+      <workItem from="1615381866223" duration="4441000" />
     </task>
     <task id="LOCAL-00046" summary="with email">
       <created>1611026369121</created>
@@ -614,7 +607,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615385619833</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="with compra">
+      <created>1615386291282</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1615386291283</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

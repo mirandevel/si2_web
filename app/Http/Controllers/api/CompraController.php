@@ -45,7 +45,7 @@ class CompraController extends Controller
                 'cantidad'=>$item['cantidadCompra'],
                 'precio'=>$item['precio'],
                 'estado'=>'p',
-                'promocion_id'=>null,
+                'promocion_id'=>$item['promocion_id'],
                 'comision_id'=>1,
             ]);
         }
