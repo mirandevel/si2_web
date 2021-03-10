@@ -21,12 +21,19 @@ class CreateFacturasTable extends Migration
             $table->date('fecha');
             $table->unsignedInteger('telefono');
             $table->unsignedBigInteger('usuario_id');
+            $table->unsignedBigInteger('tipo_pago_id');
 
             $table->timestamps();
 
             $table->foreign('usuario_id')
                 ->references('id')
                 ->on('users')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
+
+            $table->foreign('tipo_pago_id')
+                ->references('id')
+                ->on('tipo_pagos')
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
 

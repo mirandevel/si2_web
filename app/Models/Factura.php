@@ -18,6 +18,7 @@ class Factura extends Model
         'fecha',
         'telefono',
         'usuario_id',
+        'tipo_pago_id',
     ];
 
     protected $hidden = [
