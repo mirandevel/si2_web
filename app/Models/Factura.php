@@ -12,11 +12,13 @@ class Factura extends Model
     protected $table = 'facturas';
 
     protected $fillable = [
+        'estado',
         'total',
         'ubicacion',
         'fecha',
         'telefono',
         'usuario_id',
+        'tipo_pago_id',
     ];
 
     protected $hidden = [

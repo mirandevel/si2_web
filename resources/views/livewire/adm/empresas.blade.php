@@ -28,11 +28,11 @@
                                     </x-slot>
 
                                     <x-slot name="content">
-                                        <button class="w-full block px-4 text-left py-1"
+                                       {{-- <button class="w-full block px-4 text-left py-1"
                                                 wire:click="cargarDatos({{ $empresa->id }})"
                                 onclick="mostrarModalSee()">
                                 <span class="mr-2">Ver</span>
-                                </button>
+                                </button>--}}
                                 <div class="border-t border-gray-200"></div>
                                 <button class="w-full block px-4 text-left py-1"
                                         wire:click="cargarDatosDelFormularioEdit({{ $empresa->id }}, '{{ $empresa->nombre }}','{{ $empresa->nit}}')"

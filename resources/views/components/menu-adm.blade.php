@@ -28,7 +28,7 @@
                                     stroke-linejoin="round"></path>
                             </svg>
 
-                            <span class="mx-4 font-medium">Ventas</span>
+                            <span class="mx-4 font-medium">Principal</span>
                         </span>
 
                         <span>
@@ -43,11 +43,9 @@
 
                     <div x-show="open" class="bg-gray-700">
                         <a class="py-2 px-16 block text-sm text-gray-100 hover:bg-blue-500 hover:text-white"
-                           href="#">Ver estadísticas</a>
+                           href="{{route('adm.dashboard')}}">Dashboard</a>
                         <a class="py-2 px-16 block text-sm text-gray-100 hover:bg-blue-500 hover:text-white"
-                           href="#">Envios realizados</a>
-                        <a class="py-2 px-16 block text-sm text-gray-100 hover:bg-blue-500 hover:text-white"
-                           href="#">Envios pendientes</a>
+                           href="{{route('adm.estadisticas')}}">Ver estadísticas</a>
                     </div>
                 </div>
 
@@ -84,7 +82,6 @@
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round"></path>
                             </svg>
-
                             <span class="mx-4 font-medium">Usuarios</span>
                         </span>
                         <span>
@@ -98,7 +95,7 @@
                 </div>
 
                 <div >
-                    <a href="#"
+                    <a href="{{ route('reportes') }}"
                        class="w-full flex justify-between items-center py-3 px-6 text-gray-100 cursor-pointer hover:bg-gray-700 hover:text-gray-100 focus:outline-none">
                         <span class="flex items-center">
                             <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -152,7 +149,6 @@
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round"></path>
                             </svg>
-
                             <span class="mx-4 font-medium">Cerrar administración</span>
                         </span>
                         <span>
@@ -165,7 +161,6 @@
                     </a>
                 </div>
             </nav>
-
 
         </div>
     </div>

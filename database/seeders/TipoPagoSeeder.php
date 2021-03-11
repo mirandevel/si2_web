@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\TipoPago;
 use Illuminate\Database\Seeder;
 
 class TipoPagoSeeder extends Seeder
@@ -13,6 +14,12 @@ class TipoPagoSeeder extends Seeder
      */
     public function run()
     {
-        //
+        TipoPago::create([
+            'tipo'=>'Tarjeta'
+        ]);
+
+        TipoPago::create([
+            'tipo'=>'Paypal'
+        ]);
     }
 }

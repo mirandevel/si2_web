@@ -30,6 +30,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/adm/bitacora', \App\Http\Livewire\Adm\Bitacora::class)->name('adm.bitacora');
     Route::get('/adm/usuarios', \App\Http\Livewire\Adm\Usuarios::class)->name('adm.usuarios');
     Route::get('/adm/empresas', \App\Http\Livewire\Adm\Empresas::class)->name('adm.empresas');
+    Route::get('/adm/estadisticas', \App\Http\Livewire\Adm\Estadisticas::class)->name('adm.estadisticas');
 
 });
 
@@ -37,6 +38,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 //COMPANY ROUTES
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/{empresa}/dashboard',\App\Http\Livewire\Empresa\Dashboard::class)->name('emp.dashboard');
+    Route::get('/{empresa}/estaditicas',\App\Http\Livewire\Empresa\Estadisticas::class)->name('emp.estadisticas');
     Route::get('/productos/categorias', CategoriasTable::class)->name('categorias');
     Route::get('/productos/marcas', \App\Http\Livewire\Empresa\Productos\MarcasTable::class)->name('marcas');
     Route::get('/productos/garantias', \App\Http\Livewire\Empresa\Productos\GarantiasTable::class)->name('garantias');
@@ -47,26 +49,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/miembros', MiembrosTable::class)->name('miembros');
     Route::get('/productos/pendientes', EnviosPendientesTable::class)->name('envio.productos.pendientes');
     Route::get('/productos/realizados', EnviosRealizadosTable::class)->name('envio.productos.realizados');
-//    Route::get('/prueba/{data}', function ($data){
-//        $pdf = PDF::loadView('prueba', $data);
-//        return $pdf->download('prueba.pdf');
-//    })->name('pruebaa');
 });
-
-
-
-
-
-
-
-//Route::get('prueba', function (){
-//    $pdf = PDF::loadView('pdf.invoice', $data);
-//    return $pdf->stream();
-//});
-
-
-
-
 
 
 //LOGIN ROUTES

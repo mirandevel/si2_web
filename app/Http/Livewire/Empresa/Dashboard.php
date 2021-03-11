@@ -5,52 +5,64 @@ namespace App\Http\Livewire\Empresa;
 use App\Models\Factura;
 use App\Models\Producto;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class Dashboard extends Component
 {
 
     public $productos;
-    public $datos;
-    public $fecha;
-    public $monto;
-    public $mes;
-    public $fechaActual;
+    public $empresas;
+    public $cantidad;
+    public $fechas;
+
+    public function mount($empresa)
+    {
+        $idEmpresa = DB::table('empresas')
+            ->where('nombre', '=', $empresa)
+            ->value('id');
+        $nameEmpresa = DB::table('empresas')
+            ->where('nombre', '=', $empresa)
+            ->value('nombre');
+        //aumento el id de la empresa a la session y que no esta entrando como administrador
+        session([
+            'empresa_id' => $idEmpresa,
+            'empresa_name' => $nameEmpresa,
+            'entrada_adm' => false
+            ]);
+    }
+
     public function render()
     {
-        $this->fecha=[
-            '05-02-2021',
-            '05-02-2021',
-            '08-02-2021',
-            '015-02-2021',
-            '015-02-2021',
-            '016-02-2021',
-            '20-02-2021',
-            '20-02-2021',
-            '22-02-2021',
-            '23-02-2021',
-            '24-02-2021',
-        ];
+        $this->empresas=DB::table('empresas')
+            ->select(DB::raw('DATE(detalles.created_at) as date'), DB::raw('sum(detalles.precio*detalles.cantidad) as prec'))
+            ->join('productos','productos.empresa_id','=','empresas.id')
+            ->join('detalles','productos.id','=','detalles.producto_id')
+            ->where('empresas.id',session('empresa_id'))
+            ->whereMonth('detalles.created_at', '=', date('m'))
+            ->orderBy('date','asc')
 
-        $this->monto=[
-            150,
-            25,
-            120,
-           50,
-            42,
-            463,
-            102.3,
-            15.5,
-            563,
-            56,
-            356,
-        ];
-        $fechaActual=Carbon::now('America/La_Paz');
-        $this->fechaActual=Carbon::now('America/La_Paz');
-        $mes=$fechaActual->subMonth()->format('F');;
-        $inicio=date($fechaActual->year.'-'.$fechaActual->month.'-01');
-        $this->datos=Factura::whereBetween('fecha', [$inicio, $fechaActual->toDateString()])->get();
-        $this->productos=Producto::take(5)->get();
+            ->groupBy('date')
+            ->get();
+        $i=0;
+        foreach ($this->empresas as $detalle){
+            $this->fechas[$i]=$detalle->date;
+            $this->cantidad[$i]=$detalle->prec;
+            $i=$i+1;
+        }
+
+        $this->productos=DB::table('productos')
+            ->select(DB::raw('count(*) as ventas'),'productos.*')
+            ->join('empresas','empresas.id','=','productos.empresa_id')
+            ->join('detalles','detalles.producto_id','=','productos.id')
+            ->whereMonth('detalles.created_at', '=', date('m'))
+            ->where('empresas.id',session('empresa_id'))
+            ->groupBy('productos.id')
+            ->orderBy('ventas','desc')
+            ->take(5)
+            ->get();
+
+
         return view('livewire.empresa.dashboard');
     }
 }

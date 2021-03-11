@@ -1,13 +1,18 @@
 <div>
     <div class="container antialiased font-sans mx-auto px-4 sm:px-8  flexflex-row">
         <div>
-            <h2 class="text-2xl text-center font-semibold leading-tight">Gráfica {{$fechaActual->month}}</h2>
+            <h2 class="text-2xl text-center font-semibold leading-tight">Gráfica de ventas este mes</h2>
         </div>
 
             <canvas id="myChart" width="100" height="35"></canvas>
 
         <div>
-            <h2 class="text-2xl text-center font-semibold leading-tight">Productos mas vendidos</h2>
+            @if($productos->isNotEmpty())
+            <h2 class="text-2xl text-center font-semibold leading-tight">Productos mas vendidos este mes</h2>
+                @else
+                <h2 class="text-2xl text-center font-semibold leading-tight">No se ha vendio ningun producto este mes</h2>
+
+            @endif
         </div>
 
         <div class="grid grid-cols-5 gap-10 mb-10">
@@ -58,10 +63,10 @@
         var myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: <?php echo json_encode($fecha)?>,
+                labels: <?php echo json_encode($fechas)?>,
                 datasets: [{
-                    label: 'Ganancias en ventas',
-                    data: <?php echo json_encode($monto)?>,
+                    label: '',
+                    data: <?php echo json_encode($cantidad)?>,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -78,7 +83,7 @@
                         'rgba(153, 102, 255, 1)',
                         'rgba(255, 159, 64, 1)'
                     ],
-                    borderWidth: 2
+                    borderWidth: 4
                 }]
             },
             options: {

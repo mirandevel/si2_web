@@ -2,9 +2,10 @@
 
 use App\Http\Controllers\api\AuthController;
 use App\Http\Controllers\api\CategoriaController;
+use App\Http\Controllers\api\DatoMaestroController;
 use App\Http\Controllers\api\ProductoController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
-use App\Http\Controllers\DatoMaestroController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
@@ -37,6 +38,7 @@ Route::post('/obtenerporcategoria', [CategoriaController::class, 'obtenerPorCate
 Route::middleware('auth:sanctum')->post('/obtenerproductos', [CategoriaController::class, 'obtenerProductos']);
 Route::middleware('auth:sanctum')->post('/obtenermasvendido', [CategoriaController::class, 'masVendido']);
 Route::middleware('auth:sanctum')->post('/categoriasconproductos', [CategoriaController::class, 'categoriasConProductos']);
+Route::middleware('auth:sanctum')->post('/suscategorias', [CategoriaController::class, 'susCategorias']);
 Route::middleware('auth:sanctum')->post('/categoriasconproducto', [CategoriaController::class, 'categoriasConProducto']);
 Route::middleware('auth:sanctum')->post('/obtenersimilares',[CategoriaController::class,'obtenerSimilaes']);
 
@@ -51,6 +53,16 @@ Route::middleware('auth:sanctum')->post('/actualizarcompraproducto',[ProductoCon
 Route::middleware('auth:sanctum')->post('/buscarproductos',[ProductoController::class,'buscarProductos']);
 Route::middleware('auth:sanctum')->post('/buscarproductosfiltrados',[ProductoController::class,'buscarProductosFiltrados']);
 
+Route::post('/actualizarperfil',[AuthController::class,'actualizarPerfil']);
+Route::middleware('auth:sanctum')->post('/actualizarcontraseña',[AuthController::class,'actualizarContraseña']);
+
+//COMPRA
+Route::middleware('auth:sanctum')->post('/compra',[\App\Http\Controllers\api\CompraController::class,'compra']);
+
+Route::middleware('auth:sanctum')->post('/obtenertarjeta',[\App\Http\Controllers\api\TipoPagoController::class,'obtenerTarjeta']);
+Route::middleware('auth:sanctum')->post('/registrartarjeta',[\App\Http\Controllers\api\TipoPagoController::class,'registrarTarjeta']);
+
+Route::middleware('auth:sanctum')->post('/calificarproducto',[ProductoController::class,'calificarProducto']);
 
 //PRODUCTOS
 //Route::get('/productos',[])

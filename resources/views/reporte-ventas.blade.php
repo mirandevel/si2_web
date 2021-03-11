@@ -1,3 +1,4 @@
+<h1>Reporte de ventas {{ session('entrada_adm') ? '(administrador)' : '(miembro empresa)' }}</h1>
 <table border="1">
     <tr>
         <th>ID</th>
@@ -18,3 +19,4 @@
         </tr>
     @endforeach
 </table>
+<p>reporte desde {{ $fecha_inicio }} hasta {{ $fecha_fin }}</p>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFacturasTable extends Migration
+class CreateTarjetaTipoPagoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,29 +13,24 @@ class CreateFacturasTable extends Migration
      */
     public function up()
     {
-        Schema::create('facturas', function (Blueprint $table) {
+        Schema::create('tarjeta_tipo_pago', function (Blueprint $table) {
             $table->id();
-            $table->char('estado');
-            $table->float('total');
-            $table->string('ubicacion');
-            $table->date('fecha');
-            $table->unsignedInteger('telefono');
-            $table->unsignedBigInteger('usuario_id');
-            $table->unsignedBigInteger('tipo_pago_id');
+            $table->unsignedBigInteger('tarjeta_id');
+            $table->unsignedBigInteger('tipo_pagos_id');
 
-            $table->timestamps();
-
-            $table->foreign('usuario_id')
+            $table->foreign('tarjeta_id')
                 ->references('id')
-                ->on('users')
+                ->on('tarjetas')
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
 
-            $table->foreign('tipo_pago_id')
+            $table->foreign('tipo_pagos_id')
                 ->references('id')
                 ->on('tipo_pagos')
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
+
+            $table->timestamps();
 
         });
     }
@@ -47,6 +42,6 @@ class CreateFacturasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('facturas');
+        Schema::dropIfExists('tarjeta_tipo_pago');
     }
 }

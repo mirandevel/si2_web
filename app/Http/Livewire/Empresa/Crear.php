@@ -29,23 +29,23 @@ class Crear extends Component
         return view('livewire.empresa.crear');
     }
 
-    public function registrar($imageURL)
+    public function save()
     {
-        $this->photo=$imageURL;
         $this->validate([
-            'photo' => 'string|required',
+            'photo' => 'image|required',
             'nit' => 'integer|required',
             'nombre' => 'string|required',
         ]);
-        //$path = $this->photo->store('img_empresas','public');
+        $path = $this->photo->store('img_empresas','public');
 
         $empresa = new Empresa();
         $empresa->nombre = $this->nombre;
         $empresa->nit = $this->nit;
-        $empresa->image_url = $this->photo;
+        $empresa->image_url = $path;
         $empresa->save();
 
         $empresa_usuario=new EmpresaUsuario();
+        $empresa_usuario->estado=true;
         $empresa_usuario->usuario_id=Auth::user()->id;
         $empresa_usuario->empresa_id=$empresa->id;
         $empresa_usuario->save();
@@ -61,7 +61,7 @@ class Crear extends Component
 
         $this->redirect(route('start'));
     }
-    public function temp($tempURL){
+ /*   public function temp($tempURL){
         $this->photoTemp=$tempURL;
-    }
+    }*/
 }
