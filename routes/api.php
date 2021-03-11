@@ -53,6 +53,8 @@ Route::middleware('auth:sanctum')->post('/actualizarcompraproducto',[ProductoCon
 Route::middleware('auth:sanctum')->post('/buscarproductos',[ProductoController::class,'buscarProductos']);
 Route::middleware('auth:sanctum')->post('/buscarproductosfiltrados',[ProductoController::class,'buscarProductosFiltrados']);
 
+Route::post('/actualizarperfil',[AuthController::class,'actualizarPerfil']);
+Route::middleware('auth:sanctum')->post('/actualizarcontraseña',[AuthController::class,'actualizarContraseña']);
 
 //COMPRA
 Route::middleware('auth:sanctum')->post('/compra',[\App\Http\Controllers\api\CompraController::class,'compra']);

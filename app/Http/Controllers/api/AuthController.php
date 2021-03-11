@@ -97,4 +97,20 @@ class AuthController extends Controller
         \Illuminate\Support\Facades\Mail::to($request['email'])->send(new \App\Mail\MyTestMail($details,$request['id']));
         return response()->json(['email'=>'ok']);
     }
+
+    public function actualizarPerfil(Request $request)
+    {
+       // $userID = $request->user()->id;
+     //   $user = User::findOrFail($request->user()->id);
+
+
+       // $user->email = $request->input('correo');
+    //    $user->name = $request->input('nombre');
+        return true;
+    }
+
+    public function actualizarContraseña(Request $request)
+    {
+
+    }
 }
