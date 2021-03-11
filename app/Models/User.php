@@ -6,10 +6,13 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
+use function PHPUnit\Framework\isEmpty;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -58,4 +61,17 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $appends = [
         'profile_photo_url',
     ];
+
+    /**
+     * accessor, se lo llama con: Auth::user()->es_administrador
+     * se usa para saber el el usuario actual es o no administrador
+     * @return bool
+     */
+    public function getEsAdministradorAttribute()
+    {
+        return DB::table('rol_users')
+                ->where('rol_id', '=', 1)
+                ->where('user_id', '=', Auth::user()->id)
+                ->count() == 1;
+    }
 }

@@ -88,116 +88,6 @@
             <div class="px-5 py-5 bg-white border-t items-center xs:justify-between">
                 {{ $productos->links() }}
             </div>
-
-          {{--  <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-                @if(count($productos) > 0)
-                    <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
-                        <table class="min-w-full leading-normal">
-                            <thead>
-                            <tr>
-                                <th
-                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Id
-                                </th>
-                                <th
-                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Nombre
-                                </th>
-                                <th
-                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Empresa
-                                </th>
-                                <th
-                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Cantidad
-                                </th>
-                                <th
-                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Precio
-                                </th>
-                                <th
-                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Acciones
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($productos as $producto)
-                                <tr>
-                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p class="text-gray-900 text-center whitespace-no-wrap">{{ $producto->id }}</p>
-                                    </td>
-                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p class="text-gray-900 text-center whitespace-no-wrap">{{ $producto->nombre }}</p>
-                                    </td>
-                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p class="text-gray-900 text-center whitespace-no-wrap">{{ $producto->empresa }}</p>
-                                    </td>
-                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p class="text-gray-900 text-center whitespace-no-wrap">{{ $producto->cantidad }}</p>
-                                    </td>
-                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                        <p class="text-gray-900 text-center whitespace-no-wrap">{{ $producto->precio }}</p>
-                                    </td>
-                                    <td class="border-b border-gray-200 bg-white text-sm">
-                                        <div class="flex items-center justify-center">
-                                            <div class="m-3">
-                                                <button wire:click="cargarDatos({{ $producto->id }})"
-                                                        onclick="mostrarModalSee()"
-                                                        class="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-1 px-1 inline-flex items-center">
-                                                    <span class="mr-2">Ver</span>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                         viewBox="0 0 24 24">
-                                                        <path fill="currentcolor"
-                                                              d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
-                                                    </svg>
-                                                </button>
-                                            </div>
-
-                                            <div class="m-3">
-                                                <button wire:click="cargarDatos({{ $producto->id }})"
-                                                        onclick="mostrarModalEdit()"
-                                                        class="bg-white text-gray-800 font-bold rounded border-b-2 border-yellow-500 hover:border-yellow-600 hover:bg-yellow-500 hover:text-white shadow-md py-1 px-1 inline-flex items-center">
-                                                    <span class="mr-2">Editar</span>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                         viewBox="0 0 24 24">
-                                                        <path fill="currentcolor"
-                                                              d="M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5l-4-4V4h8v3.5l-4 4z"></path>
-                                                    </svg>
-                                                </button>
-                                            </div>
-
-                                            <div class="m-3">
-                                                <button
-                                                    wire:click="$set('idDeProductoSeleccionado', {{ $producto->id }})"
-                                                    onclick="mostrarModalDelete()"
-                                                    class="bg-white text-gray-800 font-bold rounded border-b-2 border-red-500 hover:border-red-600 hover:bg-red-500 hover:text-white shadow-md py-1 px-1 inline-flex items-center">
-                                                    <span class="mr-2">Eliminar</span>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                                                         viewBox="0 0 24 24">
-                                                        <path fill="currentcolor"
-                                                              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                        <div class="px-5 py-5 bg-white border-t items-center xs:justify-between">
-                            {{ $productos->links() }}
-                        </div>
-                    </div>
-                @else
-                    <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
-                        <div class="px-5 py-5 bg-white border-t">
-                            No hay resultados...
-                        </div>
-                    </div>
-                @endif
-            </div>--}}
         </div>
     </div>
 
@@ -221,7 +111,7 @@
                         <p>calificación: {{ $calificacion }} estrellas</p>
                         <p>cantidad: {{ $cantidad }}</p>
                         @foreach($empresas as $empresa)
-                            @if($empresa->id === $empresa_id)
+                            @if($empresa->id === session('empresa_id'))
                                 <p>empresa: {{ $empresa->nombre }}</p>
                             @endif
                         @endforeach
@@ -311,22 +201,7 @@
                                               rows="2" placeholder=""></textarea>
                                 </label>
                                 <div class="flex flex-wrap m-6 mb-2 -mx-3">
-                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-                                        <label
-                                            class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
-                                            for="grid-state">
-                                            Empresa
-                                        </label>
-                                        <div class="relative">
-                                            <select type="number" wire:model="empresa_id"
-                                                    class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
-                                                @foreach($empresas as $empresa)
-                                                    <option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                                    <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
                                         <label
                                             class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                                             for="grid-state">
@@ -342,7 +217,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                                    <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
                                         <label
                                             class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                                             for="grid-state">
@@ -465,24 +340,7 @@
                                               rows="2" placeholder="">{{ $descripcion }}</textarea>
                                 </label>
                                 <div class="flex flex-wrap m-6 mb-2 -mx-3">
-                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-                                        <label
-                                            class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
-                                            for="grid-state">
-                                            Empresa
-                                        </label>
-                                        <div class="relative">
-                                            <select type="number" wire:model="empresa_id"
-                                                    class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
-                                                    id="grid-state">
-                                                @foreach($empresas as $empresa)
-                                                    <option
-                                                        value="{{ $empresa->id }}" {{ $empresa_id === $empresa->id ? 'selected' : '' }}>{{ $empresa->nombre }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                                    <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
                                         <label
                                             class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                                             for="grid-state">
@@ -499,7 +357,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                                    <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
                                         <label
                                             class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                                             for="grid-state">
