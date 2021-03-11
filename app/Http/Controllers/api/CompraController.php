@@ -56,8 +56,8 @@ class CompraController extends Controller
                 'comision_id'=>1,
             ]);
             $this->detalles[$i]['nombre']=$producto->nombre;
-            $this->detalles[$i]['cantidad']=$producto->nombre;
-            $this->detalles[$i]['precio']=$producto->nombre;
+            $this->detalles[$i]['cantidad']=$item['cantidadCompra'];
+            $this->detalles[$i]['precio']=$item['precio'];
             $i=$i+1;
         }
         Carrito::destroy($request['carrito_id']);
