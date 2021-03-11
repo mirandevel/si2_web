@@ -61,6 +61,7 @@ class ProductoController extends Controller
         }
         //aqui
         // return $pr;
+
         return ['marca' => $marca, 'promocion' => $promocion, 'garantia' => $garantia, 'agregado' => $agregado,'empresa'=>$empresa];
     }
 
