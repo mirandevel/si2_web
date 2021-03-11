@@ -55,6 +55,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 //LOGIN ROUTES
 Route::get('/', function () {return view('auth.login');})->name('/');
 Route::post('/login',[\App\Http\Controllers\web\LoginController::class,'login']);
+Route::post('/register',[\App\Http\Controllers\web\LoginController::class,'register'])->name('register');
 //VERIFICATION ROUTES
 Route::get('/email/verify', function () {return view('auth.verify-email');})->middleware('auth')->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {$request->fulfill();    return redirect('/start');})->middleware(['auth', 'signed'])->name('verification.verify');
