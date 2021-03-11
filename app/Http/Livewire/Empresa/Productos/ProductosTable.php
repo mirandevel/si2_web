@@ -30,16 +30,63 @@ class ProductosTable extends Component
     public $cantidad;
     public $marca_id;
     public $garantia_id;
-    public $photoTemp='https://customercare.igloosoftware.com/.api2/api/v1/communities/10068556/previews/thumbnails/4fc20722-5368-e911-80d5-b82a72db46f2?width=680&height=680&crop=False';
     public $promocion;
 
+    public $photoTemp='https://customercare.igloosoftware.com/.api2/api/v1/communities/10068556/previews/thumbnails/4fc20722-5368-e911-80d5-b82a72db46f2?width=680&height=680&crop=False';
+    public $temp3d;
+
+    public $image_url=null;
+    public $model_url=null;
+
+    public $subido=0;
+
+
     protected $listeners=[
-        'registrar',
-        'temp'
+        'image',
+        'model',
+        'imageEdit',
+        'modelEdit',
+        'temp',
+        'temp3d',
     ];
+
+    public function image($url)
+    {
+        $this->image_url = $url;
+        $this->subido=$this->subido+1;
+        if($this->subido==2){
+            $this->store();
+        }
+    }
+    public function model($url){
+        $this->model_url=$url;
+        $this->subido=$this->subido+1;
+        if($this->subido==2){
+            $this->store();
+        }
+    }
+
+    public function imageEdit($url){
+        $this->image_url=$url;
+        $this->subido=$this->subido+1;
+        if($this->subido==2){
+            $this->editProducto();
+        }
+    }
+    public function modelEdit($url){
+        $this->model_url=$url;
+        $this->subido=$this->subido+1;
+        if($this->subido==2){
+            $this->editProducto();
+        }
+    }
     public function temp($tempURL){
         $this->photoTemp=$tempURL;
     }
+    public function temp3d($tempURL){
+        $this->temp3d=$tempURL;
+    }
+
     public function resetarValores()
     {
         $this->reset([
@@ -81,6 +128,10 @@ class ProductosTable extends Component
         $this->cantidad = $producto->cantidad;
         $this->marca_id = $producto->marca_id;
         $this->garantia_id = $producto->garantia_id;
+
+        $this->photoTemp=$producto->url_imagen;
+        $this->image_url=$producto->url_imagen;
+        $this->model_url=$producto->url_3d;
     }
 
     public function cargarDatosPorDefecto()
@@ -96,14 +147,14 @@ class ProductosTable extends Component
         $productoAEditar->nombre = $this->nombre;
         $productoAEditar->descripcion = $this->descripcion;
         $productoAEditar->precio = $this->precio;
-        $productoAEditar->url_imagen = 'gs://si-2-5abca.appspot.com/products-images/image-silla1.jpg'; //todo cambiar
-        $productoAEditar->url_3d = 'gs://si-2-5abca.appspot.com/3d-models-obj/3d-model-silla1.obj'; //todo cambiar
+       // $productoAEditar->url_imagen = $this->image_url; //cambiar
+        //$productoAEditar->url_3d = $this->model_url; //cambiar
         $productoAEditar->calificacion = $this->calificacion;
         $productoAEditar->cantidad = $this->cantidad;
         $productoAEditar->marca_id = $this->marca_id;
         $productoAEditar->garantia_id = $this->garantia_id;
         $productoAEditar->save();
-
+        $this->subido=0;
         if ($this->promocion != 0)
         {
             ProductoPromocion::create([
@@ -123,20 +174,21 @@ class ProductosTable extends Component
         $this->resetarValores();
     }
 
-    public function storeProducto()
+    public function store()
     {
         Producto::create([
             'nombre' => $this->nombre,
             'descripcion' => $this->descripcion,
             'precio' => $this->precio,
-            'url_imagen' => 'gs://si-2-5abca.appspot.com/products-images/image-silla1.jpg', //poner url
-            'url_3d' => 'gs://si-2-5abca.appspot.com/3d-models-obj/3d-model-silla1.obj',  //poner url
+            'url_imagen' => $this->image_url, //poner url
+            'url_3d' => $this->model_url,  //poner url
             'calificacion' => 0,
             'cantidad' => $this->cantidad,
             'empresa_id' => session('empresa_id'),
             'marca_id' => $this->marca_id,
             'garantia_id' => $this->garantia_id,
         ]);
+        $this->dispatchBrowserEvent('creado');
         $id=Auth::user()->id;
         Bitacora::create([
             'descripcion'=>'Creó un producto',
@@ -144,6 +196,7 @@ class ProductosTable extends Component
             'hora'=>Carbon::now('America/La_Paz')->toTimeString(),
             'usuario_id'=>$id,
         ]);
+        $this->subido=0;
         $this->resetarValores();
     }
 
