@@ -20,7 +20,8 @@
 
 <div class="min-h-screen  font-sans text-gray-900 bg-paleta-5 antialiased">
     <div class="flex-col justify-center">
-    <span class="text-2xl w-full text-center font-bold">Gracias por su compra</span>
+    <span class="text-2xl w-full text-center font-bold">GRACIAS POR SU COMPRA</span>
+        <br>
     <span class="text-xl font-bold">Total:{{$factura->total}}</span>
     <span>Fecha:{{$factura->fecha}}</span>
     </div>
