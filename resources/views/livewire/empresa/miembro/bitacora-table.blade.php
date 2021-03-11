@@ -33,16 +33,16 @@
                             @foreach($bitacoras as $bitacora)
                                 <tr>
                                     <td class="px-5 py-5 border-b border-paleta-4 bg-white text-sm">
-                                        <p class="text-gray-900 text-center whitespace-no-wrap">{{'Jose luis miranda'}}</p>
+                                        <p class="text-gray-900 text-center whitespace-no-wrap">{{ $bitacora->name }}</p>
                                     </td>
                                     <td class="px-5 py-5 border-b border-paleta-4 bg-white text-sm">
-                                        <p class="text-gray-900 text-center whitespace-no-wrap">{{$bitacora->descripcion}}</p>
+                                        <p class="text-gray-900 text-center whitespace-no-wrap">{{ $bitacora->descripcion }}</p>
                                     </td>
                                     <td class="px-5 py-5 border-b border-paleta-4 bg-white text-sm">
-                                        <p class="text-gray-900 text-center whitespace-no-wrap">{{$bitacora->fecha}}</p>
+                                        <p class="text-gray-900 text-center whitespace-no-wrap">{{ $bitacora->fecha }}</p>
                                     </td>
                                     <td class="px-5 py-5 border-b border-paleta-4 bg-white text-sm">
-                                        <p class="text-gray-900 text-center whitespace-no-wrap">{{$bitacora->hora}}</p>
+                                        <p class="text-gray-900 text-center whitespace-no-wrap">{{ $bitacora->hora }}</p>
                                     </td>
                                 </tr>
                             @endforeach
