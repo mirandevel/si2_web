@@ -177,18 +177,12 @@ class ProductoController extends Controller
     }
 
     public function buscarProductosFiltrados(Request $request)
-    {
-        $fechaInicio = $request["fecha_inicio"];
-        $fechaFin = $request["fecha fin"];
-        $valorado = $request["valorado"];
-        $vendido = $request["vendido"];
-
-        if ("$fechaInicio" != "fecha inicio") {
-
-            return ['valor' => true, 'f' => $fechaInicio];
-        } else {
-            return ['valor' => false, 'f' => $fechaInicio];
-        }
+    {   $nombre = $request["nombre"];
+        $productos = Producto::select('productos.*')
+            ->where('productos.nombre', 'like', "$nombre%")
+            ->orderby('productos.calificacion','desc')
+            ->get();
+        return$productos;
     }
 
 

@@ -6,8 +6,10 @@ use App\Actions\Fortify\PasswordValidationRules;
 use App\Http\Controllers\Controller;
 use App\Models\RolUser;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Validator;
@@ -100,17 +102,32 @@ class AuthController extends Controller
 
     public function actualizarPerfil(Request $request)
     {
-       // $userID = $request->user()->id;
+
      //   $user = User::findOrFail($request->user()->id);
         //ddsf
-
+       // $user->email = $request["correo"];
+       // $user->name = $request["nombre"];
+        DB::table('users')
+            ->where('id',$request->user()->id)
+            ->update(['email_verified_at'=> new Carbon(null),'email'=> $request["correo"]
+            ,'name'=>$request["nombre"]]);
+      //  $user->save();
        // $user->email = $request->input('correo');
     //    $user->name = $request->input('nombre');
-        return true;
+        return ['bandera'=>true];
     }
 
     public function actualizarContraseña(Request $request)
     {
+        $user = User::findOrFail($request->user()->id);
+        if(Hash::check($request["contraseñav"],$user->password))
+        {
+            $user->password = Hash::make($request["contraseña"]);
+            $user->save();
+            return ['bandera'=>true];
+        }else{
+            return ['bandera'=>false];
+        }
 
     }
 }
