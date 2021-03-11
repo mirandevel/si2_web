@@ -19,24 +19,25 @@
 
 
 <div class="min-h-screen  font-sans text-gray-900 bg-paleta-5 antialiased">
+    <div class="flex-col justify-center">
     <span class="text-2xl w-full text-center font-bold">Gracias por su compra</span>
     <span class="text-xl font-bold">Total:{{$factura->total}}</span>
     <span>Fecha:{{$factura->fecha}}</span>
-
+    </div>
     <div class="inline-block min-w-full shadow rounded-lg border-paleta-4 border-2 overflow-hidden">
         <table class="min-w-full leading-normal">
             <thead>
             <tr>
                 <th
-                    class="px-5 py-3 border-b-2 border-paleta-4 bg-paleta-2 text-center text-xs  text-white uppercase">
+                    class="px-5 py-3 border-b-2 border-black text-center text-xs  text-white uppercase">
                     Nombre
                 </th>
                 <th
-                    class="px-5 py-3 border-b-2 border-paleta-4 bg-paleta-2 text-center text-xs  text-white uppercase">
+                    class="px-5 py-3 border-b-2 border-black text-center text-xs  text-white uppercase">
                     Cantidad
                 </th>
                 <th
-                    class="px-5 py-3 border-b-2 border-paleta-4 bg-paleta-2  text-center text-xs  text-white uppercase">
+                    class="px-5 py-3 border-b-2 border-black  text-center text-xs  text-white uppercase">
                     Precio
                 </th>
 
@@ -46,13 +47,13 @@
 
             @foreach($detalles as $detalle)
                 <tr>
-                    <td class="px-5 py-5 border-b border-paleta-4 bg-white text-sm">
+                    <td class="px-5 py-5 border-b border-black bg-white text-sm">
                         <p class="text-gray-900 text-center whitespace-no-wrap">{{$detalle['nombre']}}</p>
                     </td>
-                    <td class="px-5 py-5 border-b border-paleta-4 bg-white text-sm">
+                    <td class="px-5 py-5 border-b border-black bg-white text-sm">
                         <p class="text-gray-900 text-center whitespace-no-wrap">{{$detalle['cantidad']}}</p>
                     </td>
-                    <td class="px-5 py-5 border-b border-paleta-4 bg-white text-sm">
+                    <td class="px-5 py-5 border-b border-black bg-white text-sm">
                         <p class="text-gray-900 text-center whitespace-no-wrap">{{$detalle['precio']}}</p>
                     </td>
                 </tr>
