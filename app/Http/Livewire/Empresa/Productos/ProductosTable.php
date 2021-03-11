@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Empresa\Productos;
 
 use App\Models\Bitacora;
+use App\Models\Categoria;
+use App\Models\CategoriaProducto;
 use App\Models\Empresa;
 use App\Models\Garantia;
 use App\Models\Marca;
@@ -11,6 +13,7 @@ use App\Models\ProductoPromocion;
 use App\Models\Promocion;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -31,6 +34,7 @@ class ProductosTable extends Component
     public $marca_id;
     public $garantia_id;
     public $promocion;
+    public $categoria_id;
 
     public $photoTemp='https://customercare.igloosoftware.com/.api2/api/v1/communities/10068556/previews/thumbnails/4fc20722-5368-e911-80d5-b82a72db46f2?width=680&height=680&crop=False';
     public $temp3d;
@@ -129,6 +133,11 @@ class ProductosTable extends Component
         $this->marca_id = $producto->marca_id;
         $this->garantia_id = $producto->garantia_id;
 
+        //categoria producto
+        $this->categoria_id = DB::table('categoria_productos')
+            ->where('producto_id', '=', $this->idDeProductoSeleccionado)
+            ->value('categoria_id');
+
         $this->photoTemp=$producto->url_imagen;
         $this->image_url=$producto->url_imagen;
         $this->model_url=$producto->url_3d;
@@ -139,6 +148,7 @@ class ProductosTable extends Component
         $this->garantia_id = 1;
         $this->marca_id = 1;
         $this->calificacion = 1;
+        $this->categoria_id = 1;
     }
 
     public function editProducto()
@@ -154,6 +164,11 @@ class ProductosTable extends Component
         $productoAEditar->marca_id = $this->marca_id;
         $productoAEditar->garantia_id = $this->garantia_id;
         $productoAEditar->save();
+
+        DB::table('categoria_productos')
+            ->where('producto_id', '=', $this->idDeProductoSeleccionado)
+            ->update(['categoria_id' => $this->categoria_id]);
+
         $this->subido=0;
         if ($this->promocion != 0)
         {
@@ -176,7 +191,7 @@ class ProductosTable extends Component
 
     public function store()
     {
-        Producto::create([
+        $producto = Producto::create([
             'nombre' => $this->nombre,
             'descripcion' => $this->descripcion,
             'precio' => $this->precio,
@@ -187,6 +202,12 @@ class ProductosTable extends Component
             'empresa_id' => session('empresa_id'),
             'marca_id' => $this->marca_id,
             'garantia_id' => $this->garantia_id,
+        ]);
+
+
+        CategoriaProducto::create([
+            'categoria_id' => $this->categoria_id,
+            'producto_id' => $producto->id,
         ]);
         $this->dispatchBrowserEvent('creado');
         $id=Auth::user()->id;
@@ -229,6 +250,8 @@ class ProductosTable extends Component
             'garantias' => Garantia::select('id', 'tiempo')
                 ->get(),
             'promociones' => Promocion::select('id', 'nombre')
+                ->get(),
+            'categorias' => Categoria::select('id', 'nombre')
                 ->get(),
         ]);
     }
