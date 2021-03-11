@@ -50,7 +50,7 @@
 
                             </div>
                         </div>
-                        <img class="border-b-2 border-paleta-4" src="{{$empresa->image_url}}">
+                        <img class="border-b-2 border-paleta-4" src="{{ asset('storage/'.$empresa->image_url) }}" >
                         <div class="text-center uppercase">
                         <p class="text-paleta-4 text-lg">Nombre: {{$empresa->nombre}}</p>
                         <p class="text-black text-lg ">NIT: {{$empresa->nit}}</p>
