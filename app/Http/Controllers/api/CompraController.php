@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 
 class CompraController extends Controller
 {
+    public $detalles;
     public function compra(Request $request){
 
        // $ubi=$request['direccion'];
@@ -34,7 +35,7 @@ class CompraController extends Controller
             'usuario_id'=>$user,
             'tipo_pago_id'=>$request['tipo_pago'],
         ]);
-
+        $i=0;
         foreach ($request['detalles'] as $item){
             $producto=Producto::findOrFail($item['id']);
             $producto->cantidad=$producto->cantidad-$item['cantidadCompra'];
@@ -54,8 +55,23 @@ class CompraController extends Controller
                 'promocion_id'=>$promocion_id,
                 'comision_id'=>1,
             ]);
+            $this->detalles[$i]['nombre']=$producto->nombre;
+            $this->detalles[$i]['cantidad']=$producto->nombre;
+            $this->detalles[$i]['precio']=$producto->nombre;
+            $i=$i+1;
         }
         Carrito::destroy($request['carrito_id']);
+        $this->sendEmail($this->detalles,$factura,$request->user()->email);
         return response()->json(['status_code'=>$total,'message'=>$precio]);
+    }
+
+    public function sendEmail($detalles,$factura,$email)
+    {
+        $details = [
+            'title' => 'Confirmar correo electrónico',
+            'body' => 'This is for testing email using smtp'
+        ];
+        \Illuminate\Support\Facades\Mail::to($email)->send(new \App\Mail\MailFactura($detalles,$factura));
+        //return response()->json(['email'=>'ok']);
     }
 }
