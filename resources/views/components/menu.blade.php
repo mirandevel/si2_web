@@ -17,6 +17,29 @@
                 </button>
             </div>
             <nav class="">
+                <div >
+                    <a href="{{ route('emp.dashboard',['empresa'=>session('empresa_name')]) }}"
+                       class="w-full flex justify-between items-center py-3 px-6 text-gray-100 cursor-pointer hover:bg-gray-700 hover:text-gray-100 focus:outline-none">
+                        <span class="flex items-center">
+                            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M15 5V7M15 11V13M15 17V19M5 5C3.89543 5 3 5.89543 3 7V10C4.10457 10 5 10.8954 5 12C5 13.1046 4.10457 14 3 14V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V14C19.8954 14 19 13.1046 19 12C19 10.8954 19.8954 10 21 10V7C21 5.89543 20.1046 5 19 5H5Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </svg>
+
+                            <span class="mx-4 font-medium">Dashboard</span>
+                        </span>
+                        <span>
+                            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path x-show="open" d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2"
+                                      stroke-linecap="round" stroke-linejoin="round" style="display: none;"></path>
+
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+
                 <div x-data="{ open: false }">
                     <button @click="open = !open"
                             class="w-full flex justify-between items-center py-3 px-6 text-gray-100 cursor-pointer hover:bg-gray-700 hover:text-gray-100 focus:outline-none">
@@ -43,7 +66,7 @@
 
                     <div x-show="open" class="bg-gray-700">
                         <a class="py-2 px-16 block text-sm text-gray-100 hover:bg-blue-500 hover:text-white"
-                           href="#">Ver estadísticas</a>
+                           href="{{route('emp.estadisticas',['empresa'=>session('empresa_name')])}}">Ver estadísticas</a>
                         <a class="py-2 px-16 block text-sm text-gray-100 hover:bg-blue-500 hover:text-white"
                            href="{{ route('envio.productos.realizados') }}">Envios realizados</a>
                         <a class="py-2 px-16 block text-sm text-gray-100 hover:bg-blue-500 hover:text-white"
