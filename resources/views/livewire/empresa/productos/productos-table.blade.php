@@ -159,7 +159,7 @@
                                 </label>
                                 <input type="text" wire:model="nombre" id="nombre"
                                        class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
-                                <div class="flex flex-wrap m-6 mb-2 -mx-3">
+                                <div class="flex flex-wrap -mx-3">
                                     <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
                                         <label
                                             class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
@@ -181,10 +181,10 @@
                                     <span class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">Descripción</span>
                                     <textarea type="text" wire:model="descripcion"
                                               class="block w-full px-4 py-3 mt-1 mb-3 text-gray-700 bg-gray-200 border border-gray-200 rounded form-textarea focus:outline-none"
-                                              rows="2" placeholder=""></textarea>
+                                              rows="1" placeholder=""></textarea>
                                 </label>
-                                <div class="flex flex-wrap m-6 mb-2 -mx-3">
-                                    <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
+                                <div class="flex flex-wrap -mx-3">
+                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
                                         <label
                                             class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                                             for="grid-state">
@@ -200,7 +200,23 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
+                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                                        <label
+                                            class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+                                            for="grid-state">
+                                            Categoría
+                                        </label>
+                                        <div class="relative">
+                                            <select type="number" wire:model="categoria_id"
+                                                    class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                                                    id="grid-state">
+                                                @foreach($categorias as $categoria)
+                                                    <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
                                         <label
                                             class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                                             for="grid-state">
@@ -242,7 +258,7 @@
 
                         </div>
                     </div>
-                    <div class="flex items-center justify-end p-1 text-center bg-gray-200">
+                    <div class="flex items-center justify-end text-center bg-gray-200">
                         <div id="container" class="flex-col justify-center>
                         <x-jet-label for="progressBar1" id="labell">Subiendo imagen</x-jet-label>
                         <progress id="progressBar1" value="0" max="100" style="width:300px;"></progress>
@@ -330,7 +346,7 @@
                                               rows="2" placeholder="">{{ $descripcion }}</textarea>
                                 </label>
                                 <div class="flex flex-wrap m-6 mb-2 -mx-3">
-                                    <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
+                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
                                         <label
                                             class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                                             for="grid-state">
@@ -347,7 +363,23 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
+                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+                                        <label
+                                            class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+                                            for="grid-state">
+                                            Categoría
+                                        </label>
+                                        <div class="relative">
+                                            <select type="number" wire:model="categoria_id"
+                                                    class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                                                    id="grid-state">
+                                                @foreach($categorias as $categoria)
+                                                    <option value="{{ $categoria->id }}" {{ $categoria->id === $categoria_id ? 'selected' : '' }}>{{ $categoria->nombre }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
                                         <label
                                             class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                                             for="grid-state">
@@ -393,9 +425,15 @@
                     </div>
                     <div class="flex items-center justify-end p-1 text-center bg-gray-200">
                         <div class="m-3">
-                            <x-jet-button class="ml-4" id="send1" type="button">
-                                {{ __('Guardar') }}
-                            </x-jet-button>
+                            <button wire:click="editProducto"
+                                    class="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-1 px-1 inline-flex items-center disabled:opacity-50"
+                                    @if ($errors->has('nombre') || $errors->has('descripcion') || $errors->has('precio') || $errors->has('cantidad') || empty($nombre) || empty($descripcion) || empty($precio) || empty($cantidad)) disabled
+                                    @else onclick="ocultarModalEdit()" @endif>
+                                <span class="mr-2">Guardar</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24">
+                                    <path fill="currentcolor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                 </div>
