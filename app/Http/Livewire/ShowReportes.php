@@ -20,6 +20,9 @@ class ShowReportes extends Component
     public $fechaInicioProducto; //reporte productos
     public $fechaFinProducto; //reporte productos
 
+    public $fechaInicioBitacoras;
+    public $fechaFinBitacoras;
+
     public $adm;  //todo *
     public $empresaid; //todo *
 
@@ -40,6 +43,10 @@ class ShowReportes extends Component
         //reportes productos
         $this->fechaInicioProducto = '2021-01-25';
         $this->fechaFinProducto = '2021-02-28';
+
+        //reporte bitacoras
+        $this->fechaInicioBitacoras = '2021-01-25';
+        $this->fechaFinBitacoras = '2021-02-28';
 
         $this->adm = Auth::user()->es_administrador;
         $this->empresaid = session('empresa_id');
@@ -147,6 +154,27 @@ class ShowReportes extends Component
         $pdf->save(storage_path('app/public/') . 'reporte-empresas.pdf');
 
         return response()->download(storage_path('app/public/') . 'reporte-empresas.pdf');
+    }
+
+    public function descargarReporteDeBitacoras()
+    {
+        $pdf = app('dompdf.wrapper');
+        $bitacoras = DB::table('bitacoras')
+            ->select('users.name', 'bitacoras.descripcion', 'bitacoras.fecha', 'bitacoras.hora')
+            ->whereBetween('bitacoras.fecha', [$this->fechaInicioBitacoras, $this->fechaFinBitacoras])
+            ->join('users', 'bitacoras.usuario_id', '=', 'users.id')
+            ->orderBy('bitacoras.id', 'asc')
+            ->get();
+
+        $pdf->loadView('reporte-bitacoras', [
+            'bitacoras' => $bitacoras,
+            'fecha_inicio' => $this->fechaInicioBitacoras,
+            'fecha_fin' => $this->fechaFinBitacoras,
+        ]);
+
+        $pdf->save(storage_path('app/public/') . 'reporte-bitacoras.pdf');
+
+        return response()->download(storage_path('app/public/') . 'reporte-bitacoras.pdf');
     }
 
     public function render()
