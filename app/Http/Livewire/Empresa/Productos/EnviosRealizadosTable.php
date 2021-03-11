@@ -22,10 +22,12 @@ class EnviosRealizadosTable extends Component
     {
         // p = pendiente, e = enviado
         $enviosRealizados = DB::table('detalles')
-            ->select('detalles.factura_id', 'productos.id', 'productos.nombre', 'detalles.cantidad', 'detalles.precio')
+            ->select('detalles.factura_id', 'productos.id', 'productos.nombre', 'detalles.cantidad', 'detalles.precio', 'facturas.ubicacion', 'facturas.telefono')
             ->where('detalles.estado', '=', 'e')
+            ->where('productos.empresa_id', '=', session('empresa_id'))
             ->where('productos.nombre', 'LIKE', '%'.$this->nombreDeProductoABuscar.'%')
             ->join('productos', 'detalles.producto_id', '=', 'productos.id')
+            ->join('facturas', 'detalles.factura_id', '=', 'facturas.id')
             ->paginate($this->cantidadDeItemsPorPagina);
 
         return view('livewire.empresa.productos.envios-realizados-table', [

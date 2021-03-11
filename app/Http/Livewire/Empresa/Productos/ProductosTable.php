@@ -131,7 +131,7 @@ class ProductosTable extends Component
             'precio' => $this->precio,
             'url_imagen' => 'gs://si-2-5abca.appspot.com/products-images/image-silla1.jpg', //poner url
             'url_3d' => 'gs://si-2-5abca.appspot.com/3d-models-obj/3d-model-silla1.obj',  //poner url
-            'calificacion' => $this->calificacion,
+            'calificacion' => 0,
             'cantidad' => $this->cantidad,
             'empresa_id' => session('empresa_id'),
             'marca_id' => $this->marca_id,
@@ -175,7 +175,7 @@ class ProductosTable extends Component
                 ->get(),
             'garantias' => Garantia::select('id', 'tiempo')
                 ->get(),
-            'promociones' => Promocion::where('id', 'nombre')
+            'promociones' => Promocion::select('id', 'nombre')
                 ->get(),
         ]);
     }
