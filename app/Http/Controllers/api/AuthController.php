@@ -102,7 +102,7 @@ class AuthController extends Controller
     {
        // $userID = $request->user()->id;
      //   $user = User::findOrFail($request->user()->id);
-
+        //ddsf
 
        // $user->email = $request->input('correo');
     //    $user->name = $request->input('nombre');
