@@ -1,22 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with compra">
-      <change afterPath="$PROJECT_DIR$/public/photos/factory.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/photos/users.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/reporte-empresas.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/reporte-usuarios.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/EnviosPendientesTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/EnviosPendientesTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/EnviosRealizadosTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/EnviosRealizadosTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/ProductosTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Empresa/Productos/ProductosTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/ShowReportes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/ShowReportes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/envios-pendientes-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/envios-pendientes-table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/envios-realizados-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/envios-realizados-table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/productos-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/empresa/productos/productos-table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/show-reportes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/show-reportes.blade.php" afterDir="false" />
+    <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/categorias-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/categorias-table.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,14 +270,7 @@
       <workItem from="1615293632228" duration="3123000" />
       <workItem from="1615307485735" duration="41000" />
       <workItem from="1615381866223" duration="4441000" />
-      <workItem from="1615428023074" duration="10610000" />
-    </task>
-    <task id="LOCAL-00046" summary="with email">
-      <created>1611026369121</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1611026369121</updated>
+      <workItem from="1615428023074" duration="10947000" />
     </task>
     <task id="LOCAL-00047" summary="with email">
       <created>1611026770355</created>
@@ -629,7 +608,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615386291283</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="cambios x2">
+      <created>1615439260685</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1615439260685</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -693,7 +679,8 @@
     <MESSAGE value="with producto" />
     <MESSAGE value="with bitacora" />
     <MESSAGE value="with compra" />
-    <option name="LAST_COMMIT_MESSAGE" value="with compra" />
+    <MESSAGE value="cambios x2" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambios x2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
