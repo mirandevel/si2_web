@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b0b3d27-7873-4be2-9c2d-95f5b999255a" name="Default Changelist" comment="with stadistics">
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/UserRegister.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/user-register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/UserRegister.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/UserRegister.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/user-register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/user-register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
+    <list id="43d5e9d4-422d-4930-a1d8-dddd105d1be8" name="Revert: " comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +41,17 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/.idea/workspace.xml">
+      <ranges>
+        <range start1="4" end1="6" start2="4" end2="4" changelist="4b0b3d27-7873-4be2-9c2d-95f5b999255a" />
+        <range start1="7" end1="8" start2="5" end2="8" changelist="4b0b3d27-7873-4be2-9c2d-95f5b999255a" />
+        <range start1="9" end1="9" start2="9" end2="12" changelist="4b0b3d27-7873-4be2-9c2d-95f5b999255a" />
+        <range start1="40" end1="40" start2="43" end2="54" changelist="4b0b3d27-7873-4be2-9c2d-95f5b999255a" />
+        <range start1="178" end1="178" start2="192" end2="193" changelist="43d5e9d4-422d-4930-a1d8-dddd105d1be8" />
+      </ranges>
+    </file>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>

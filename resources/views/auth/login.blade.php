@@ -40,7 +40,7 @@
                 </x-jet-button>
             </div>
             <div class="flex justify-center mt-2">
-                    <a class="underline text-sm text-paleta-4 hover:text-gray-900" href="{{ route('register') }}">
+                    <a class="underline text-sm text-paleta-4 hover:text-gray-900" href="{{ route('registro') }}">
                         {{ __('Crear cuenta') }}
                     </a>
             </div>
