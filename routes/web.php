@@ -38,6 +38,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 //COMPANY ROUTES
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/{empresa}/dashboard',\App\Http\Livewire\Empresa\Dashboard::class)->name('emp.dashboard');
+    Route::get('/{empresa}/estaditicas',\App\Http\Livewire\Empresa\Estadisticas::class)->name('emp.estadisticas');
     Route::get('/productos/categorias', CategoriasTable::class)->name('categorias');
     Route::get('/productos/marcas', \App\Http\Livewire\Empresa\Productos\MarcasTable::class)->name('marcas');
     Route::get('/productos/garantias', \App\Http\Livewire\Empresa\Productos\GarantiasTable::class)->name('garantias');

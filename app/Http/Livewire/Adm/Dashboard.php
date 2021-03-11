@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Adm;
 
+use App\Models\Empresa;
 use App\Models\Factura;
 use App\Models\Producto;
 use App\Models\User;
@@ -12,6 +13,9 @@ use Livewire\Component;
 class Dashboard extends Component
 {
 
+    public $detalles;
+    public $fechasC;
+    public $cantidadC;
     public function mount()
     {
         session(['entrada_adm' => true]);
@@ -19,20 +23,26 @@ class Dashboard extends Component
 
 
     public $users;
-    public $fechas;
-    public $cantidad;
+    public $empresas;
+
     public function render()
     {
-       $this->users=DB::table('users')
-            ->select(DB::raw('DATE(created_at) as date'), DB::raw('count(*) as cantidad'))
+       $this->users=User::count();
+       $this->empresas=Empresa::count();
+
+
+        $this->detalles=DB::table('detalles')
+            ->select(DB::raw('DATE(created_at) as date'), DB::raw('sum(precio*cantidad) as precio'))
+            ->whereMonth('created_at', '=', date('m'))
             ->groupBy('date')
             ->get();
-       $i=0;
-       foreach ($this->users as $user){
-           $this->fechas[$i]=$user->date;
-           $this->cantidad[$i]=$user->cantidad;
-           $i=$i+1;
-       }
+        $i=0;
+        foreach ($this->detalles as $detalle){
+            $this->fechasC[$i]=$detalle->date;
+            $this->cantidadC[$i]=$detalle->precio*0.05;
+            $i=$i+1;
+        }
+
 
 
         return view('livewire.adm.dashboard')->layout('layouts.adm');
