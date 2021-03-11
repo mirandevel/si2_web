@@ -63,7 +63,7 @@ class UserRegister extends Component
             'user_id' => $user->id,
         ]);
         RolUser::create([
-            'rol_id' => 1,
+            'rol_id' => 3,
             'user_id' => $user->id,
         ]);
         $this->redirect('login');
